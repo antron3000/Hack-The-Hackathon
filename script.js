@@ -23,10 +23,6 @@ async function signIn() {
 
             signer = await provider.getSigner();
 
-            await getAddress()
-            await getEthBalance()
-            await initToken()
-            await getBalance()
 
         } else {
             console.log('Please install MetaMask!');
