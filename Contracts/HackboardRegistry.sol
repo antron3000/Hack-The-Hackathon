@@ -16,7 +16,6 @@ contract HackBoardRegistry{
     struct User{
         bool HasTeam;
         uint256 TeamID;
-        
     }
     
     struct HackBoardTeam{
