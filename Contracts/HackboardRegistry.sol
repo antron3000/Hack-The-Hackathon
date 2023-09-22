@@ -16,6 +16,7 @@ contract HackBoardRegistry{
         address Admin;
         string TeamName;
         address[] TeamMembers;
+        bool InterestedInPredictionMarket;
         bool PredictionMarketEnabled;
     }
 
