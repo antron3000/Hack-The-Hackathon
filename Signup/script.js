@@ -57,7 +57,6 @@ async function OnBoard() {
     let InteredInPMarket = document.getElementById('InteredInPMarket').value;
     let SponsorGoal = document.getElementById('SponsorGoal').value;
 
-    let signer = provider.getSigner();
     let contract = new ethers.Contract(contractAddress, ABI, signer);
 
     let tx = await contract.OnboardNewTeam(TeamName, Description, Discord, SponsorGoal, TeamMembers, InteredInPMarket);
