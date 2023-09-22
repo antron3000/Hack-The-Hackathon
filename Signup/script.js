@@ -3,7 +3,7 @@ let TeamName = document.getElementById("TeamName")
 let TeamMembers = document.getElementById('TeamMembers');
 let Description = document.getElementById('Description')
 let Discord = document.getElementById('Discord');
-let 
+let InteredInPMarket = document.getElementById('InteredInPMarket');
 
 document.getElementById('metamaskButton').addEventListener('click', async () => {
     console.log("button clicked")
