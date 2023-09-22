@@ -57,6 +57,6 @@ contract HackBoardRegistry{
         AllUsers.push(msg.sender);
     }
 
-    function GetTeamInfo(TeamID)
+    function GetTeamInfo(uint256 TeamID) public returns()
 
 }
