@@ -20,6 +20,7 @@ contract HackBoardRegistry{
     struct HackBoardTeam{
         address Admin;
         string TeamName;
+        string ShortDescription;
         address[] TeamMembers;
         bool InterestedInPredictionMarket;
     }
