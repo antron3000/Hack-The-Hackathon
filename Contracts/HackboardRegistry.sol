@@ -22,6 +22,7 @@ contract HackBoardRegistry{
         address Admin;
         string TeamName;
         string ShortDescription;
+        string Discord;
         address[] TeamMembers;
         bool InterestedInPredictionMarket;
     }
