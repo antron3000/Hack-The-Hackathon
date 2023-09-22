@@ -53,4 +53,6 @@ function OnBoard() {
     let Discord = document.getElementById('Discord').value;
     let InteredInPMarket = document.getElementById('InteredInPMarket').value;
     let SponsorGoal = document.getElementById('SponsorGoal').value;
+
+    
 }
