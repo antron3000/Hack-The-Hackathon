@@ -3,6 +3,7 @@ pragma solidity 0.8.19;
 contract HackBoardRegistry{
     address HackBoardAdmin;
     string[] AllTeams;
+    
 
     constructor(){
         HackBoardAdmin = msg.sender;
@@ -19,7 +20,8 @@ contract HackBoardRegistry{
         bool InterestedInPredictionMarket;
     }
 
-    function OnboardNewTeam(string TeamName, address[] CurrentMembers) public {
+    function OnboardNewTeam(string TeamName, address[] CurrentMembers, bool InterestedInPredictionMarket) public {
+
 
     }
 
