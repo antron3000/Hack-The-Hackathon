@@ -2,8 +2,8 @@ pragma solidity 0.8.19;
 
 contract HackBoardRegistry{
     address HackBoardAdmin;
-    string[] AllTeams;
-    
+    uint256[] AllTeams;
+    uint256 TeamIncrement;
 
     constructor(){
         HackBoardAdmin = msg.sender;
@@ -21,7 +21,7 @@ contract HackBoardRegistry{
     }
 
     function OnboardNewTeam(string TeamName, address[] CurrentMembers, bool InterestedInPredictionMarket) public {
-
+        
 
     }
 
