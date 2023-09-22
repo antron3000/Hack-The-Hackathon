@@ -29,7 +29,7 @@ contract HackBoardRegistry{
         require(User[msg.sender].HasTeam == false);
 
         User[msg.sender].HasTeam = true;
-        
+        User[msg.sender].TeamID = TeamID;
         uint256 TeamID = TeamIncrement;
         TeamIncrement++
 
