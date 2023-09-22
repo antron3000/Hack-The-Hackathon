@@ -1,5 +1,5 @@
-let TeamMemberArray = [];
 
+let 
 let TeamMembers = document.getElementById('TeamMembers');
 
 
