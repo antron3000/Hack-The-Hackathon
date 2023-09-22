@@ -2,8 +2,6 @@ pragma solidity 0.8.19;
 
 contract HackBoardRegistry{
     address HackBoardAdmin;
-    address Handler;
-
     string[] AllTeams;
 
     constructor(){
