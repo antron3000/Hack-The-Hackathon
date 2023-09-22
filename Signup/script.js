@@ -22,7 +22,7 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
 
             provider = new ethers.BrowserProvider(window.ethereum);
             console.log("a")
-            const signer = await provider.getSigner();
+            signer = await provider.getSigner();
             console.log("a")
 
             const userAddress = await signer.getAddress();
