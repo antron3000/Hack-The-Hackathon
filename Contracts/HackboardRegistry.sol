@@ -49,7 +49,8 @@ contract HackBoardRegistry{
     function OnboardUser(uint256 TeamID) public returns() {
         require(User[msg.sender].HasTeam == false);
 
-        
+        User[msg.sender].HasTeam = true;
+        User[msg.sender].TeamID = TeamID;
     }
 
 }
