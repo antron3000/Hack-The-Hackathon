@@ -47,8 +47,6 @@ contract HackBoardRegistry{
         return TeamID;
     }
 
-   
-
     function GetTeamInfo(uint256 TeamID) public returns(HackBoardTeam memory){
         return Teams[TeamID];
     }
