@@ -17,7 +17,6 @@ contract HackBoardRegistry{
         string TeamName;
         address[] TeamMembers;
         bool InterestedInPredictionMarket;
-        bool PredictionMarketEnabled;
     }
 
     function OnboardNewTeam(string TeamName, address[] CurrentMembers) public {
