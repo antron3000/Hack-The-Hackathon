@@ -9,7 +9,8 @@ contract HackBoardRegistry{
     }
 
     mapping(address => uint256) public UserTeamName;
-    mapping(string => HackBoardTeam) public Teams;
+    mapping(uint256 => HackBoardTeam) public Teams;
+    mapping(string => uint256) public JoinCodes;
     
     struct HackBoardTeam{
         address Admin;
