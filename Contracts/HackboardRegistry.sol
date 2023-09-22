@@ -23,11 +23,12 @@ contract HackBoardRegistry{
         string TeamName;
         string ShortDescription;
         string Discord;
+        string MainBountyTarget;
         address[] TeamMembers;
         bool InterestedInPredictionMarket;
     }
 
-    function OnboardNewTeam(string memory TeamName, string memory ShortDescription, string memory Discord, address[] memory CurrentMembers, bool InterestedInPredictionMarket) public returns(string memory TeamCode) {
+    function OnboardNewTeam(string memory TeamName, string memory ShortDescription, string memory Discord,  address[] memory CurrentMembers, bool InterestedInPredictionMarket) public returns(string memory TeamCode) {
         require(Users[msg.sender].HasTeam == false);
         uint256 TeamID = TeamIncrement;
         TeamIncrement++;
