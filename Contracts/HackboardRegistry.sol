@@ -61,6 +61,10 @@ contract HackBoardRegistry{
         return Teams[TeamID];
     }
 
+    function GetAllTeams() public returns(uint256[]){
+        return AllTeams;
+    }
+
     
 
 }
