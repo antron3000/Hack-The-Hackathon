@@ -10,7 +10,7 @@ contract HackBoardRegistry{
         HackBoardAdmin = msg.sender;
     }
 
-    mapping(address => uint256) public User;
+    mapping(address => uint256) public Users;
     mapping(uint256 => HackBoardTeam) public Teams;
 
     struct User{
@@ -22,19 +22,17 @@ contract HackBoardRegistry{
         address Admin;
         string TeamName;
         string ShortDescription;
-        string Discord;
         address[] TeamMembers;
         bool InterestedInPredictionMarket;
-        uint256 RegistrationTime;
     }
 
-    function OnboardNewTeam(string TeamName, string ShortDescription, string Discord, address[] CurrentMembers, bool InterestedInPredictionMarket) public returns(string TeamCode) {
-        require(User[msg.sender].HasTeam == false);
+    function OnboardNewTeam(string memory TeamName, string memory ShortDescription, address[] memory CurrentMembers, bool InterestedInPredictionMarket) public returns(string memory TeamCode) {
+        require(Users[msg.sender].HasTeam == false);
         uint256 TeamID = TeamIncrement;
         TeamIncrement++;
 
-        User[msg.sender].HasTeam = true;
-        User[msg.sender].TeamID = TeamID;
+        Users[msg.sender].HasTeam = true;
+        Users[msg.sender].TeamID = TeamID;
 
         Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, ShortDescription, CurrentMembers, InterestedInPredictionMarket);
 
@@ -48,22 +46,26 @@ contract HackBoardRegistry{
         return TeamID;
     }
 
-    function OnboardUser(uint256 TeamID) public returns() {
+    function OnboardUser(uint256 TeamID) public {
         require(User[msg.sender].HasTeam == false);
 
-        User[msg.sender].HasTeam = true;
-        User[msg.sender].TeamID = TeamID;
+        Users[msg.sender].HasTeam = true;
+        Users[msg.sender].TeamID = TeamID;
 
         Teams[TeamID].TeamMembers.push(msg.sender);
 
         AllUsers.push(msg.sender);
     }
 
-    function GetTeamInfo(uint256 TeamID) public returns(HackBoardTeam){
+    function GetTeamInfo(uint256 TeamID) public returns(HackBoardTeam memory){
         return Teams[TeamID];
     }
 
-    function GetAllTeams() public returns(uint256[]){
+    function GetUserInfo(address _User) public returns(User memory){
+        return(Users[User]);
+    }
+
+    function GetAllTeams() public returns(uint256[] memory){
         return AllTeams;
     }
 
