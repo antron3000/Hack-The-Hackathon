@@ -1,5 +1,5 @@
 
-let TeamName = document.getElementById()
+let TeamName = document.getElementById("teamName")
 let TeamMembers = document.getElementById('TeamMembers');
 
 
