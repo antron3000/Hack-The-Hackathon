@@ -35,7 +35,10 @@ contract HackBoardRegistry{
 
         Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, CurrentMembers, InterestedInPredictionMarket);
 
-        for()
+        for(uint256 i = 0; i < CurrentMembers.length; i++){
+            User[CurrentMembers[i]].HasTeam = true;
+            User[CurrentMembers[i]].TeamID = TeamID;
+        }
 
         
 
