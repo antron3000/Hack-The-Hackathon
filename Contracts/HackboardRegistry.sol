@@ -47,7 +47,12 @@ contract HackBoardRegistry{
         return TeamID;
     }
 
-    function AddTeam
+    function AddTeamMember(uint256 TeamID, address NewMember) public {
+        require(Teams[TeamID].Admin == msg.sender);
+        Teams[TeamID].TeamMembers.push(NewMember);
+        Users[NewMember].HasTeam = true;
+        Users[NewMember].TeamID = TeamID;
+    }
 
     function GetTeamInfo(uint256 TeamID) public returns(HackBoardTeam memory){
         return Teams[TeamID];
