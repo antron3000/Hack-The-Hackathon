@@ -26,7 +26,7 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
             signer = await provider.getSigner();
             console.log("a")
 
-            const userAddress = await signer.getAddress();
+            address = await signer.getAddress();
             console.log("a")
 
             console.log(userAddress)
