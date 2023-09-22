@@ -15,12 +15,13 @@ body {
 }
 
 button{
+    margin-top: ;
     color: orange;
     font-size: larger;
     font-weight: bold;
     padding: 4px;
     background-color: black;
-    border-color: ;
+    border-color: orange;
 }
 
 #timer {
