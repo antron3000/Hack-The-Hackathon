@@ -1,6 +1,6 @@
 let TeamMemberArray = [];
 
-document.getElementById('TeamMembers');
+TeamMembers = document.getElementById('TeamMembers');
 
 
 
