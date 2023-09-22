@@ -38,9 +38,3 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
     }
 });
 
-function PushToTeamArray(){
-    TeamMemberArray.push(document.getElementById('TeamMember').value);
-    //clear the teammember input
-    document.getElementById('TeamMember').value = "";
-}
-
