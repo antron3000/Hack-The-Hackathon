@@ -32,3 +32,5 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
         console.error("MetaMask is not installed");
     }
 });
+
+
