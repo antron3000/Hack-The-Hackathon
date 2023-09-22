@@ -22,12 +22,13 @@ contract HackBoardRegistry{
         address Admin;
         string TeamName;
         string ShortDescription;
+        string Discord;
         address[] TeamMembers;
         bool InterestedInPredictionMarket;
         uint256 RegistrationTime;
     }
 
-    function OnboardNewTeam(string TeamName, string ShortDescription, address[] CurrentMembers, bool InterestedInPredictionMarket) public returns(string TeamCode) {
+    function OnboardNewTeam(string TeamName, string ShortDescription, string Discord, address[] CurrentMembers, bool InterestedInPredictionMarket) public returns(string TeamCode) {
         require(User[msg.sender].HasTeam == false);
         uint256 TeamID = TeamIncrement;
         TeamIncrement++;
