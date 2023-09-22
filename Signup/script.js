@@ -46,7 +46,7 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
 });
 
 //Create a function that calls the contract and adds the team to the blockchain
-function OnBoard() {
+async function OnBoard() {
     let TeamName = document.getElementById("TeamName").value
     let TeamMembers = document.getElementById('TeamMembers').value;
     let Description = document.getElementById('Description').value
@@ -54,5 +54,8 @@ function OnBoard() {
     let InteredInPMarket = document.getElementById('InteredInPMarket').value;
     let SponsorGoal = document.getElementById('SponsorGoal').value;
 
-    
+    let signer = provider.getSigner();
+    let contract = new ethers.Contract(contractAddress, ABI, signer);
+
+    let tx = await contract.OnboardNewTeam(TeamName, Description, Discord, SponsorGoal, TeamMembers, InteredInPMarket);
 }
