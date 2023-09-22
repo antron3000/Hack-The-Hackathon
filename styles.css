@@ -16,7 +16,8 @@ body {
 
 button{
     color: orange;
-    font
+    font-size: larger;
+    font-weight: bold;
 }
 
 #timer {
