@@ -4,6 +4,7 @@ let TeamMembers = document.getElementById('TeamMembers');
 let Description = document.getElementById('Description')
 let Discord = document.getElementById('Discord');
 let InteredInPMarket = document.getElementById('InteredInPMarket');
+let SponsorGoal = document.getElementById('SponsorGoal');
 
 document.getElementById('metamaskButton').addEventListener('click', async () => {
     console.log("button clicked")
