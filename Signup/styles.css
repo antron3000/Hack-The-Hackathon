@@ -5,6 +5,16 @@ body {
     background-color: black;
 }
 
+button{
+    margin-top: 1%;
+    color: orange;
+    font-size: larger;
+    font-weight: bold;
+    padding: 4px;
+    background-color: black;
+    border-color: orange;
+}
+
 form {
     width: 300px;
     margin: 0 auto;
