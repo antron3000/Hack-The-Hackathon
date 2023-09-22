@@ -58,4 +58,6 @@ async function OnBoard() {
     let contract = new ethers.Contract(contractAddress, ABI, signer);
 
     let tx = await contract.OnboardNewTeam(TeamName, Description, Discord, SponsorGoal, TeamMembers, InteredInPMarket);
+    let receipt = await tx.wait();
+    console.log(receipt);
 }
