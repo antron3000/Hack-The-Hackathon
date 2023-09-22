@@ -11,7 +11,7 @@ let ABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"i
 let contractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17"
 let provider;
 let signer;
-let address;
+let
 
 document.getElementById('metamaskButton').addEventListener('click', async () => {
     console.log("button clicked")
@@ -26,7 +26,7 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
             signer = await provider.getSigner();
             console.log("a")
 
-            address = await signer.getAddress();
+            const userAddress = await signer.getAddress();
             console.log("a")
 
             console.log(userAddress)
@@ -57,8 +57,10 @@ async function OnBoard() {
     let InteredInPMarket = document.getElementById('InteredInPMarket').value;
     let SponsorGoal = document.getElementById('SponsorGoal').value;
 
+    let signer = provider.getSigner();
     let contract = new ethers.Contract(contractAddress, ABI, signer);
 
-    await contract.OnboardNewTeam(TeamName, Description, Discord, SponsorGoal, TeamMembers, InteredInPMarket);
-    
+    let tx = await contract.OnboardNewTeam(TeamName, Description, Discord, SponsorGoal, TeamMembers, InteredInPMarket);
+    let receipt = await tx.wait();
+    console.log(receipt);
 }
