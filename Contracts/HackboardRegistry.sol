@@ -52,7 +52,7 @@ contract HackBoardRegistry{
         User[msg.sender].HasTeam = true;
         User[msg.sender].TeamID = TeamID;
 
-        Teams[TeamID].
+        Teams[TeamID].TeamMembers.push(msg.sender)
 
         AllUsers.push(msg.sender);
     }
