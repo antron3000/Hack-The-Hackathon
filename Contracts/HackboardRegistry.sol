@@ -22,7 +22,9 @@ contract HackBoardRegistry{
         bool PredictionMarketEnabled;
     }
 
-    function OnboardNewTeam(string TeamName, address[]) 
+    function OnboardNewTeam(string TeamName, address[] CurrentMembers) public {
+        
+    }
 
     function handle(uint32 _origin, bytes32 _sender, bytes calldata _body) external {
         require(msg.sender == Handler);
