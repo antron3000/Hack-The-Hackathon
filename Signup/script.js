@@ -37,5 +37,5 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
     }
 });
 
-
+function PushToTeamArray()
 
