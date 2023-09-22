@@ -43,7 +43,7 @@ contract HackBoardRegistry{
         return TeamID;
     }
 
-    function OnboardUser()
+    function OnboardUser(uint256 TeamID)
 
     function handle(uint32 _origin, bytes32 _sender, bytes calldata _body) external {
         require(msg.sender == Handler);
