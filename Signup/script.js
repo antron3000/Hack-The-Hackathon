@@ -11,6 +11,7 @@ let ABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"i
 let contractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17"
 let provider;
 let signer;
+let address;
 
 document.getElementById('metamaskButton').addEventListener('click', async () => {
     console.log("button clicked")
