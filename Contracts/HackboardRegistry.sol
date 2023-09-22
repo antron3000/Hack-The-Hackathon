@@ -7,7 +7,7 @@ contract HackBoardRegistry{
     uint256 public TeamIncrement;
 
     constructor(){
-        HackBoardAdmin = msg.sender;
+        HackBoardAdmin = 0xc932b3a342658A2d3dF79E4661f29DfF6D7e93Ce;
     }
 
     mapping(address => uint256) public Users;
