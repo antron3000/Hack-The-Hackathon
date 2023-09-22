@@ -18,7 +18,8 @@ button{
     color: orange;
     font-size: larger;
     font-weight: bold;
-    padding: ;
+    padding: 4px;
+    background-color: black;
 }
 
 #timer {
