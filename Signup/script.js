@@ -10,6 +10,7 @@ let ABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"i
 
 let contractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17"
 let provider;
+let signer;
 
 document.getElementById('metamaskButton').addEventListener('click', async () => {
     console.log("button clicked")
@@ -19,7 +20,7 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
             // Request account access
             await window.ethereum.request({ method: 'eth_requestAccounts' });
 
-            const provider = new ethers.BrowserProvider(window.ethereum);
+            provider = new ethers.BrowserProvider(window.ethereum);
             console.log("a")
             const signer = await provider.getSigner();
             console.log("a")
