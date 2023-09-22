@@ -26,7 +26,7 @@ contract HackBoardRegistry{
     }
 
     function OnboardNewTeam(string TeamName, address[] CurrentMembers, bool InterestedInPredictionMarket) public {
-        require(User[msg.sender].ha);
+        require(User[msg.sender].HasTeam == false);
 
         uint256 TeamID = TeamIncrement;
 
