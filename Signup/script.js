@@ -1,6 +1,6 @@
 let TeamMemberArray = [];
 
-TeamMembers = document.getElementById('TeamMembers');
+let TeamMembers = document.getElementById('TeamMembers');
 
 
 
@@ -39,5 +39,7 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
     }
 });
 
-function PushToTeamArray()
+function PushToTeamArray(){
+    
+}
 
