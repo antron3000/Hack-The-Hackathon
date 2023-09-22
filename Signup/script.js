@@ -45,3 +45,4 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
     }
 });
 
+//Create a function that calls the contract 
