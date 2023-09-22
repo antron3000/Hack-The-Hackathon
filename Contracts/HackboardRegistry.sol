@@ -24,6 +24,7 @@ contract HackBoardRegistry{
         string ShortDescription;
         address[] TeamMembers;
         bool InterestedInPredictionMarket;
+        uint256 RegistrationTime;
     }
 
     function OnboardNewTeam(string TeamName, string ShortDescription, address[] CurrentMembers, bool InterestedInPredictionMarket) public returns(string TeamCode) {
@@ -65,6 +66,6 @@ contract HackBoardRegistry{
         return AllTeams;
     }
 
-    
+
 
 }
