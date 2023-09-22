@@ -19,7 +19,7 @@
 
     <h1 style="text-align: center;">HackBoard Team Registration</h1>
     
-    <form id="teamRegistration">
+    <form id="teamRegistration" onsubmit="return false">
         <!-- Team Name -->
         <label for="teamName">Team Name:</label>
         <input type="text" id="TeamName" name="teamName" required><br>
@@ -48,7 +48,7 @@
 
 
         <!-- Submit Button -->
-        <button onclick="OnBoard()" type="Register">Register</button>
+        <button onclick="OnBoard()" type="button" value="Register">Register</button>
     </form>
 
 </body>
