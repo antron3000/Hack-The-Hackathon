@@ -27,7 +27,7 @@ contract HackBoardRegistry{
         bool InterestedInPredictionMarket;
     }
 
-    function OnboardNewTeam(string memory TeamName, string memory ShortDescription, address[] memory CurrentMembers, bool InterestedInPredictionMarket) public returns(string memory TeamCode) {
+    function OnboardNewTeam(string memory TeamName, string memory ShortDescription, string memory Discord, address[] memory CurrentMembers, bool InterestedInPredictionMarket) public returns(string memory TeamCode) {
         require(Users[msg.sender].HasTeam == false);
         uint256 TeamID = TeamIncrement;
         TeamIncrement++;
@@ -47,16 +47,7 @@ contract HackBoardRegistry{
         return TeamID;
     }
 
-    function OnboardUser(uint256 TeamID) public {
-        require(User[msg.sender].HasTeam == false);
-
-        Users[msg.sender].HasTeam = true;
-        Users[msg.sender].TeamID = TeamID;
-
-        Teams[TeamID].TeamMembers.push(msg.sender);
-
-        AllUsers.push(msg.sender);
-    }
+   
 
     function GetTeamInfo(uint256 TeamID) public returns(HackBoardTeam memory){
         return Teams[TeamID];
