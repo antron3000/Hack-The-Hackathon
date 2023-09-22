@@ -40,6 +40,8 @@ contract HackBoardRegistry{
             User[CurrentMembers[i]].TeamID = TeamID;
         }
 
+        return TeamID;
+
         
 
     }
