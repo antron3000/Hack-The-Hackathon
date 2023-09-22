@@ -6,6 +6,8 @@ let Discord = document.getElementById('Discord');
 let InteredInPMarket = document.getElementById('InteredInPMarket');
 let SponsorGoal = document.getElementById('SponsorGoal');
 
+let ABI = [
+
 document.getElementById('metamaskButton').addEventListener('click', async () => {
     console.log("button clicked")
     if (typeof window.ethereum !== 'undefined') {
