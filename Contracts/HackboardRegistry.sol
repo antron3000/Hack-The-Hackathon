@@ -44,12 +44,7 @@ contract HackBoardRegistry{
     }
 
     function OnboardUser(uint256 TeamID) public returns() {
-        
-    }
-
-    function handle(uint32 _origin, bytes32 _sender, bytes calldata _body) external {
-        require(msg.sender == Handler);
-        HackBoardTeam memory ArrivingInfo = abi.decode(_body, (HackBoardTeam));
 
     }
+
 }
