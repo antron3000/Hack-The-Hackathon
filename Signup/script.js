@@ -46,9 +46,11 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
 });
 
 //Create a function that calls the contract and adds the team to the blockchain
-let TeamName = document.getElementById("TeamName").value
+function OnBoard() {
+    let TeamName = document.getElementById("TeamName").value
     let TeamMembers = document.getElementById('TeamMembers').value;
     let Description = document.getElementById('Description').value
     let Discord = document.getElementById('Discord').value;
     let InteredInPMarket = document.getElementById('InteredInPMarket').value;
     let SponsorGoal = document.getElementById('SponsorGoal').value;
+}
