@@ -4,7 +4,7 @@ contract HackBoardRegistry{
     address public HackBoardAdmin;
     uint256[] public AllTeams;
     address[] public AllUsers;
-    uint256 TeamIncrement;
+    uint256 public TeamIncrement;
 
     constructor(){
         HackBoardAdmin = msg.sender;
