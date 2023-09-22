@@ -1,6 +1,7 @@
 let TeamMemberArray = [];
 
-document.getElementById('')
+document.getElementById('TeamMembers');
+
 
 
 document.getElementById('metamaskButton').addEventListener('click', async () => {
