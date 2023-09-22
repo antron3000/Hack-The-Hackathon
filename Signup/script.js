@@ -45,4 +45,4 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
     }
 });
 
-//Create a function that calls the contract 
+//Create a function that calls the contract and adds the team to the blockchain
