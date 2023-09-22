@@ -35,7 +35,7 @@ contract HackBoardRegistry{
 
         Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, CurrentMembers, InterestedInPredictionMarket);
 
-        CurrentMembers
+        for()
 
         
 
