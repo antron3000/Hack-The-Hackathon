@@ -33,7 +33,9 @@ contract HackBoardRegistry{
         User[msg.sender].HasTeam = true;
         User[msg.sender].TeamID = TeamID;
 
-        Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, CurrentMembers, )
+        Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, CurrentMembers, InterestedInPredictionMarket);
+
+        CurrentMembers
 
         
 
