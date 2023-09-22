@@ -11,7 +11,6 @@ contract HackBoardRegistry{
 
     mapping(address => uint256) public User;
     mapping(uint256 => HackBoardTeam) public Teams;
-    mapping(string => uint256) public JoinCodes;
 
     struct User{
         bool HasTeam;
@@ -39,8 +38,6 @@ contract HackBoardRegistry{
             User[CurrentMembers[i]].HasTeam = true;
             User[CurrentMembers[i]].TeamID = TeamID;
         }
-
-        bytes32 TeamHash
 
         return TeamID;
     }
