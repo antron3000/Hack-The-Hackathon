@@ -1,6 +1,7 @@
 
 let TeamName = document.getElementById("teamName")
 let TeamMembers = document.getElementById('TeamMembers');
+let 
 
 
 document.getElementById('metamaskButton').addEventListener('click', async () => {
