@@ -41,6 +41,7 @@ contract HackBoardRegistry{
             User[CurrentMembers[i]].TeamID = TeamID;
         }
         
+        AllUsers.push(msg.sender);
         AllTeams.push(TeamID);
         return TeamID;
     }
