@@ -19,7 +19,7 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
             // Request account access
             await window.ethereum.request({ method: 'eth_requestAccounts' });
 
-             provider = new ethers.BrowserProvider(window.ethereum);
+            provider = new ethers.BrowserProvider(window.ethereum);
             console.log("a")
             const signer = await provider.getSigner();
             console.log("a")
