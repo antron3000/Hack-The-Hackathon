@@ -23,7 +23,7 @@ async function Login() {
     } else {
         console.error("MetaMask is not installed");
     }
-});
+}
 
 //Create a function that calls the contract and gets the list of all team ids
 async function GetAllTeams() {
