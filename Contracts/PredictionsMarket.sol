@@ -7,7 +7,7 @@ contract HackBoardPredictionMarket{
     uint256[] public ParticipatingTeams;
     uint256 TotalHackathonPrizePool;
 
-    mapping
+    mapping(uint256 => uint256) public TotalTeam;
 
     constructor(){
         //check hackboardregistry for all teams and loop through them, if they are interested in prediction market, add them to participating teams
