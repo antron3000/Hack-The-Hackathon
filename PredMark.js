@@ -118,12 +118,14 @@ async function insertDataIntoTable(dataone, datatwo, TeamID) {
         <td>${teamName}</td>
         <td>Long interest: ${LongInterest} $XDAI <br> Short Interest: ${ShortInterest} $XDAI</td>
         <td>Your Long Interest: ${UserForDeposit} $XDAI<br> <input id="LongInput${TeamID}" placeholder="Enter Amount"></input><br><button>Increase Long Interest</button></td>
-        <td>Your Short Interest: ${UserFadeDeposit} $XDAI<br> <input id="LongInput${TeamID}" placeholder="Enter Amount"></input><br><button></td>
+        <td>Your Short Interest: ${UserFadeDeposit} $XDAI<br> <input id="LongInput${TeamID}" placeholder="Enter Amount"></input><br><button>Increase Short Interest</button></td>
         </tr>
     `;
 
     tbody.appendChild(tr);
 }
+
+async function 
 
 async function addGnosisChainToMetaMask() {
     const chainId = 100;
