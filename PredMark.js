@@ -137,7 +137,7 @@ async function IncreaseInterest(LongShort, TeamID){
         alert("Please enter an amount");
         return
     }
-    Amount = ethers.utils.parseEther(Amount);
+    Amount = Amount * ;
     if (LongShort){
         await PredictionsContract.DepositToTeam(TeamID, LongShort, {value: Amount});
     }
