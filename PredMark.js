@@ -6,7 +6,7 @@ let RegistryContract;
 
 
 let RegistryContractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17";
-let PredictionsContractAddress = "0x284D7DAbeD043Be936Cd3db10244269c9A8dE51f";
+let PredictionsContractAddress = "0x00BaA09F96928A168cd76c949ee9668C50EA2F44";
 let provider;
 let signer;
 
