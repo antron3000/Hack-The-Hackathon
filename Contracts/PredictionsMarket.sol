@@ -63,6 +63,7 @@ contract HackBoardPredictionMarket{
 
     function FinalizeMarkets(uint256[] memory SuccessfulTeams) public {
         require(msg.sender == HackBoardAdmin);
+        require(SuccessfulTeams.length == 10);
 
         //Calculate the total available prize pool which is the total amount of ether deposited into the forprizepool, devided by 10 because there will be 10 winners
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / 10;
