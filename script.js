@@ -17,6 +17,7 @@ async function Login() {
             if (networkId === '100') {
                 provider = new ethers.BrowserProvider(window.ethereum);
                 console.log("Connected to Gnosis Chain");
+                let contract = new ethers.Contract(contractAddress, ABI, signer);
 
                 document.getElementById('metamaskButton').innerText = "Connected";
                 document.getElementById('metamaskButton').disabled = true;
@@ -37,7 +38,6 @@ async function Login() {
 //Create a function that calls the contract and gets the list of all team ids
 async function GetAllTeams() {
     let signer = await provider.getSigner();
-    let contract = new ethers.Contract(contractAddress, ABI, signer);
     let teamIDs = await contract.GetAllTeams();
     return teamIDs
 }
