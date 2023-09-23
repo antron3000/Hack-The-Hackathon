@@ -55,6 +55,7 @@ contract RebirthedToken {
     string public symbol;
     uint8 public decimals;
     address private ZeroAddress;
+    address public Creator;
     //variable Declarations
     
 
@@ -74,7 +75,7 @@ contract RebirthedToken {
         name = _name;
         symbol = _symbol;
         decimals = 18;
-        Mint(msg.sender, _TokenCap);
+        Creator = msg.sender;
     }
     
     function balanceOf(address Address) public view returns (uint256 balance){
