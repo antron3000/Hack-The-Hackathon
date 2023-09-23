@@ -113,7 +113,7 @@ function insertDataIntoTable(dataone, datatwo, TeamID) {
     tr.innerHTML = `<tr>
         <td>${teamName}</td>
         <td>Long interest: ${LongInterest} XDAI <br> Short Interest: ${ShortInterest} XDAI</td>
-        <td>temp</a></td>
+        <td>Your Long Interest:</a></td>
         <td>temp</td>
         </tr>
     `;
