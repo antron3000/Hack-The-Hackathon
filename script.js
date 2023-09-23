@@ -7,24 +7,28 @@ let contractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17"
 let provider;
 
 async function Login() {
-    console.log("button clicked")
+    console.log("button clicked");
     if (typeof window.ethereum !== 'undefined') {
-        console.log("defined")
+        console.log("MetaMask is installed");
         try {
             // Request account access
-            await window.ethereum.request({ method: 'eth_requestAccounts' });
+            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+            
+            // Get the network ID
+            const networkId = await window.ethereum.request({ method: 'net_version' });
 
-            provider = new ethers.BrowserProvider(window.ethereum);
-            console.log("a")
+            if (networkId === '100') {
+                provider = new ethers.BrowserProvider(window.ethereum);
+                console.log("Connected to Gnosis Chain");
 
-            document.getElementById('metamaskButton').innerText = "Connected";
-            document.getElementById('metamaskButton').disabled = true;
-            document.getElementById('temprow').style.display = "none";
+                document.getElementById('metamaskButton').innerText = "Connected";
+                document.getElementById('metamaskButton').disabled = true;
+                document.getElementById('temprow').style.display = "none";
 
-
-
-            populateTableWithTeamInfo();
-
+                populateTableWithTeamInfo();
+            } else {
+                console.error("Please switch to Gnosis Chain (Network ID 100) in MetaMask.");
+            }
         } catch (error) {
             console.error("User denied account access or an error occurred.");
         }
