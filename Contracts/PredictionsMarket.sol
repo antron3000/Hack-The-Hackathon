@@ -25,7 +25,7 @@ contract HackBoardPredictionMarket{
     }
 
     constructor(){
-        HackBoardRegistryContract = HackBoardRegistry(0x5FbDB2315678afecb367f032d93F642f64180aa3);
+        HackBoardRegistryContract = HackBoardRegistry(0xD87dF59Bf476e9700f36F00c198166bC901a0e17);
         uint256[] memory AllTeams = HackBoardRegistryContract.GetAllTeams();
         for(uint256 i = 0; i < AllTeams.length; i++){
             HackBoardRegistry.HackBoardTeam memory Team = HackBoardRegistryContract.GetTeamInfo(AllTeams[i]);
