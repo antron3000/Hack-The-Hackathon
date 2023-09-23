@@ -117,7 +117,7 @@ async function insertDataIntoTable(dataone, datatwo, TeamID) {
     tr.innerHTML = `<tr>
         <td>${teamName}</td>
         <td>Long interest: ${LongInterest} $XDAI <br> Short Interest: ${ShortInterest} $XDAI</td>
-        <td>Your Long Interest: ${UserForDeposit} $XDAI<br> <input id="LongInput${TeamID}" placeholder="Enter Amount"></input><br><button onclick="">Increase Long Interest</button></td>
+        <td>Your Long Interest: ${UserForDeposit} $XDAI<br> <input id="LongInput${TeamID}" placeholder="Enter Amount"></input><br><button onclick="IncreaseInterest()">Increase Long Interest</button></td>
         <td>Your Short Interest: ${UserFadeDeposit} $XDAI<br> <input id="LongInput${TeamID}" placeholder="Enter Amount"></input><br><button>Increase Short Interest</button></td>
         </tr>
     `;
