@@ -29,7 +29,6 @@ async function GetAllTeams() {
     let signer = await provider.getSigner();
     let contract = new ethers.Contract(contractAddress, ABI, signer);
     let teamIDs = await contract.GetAllTeams();
-    console.log(teamIDs)
     return teamIDs
 }
 
@@ -38,7 +37,6 @@ async function GetTeamInfo(teamID) {
     let signer = await provider.getSigner();
     let contract = new ethers.Contract(contractAddress, ABI, signer);
     let teamInfo = await contract.GetTeamInfo(teamID);
-    console.log(teamInfo)
 }
 
 async function GetAllTeamInfoToConsole(){
