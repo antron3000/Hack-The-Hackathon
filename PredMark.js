@@ -79,7 +79,7 @@ async function GetTeamPredictionsInfo(teamID){
     return JSON.parse(JSON.stringify(TeamInfo))
 }
 
-async function GetAllPredictionTeamInfoToConsole(){
+async function GetAllTeamInfoToConsole(){
     let TeamInfos = [];
     let teamIDs = await GetAllTeams();
     for (let i = 0; i < teamIDs.length; i++) {
