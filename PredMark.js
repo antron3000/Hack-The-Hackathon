@@ -104,7 +104,7 @@ function insertDataIntoTable(dataone, datatwo) {
     // Add console logs to debug the dataone
 
     const teamName = dataone[1];
-    const 
+    const LongInterest = 
 
     console.log(teamName, description, contactLink, interestInPredictionMarket, mainSponsorPrizeTarget);
 
