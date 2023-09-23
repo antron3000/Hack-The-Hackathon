@@ -40,7 +40,9 @@ contract HackBoardPredictionMarket{
         require(TeamID >= 0);
         require(TeamID < ParticipatingTeams.length);
 
-        if()
+        if(ForAgainst){
+            ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].ForToken);
+            TeamToken.Mint(msg.sender, msg.value);
 
 
 
