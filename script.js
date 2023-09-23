@@ -88,12 +88,10 @@ function insertDataIntoTable(data) {
 }
 
 async function populateTableWithTeamInfo() {
-    try {
+    
         const teamData = await GetAllTeamInfoToConsole();
         insertDataIntoTable(teamData);
-    } catch (error) {
-        console.error('Error populating table:', error);
-    }
+    
 }
 
 document.addEventListener("DOMContentLoaded", function() {
