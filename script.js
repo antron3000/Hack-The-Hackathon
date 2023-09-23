@@ -38,7 +38,7 @@ async function GetTeamInfo(teamID) {
     let contract = new ethers.Contract(contractAddress, ABI, signer);
     let teamInfo = await contract.GetTeamInfo(teamID);
 
-    return JSON.parse(teamInfo)
+    return JSON.parse(JSON.stringify(teamInfo))
 }
 
 async function GetAllTeamInfoToConsole(){
