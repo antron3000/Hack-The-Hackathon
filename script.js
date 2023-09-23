@@ -34,7 +34,11 @@ async function GetAllTeams() {
 }
 
 //Create a function that calls the contract and gets the team info for each team then displays it in the "Table" element as a tbody row
-
+async function GetTeamInfo(teamID) {
+    let signer = await provider.getSigner();
+    let contract = new ethers.Contract(contractAddress, ABI, signer);
+    let teamInfo = await contract.GetTeamInfo(teamID);
+    console.log(teamInfo)
 
 document.addEventListener("DOMContentLoaded", function() {
     // Define the start time and duration (in this case, a 48-hour hackathon)
