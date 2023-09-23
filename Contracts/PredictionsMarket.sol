@@ -92,7 +92,6 @@ contract HackBoardPredictionMarket{
         }
     }
 
-
     function OpenMarkets() public {
         require(msg.sender == HackBoardAdmin);
         MarketsOpen = true;
