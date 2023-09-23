@@ -62,6 +62,9 @@ async function SetUserTeamName(){
     if (await GetUserInfo()[0]){
         document.getElementById("TeamName").value = await GetTeamInfo(await GetUserInfo()[1])["TeamName"]
     }
+    else{
+        return
+    }
 }
 
 async function GetAllTeamInfoToConsole(){
