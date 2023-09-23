@@ -6,7 +6,7 @@ let provider;
 document.getElementById('metamaskButton').addEventListener('click', async () => {
     console.log("button clicked")
     if (typeof window.ethereum !== 'undefined') {
-        console.log("defined";
+        console.log("defined");
         
         await window.ethereum.request({ method: 'eth_requestAccounts' });
 
