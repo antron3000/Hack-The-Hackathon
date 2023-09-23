@@ -26,7 +26,7 @@ contract HackBoardPredictionMarket{
                 ParticipatingTeams.push(AllTeams[i]);
                 TeamParticipating[AllTeams[i]] = true;
                 //for each participating team, create two new erc20 tokens, one for the team, one for fading the team
-                PredictionsDerivativeToken ForToken = new PredictionsDerivativeToken()
+                ERC20 ForToken = new ERC20()
 
             }
         }
@@ -48,7 +48,7 @@ contract HackBoardPredictionMarket{
     // }
 }
 
-contract PredictionsDerivativeToken {
+contract ERC20 {
     uint256 public tokenCap;
     uint256 public totalSupply;
     string public name;
