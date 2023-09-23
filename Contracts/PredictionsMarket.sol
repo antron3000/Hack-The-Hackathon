@@ -8,12 +8,13 @@ contract HackBoardPredictionMarket{
     uint256 TotalHackathonPrizePool;
 
     mapping(uint256 => bool) public TeamParticipating;
-    mapping(uint256 => uint256) public TotalTeamPredictionsDeposits;
+    mapping(uint256 => TeamPredictionsInfo) public TotalTeamPredictionsDeposits;
     mapping(address => mapping(uint256 => uint256)) public UserTeamPredictionsDeposits;
 
     struct TeamPredictionsInfo{
         address ForToken;
         address FadeToken;
+        uint256 TotalTeamPredictionsDeposits
     }
 
     constructor(){
