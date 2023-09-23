@@ -22,6 +22,7 @@ async function Login() {
                 console.log("Connected to Gnosis Chain");
                 signer = await provider.getSigner();
                 RegistryContract = new ethers.Contract(RegistryContractAddress, ABI, signer);
+                
 
                 document.getElementById('metamaskButton').innerText = "Connected";
                 document.getElementById('metamaskButton').disabled = true;
