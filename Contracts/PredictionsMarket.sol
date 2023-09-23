@@ -19,7 +19,7 @@ contract HackBoardPredictionMarket{
         address FadeToken;
         uint256 TotalForPredictionsDeposits;
         uint256 TotalFadePredictionDeposits;
-        uint256 WinnersPool;
+        uint256 WinnerPayoutRate;
         bool ForSuccess;
         bool AgainstSuccessful;
     }
@@ -68,6 +68,7 @@ contract HackBoardPredictionMarket{
         }
 
         //Loop through all teams to see if they were successful, those that we're not successful, set the fadesuccessful bool to true
+        
     }
 
 
