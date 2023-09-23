@@ -67,6 +67,8 @@ contract HackBoardPredictionMarket{
         //Calculate the total available prize pool which is the total amount of ether deposited into the forprizepool, devided by 10 because there will be 10 winners
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / 10;
 
+        //Calculate the total available fade prize pool which is the total amount of ether deposited into the forprizepool, devided by 10 because there will be 10 winners
+
         for(uint256 i = 0; i < SuccessfulTeams.length; i++){
             TeamPredictionsInfo[SuccessfulTeams[i]].ForSuccess = true;
         }
