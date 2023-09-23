@@ -73,8 +73,6 @@ contract HackBoardPredictionMarket{
                 TeamPredictionsInfo[ParticipatingTeams[i]].AgainstSuccessful = true;
             }
         }
-
-        
     }
 
 
