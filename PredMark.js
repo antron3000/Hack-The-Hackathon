@@ -74,6 +74,8 @@ async function SetUserTeamName(){
     }
 }
 
+async function GetTeam
+
 async function GetAllTeamInfoToConsole(){
     let TeamInfos = [];
     let teamIDs = await GetAllTeams();
