@@ -70,6 +70,7 @@ function insertDataIntoTable(data) {
         <td><a href="${contactLink}">Contact</a></td>
         <td>${interestInPredictionMarket}</td>
         <td>${mainSponsorPrizeTarget}</td>
+        </tr>
     `;
 
     tbody.appendChild(tr);
