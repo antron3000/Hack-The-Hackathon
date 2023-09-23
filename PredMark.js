@@ -6,7 +6,7 @@ let RegistryContract;
 
 
 let RegistryContractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17";
-let PredictionsContractAddress = "0x0dDfFf3b2cC8fE9775f0f4aBf3eBb0b0e5aBbBbB";
+let PredictionsContractAddress = "0x284D7DAbeD043Be936Cd3db10244269c9A8dE51f";
 let provider;
 let signer;
 
@@ -45,7 +45,7 @@ async function Login() {
 
 //Create a function that calls the RegistryContract and gets the list of all team ids
 async function GetAllTeams() {
-    let teamIDs = await RegistryContract.GetAllTeams();
+    let teamIDs = await PredictionsContract.GetAllTeams();
     return teamIDs
 }
 
