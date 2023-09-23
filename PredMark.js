@@ -4,7 +4,7 @@ Login();
 let contract;
 
 
-let contractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17"
+let RegistryContractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17"
 let provider;
 let signer;
 
@@ -20,7 +20,7 @@ async function Login() {
                 provider = new ethers.BrowserProvider(window.ethereum);
                 console.log("Connected to Gnosis Chain");
                 signer = await provider.getSigner();
-                contract = new ethers.Contract(contractAddress, ABI, signer);
+                contract = new ethers.Contract(RegistryContractAddress, ABI, signer);
 
                 document.getElementById('metamaskButton').innerText = "Connected";
                 document.getElementById('metamaskButton').disabled = true;
