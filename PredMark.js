@@ -125,7 +125,9 @@ async function insertDataIntoTable(dataone, datatwo, TeamID) {
     tbody.appendChild(tr);
 }
 
-async function IncreaseInterest()
+async function IncreaseInterest(LongShort, TeamID){
+    
+}
 
 async function addGnosisChainToMetaMask() {
     const chainId = 100;
