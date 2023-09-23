@@ -33,6 +33,8 @@ async function GetAllTeams() {
     return teamIDs
 }
 
+//Create a function that calls the contract and gets the team info for each team 
+
 document.addEventListener("DOMContentLoaded", function() {
     // Define the start time and duration (in this case, a 48-hour hackathon)
     const startTime = new Date('2023-09-22T12:00:00');  // Adjust the date and time as needed
