@@ -65,10 +65,8 @@ contract HackBoardPredictionMarket{
         require(msg.sender == HackBoardAdmin);
         require(SuccessfulTeams.length == 10);
 
-        //Calculate the total available prize pool which is the total amount of ether deposited into the forprizepool, devided by 10 because there will be 10 winners
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / 10;
 
-        //Calculate the total available fade prize pool which is the total amount of ether deposited into the forprizepool, devided by the number of teams that were not successful
         uint256 TotalFadeAvailablePrizePool = TotalFadePrizePool / (ParticipatingTeams.length - 10);
 
         for(uint256 i = 0; i < SuccessfulTeams.length; i++){
