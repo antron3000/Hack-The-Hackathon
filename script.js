@@ -81,6 +81,7 @@ function insertDataIntoTable(data) {
 async function populateTableWithTeamInfo() {
     
         const teamData = await GetAllTeamInfoToConsole();
+        console.log(teamData);
         insertDataIntoTable(teamData);
     
 }
