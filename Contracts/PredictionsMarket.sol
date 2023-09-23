@@ -9,6 +9,13 @@ contract HackBoardPredictionMarket{
     constructor(){
         //check hackboardregistry for all teams and loop through them, if they are interested in prediction market, add them to participating teams
         HackBoardRegistryContract = HackBoardRegistry(0x5FbDB2315678afecb367f032d93F642f64180aa3);
+        uint256[] memory AllTeams = HackBoardRegistryContract.GetAllTeams();
+        for(uint256 i = 0; i < AllTeams.length; i++){
+            HackBoardRegistry.HackBoardTeam memory Team = HackBoardRegistryContract.GetTeamInfo(AllTeams[i]);
+            if(Team.InterestedInPredictionMarket){
+                ParticipatingTeams.push(AllTeams[i]);
+            }
+        }
         
     }
 }
