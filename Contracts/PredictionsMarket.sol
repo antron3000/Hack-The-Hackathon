@@ -19,6 +19,7 @@ contract HackBoardPredictionMarket{
             HackBoardRegistry.HackBoardTeam memory Team = HackBoardRegistryContract.GetTeamInfo(AllTeams[i]);
             if(Team.InterestedInPredictionMarket){
                 ParticipatingTeams.push(AllTeams[i]);
+                TeamParticipating[AllTeams[i]] = true;
             }
         }
     }
