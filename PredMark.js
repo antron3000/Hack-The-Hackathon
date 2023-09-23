@@ -183,6 +183,7 @@ async function populateTableWithTeamInfo() {
         const predData = await GetAllTeamPredictionsInfoToConsole();
 
         //loop through preddata and add the team ID to the end of each array object, then create 
+        
 
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
