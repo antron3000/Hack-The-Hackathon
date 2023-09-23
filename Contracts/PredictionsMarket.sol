@@ -11,7 +11,7 @@ contract HackBoardPredictionMarket{
     mapping(uint256 => uint256) public TotalTeamPredictionsDeposits;
     mapping(address => mapping(uint256 => uint256)) public UserTeamPredictionsDeposits;
 
-    struct TeamPredictions{
+    struct TeamPredictionsInfo{
         address ForToken;
         address FadeToken;
     }
