@@ -48,6 +48,52 @@ async function GetAllTeamInfoToConsole(){
     for (let i = 0; i < teamIDs.length; i++) {
         console.log(await GetTeamInfo(teamIDs[i]));
     }
+    console.log(teamIDs)
+    return(teamIDs)
+}
+
+function insertDataIntoTable(data) {
+    // Add console logs to debug the data
+    console.log("Data received:", data);
+    if(data) {
+        console.log("Data length:", data.length);
+    }
+    if(data && data[5]) {
+        console.log("Data[5] length:", data[5].length);
+    }
+
+    if (!Array.isArray(data) || data.length !== 7 || !Array.isArray(data[5])) {
+        console.error('Invalid data format');
+        return;
+    }
+
+    const teamName = data[1];
+    const description = data[2];
+    const contactLink = data[3];
+    const interestInPredictionMarket = data[6] ? 'Yes' : 'No';
+    const mainSponsorPrizeTarget = data[5].join(', ');
+
+    const tbody = document.querySelector('#Table tbody');
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td>${teamName}</td>
+        <td>${description}</td>
+        <td><a href="${contactLink}">Contact</a></td>
+        <td>${interestInPredictionMarket}</td>
+        <td>${mainSponsorPrizeTarget}</td>
+    `;
+
+    tbody.appendChild(tr);
+}
+
+async function populateTableWithTeamInfo() {
+    try {
+        const teamData = await GetAllTeamInfoToConsole();
+        insertDataIntoTable(teamData);
+    } catch (error) {
+        console.error('Error populating table:', error);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
