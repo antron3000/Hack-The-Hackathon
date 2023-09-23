@@ -108,9 +108,9 @@ contract HackBoardPredictionMarket{
         return ParticipatingTeams;
     }
 
-    function GetTeamInfo(uint256 TeamID) public view returns(bool ForSuccess, bool AgainstSuccess){
-        return(TeamPredictionsInfo[TeamID].ForSuccess, TeamPredictionsInfo[TeamID].AgainstSuccess);
-    }
+    function GetTeamInfo(uint256 TeamID) public view returns(){
+
+        }
 }
 
 contract ERC20 {
