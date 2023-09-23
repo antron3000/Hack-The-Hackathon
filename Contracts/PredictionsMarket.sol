@@ -68,7 +68,7 @@ contract ERC20 {
 
     mapping(address => mapping (address => uint256)) public allowance;
     
-    constructor(, string memory _name, string memory _symbol){
+    constructor(string memory _name, string memory _symbol){
         totalSupply = 0;
         name = _name;
         symbol = _symbol;
