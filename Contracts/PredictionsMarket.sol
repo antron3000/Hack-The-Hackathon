@@ -60,7 +60,7 @@ contract HackBoardPredictionMarket{
 
     //Admin functions
 
-    function
+    function SetSuccesfulTeams
 
 
     function OpenMarkets() public {
