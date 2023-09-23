@@ -66,7 +66,7 @@ contract HackBoardPredictionMarket{
             TeamPredictionsInfo[SuccessfulTeams[i]].ForSuccess = true;
         }
 
-        //Loop through all teams t
+        //Loop through all teams to see if they were successful, those that we're not 
     }
 
 
