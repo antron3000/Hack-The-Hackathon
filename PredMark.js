@@ -181,6 +181,10 @@ async function populateTableWithTeamInfo() {
     
         const teamData = await GetAllTeamInfoToConsole();
         const predData = await GetAllTeamPredictionsInfoToConsole();
+
+        
+
+
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
             if(i != 9 && i != 26){
