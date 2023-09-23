@@ -126,7 +126,25 @@ async function insertDataIntoTable(dataone, datatwo, TeamID) {
 }
 
 async function IncreaseInterest(LongShort, TeamID){
-    
+    let Amount;
+    if (LongShort){
+        Amount = document.getElementById(`LongInput${TeamID}`).value;
+    }
+    else{
+        Amount = document.getElementById(`ShortInput${TeamID}`).value;
+    }
+    if (Amount == ""){
+        alert("Please enter an amount");
+        return
+    }
+    Amount = ethers.utils.parseEther(Amount);
+    if (LongShort){
+        await PredictionsContract.DepositToTeam(TeamID, LongShort, {value: Amount});
+    }
+    else{
+        await PredictionsContract.DepositToTeam(TeamID, LongShort, {value: Amount});
+    }
+    location.reload();
 }
 
 async function addGnosisChainToMetaMask() {
