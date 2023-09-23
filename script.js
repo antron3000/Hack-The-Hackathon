@@ -63,8 +63,8 @@ function insertDataIntoTable(data) {
 
     const tbody = document.getElementById('Registry');
 
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
+    const tr = document.createElement('tbody');
+    tr.innerHTML = `<tr>
         <td>${teamName}</td>
         <td>${description}</td>
         <td><a href="${contactLink}">Contact</a></td>
