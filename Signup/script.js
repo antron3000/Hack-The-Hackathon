@@ -26,6 +26,9 @@ async function Login() {
             const signer = await provider.getSigner();
             console.log("a")
 
+            document.getElementById('metamaskButton').innerText = "Connected";
+            document.getElementById('metamaskButton').disabled = true;
+
             const userAddress = await signer.getAddress();
             console.log("a")
 
