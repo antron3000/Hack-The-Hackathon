@@ -19,7 +19,7 @@ contract HackBoardPredictionMarket{
         address FadeToken;
         uint256 TotalForPredictionsDeposits;
         uint256 TotalFadePredictionDeposits;
-        uint256 TotalPriAvailable;
+        uint256 WinnersPool;
         bool ForSuccess;
         bool AgainstSuccessful;
     }
