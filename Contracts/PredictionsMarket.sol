@@ -16,8 +16,9 @@ contract HackBoardPredictionMarket{
                 ParticipatingTeams.push(AllTeams[i]);
             }
         }
-        
     }
+
+    
 }
 
 contract HackBoardRegistry{
