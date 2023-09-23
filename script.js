@@ -6,15 +6,9 @@ let provider;
 document.getElementById('metamaskButton').addEventListener('click', async () => {
     console.log("button clicked")
     if (typeof window.ethereum !== 'undefined') {
-        console.log("defined")
-        try {
-            // Request account access
-            await window.ethereum.request({ method: 'eth_requestAccounts' });
-
-            provider = new ethers.BrowserProvider(window.ethereum);
-            console.log("a")
-
-        } 
+        console.log("defined";
+        
+        
     } else {
         console.error("MetaMask is not installed");
     }
