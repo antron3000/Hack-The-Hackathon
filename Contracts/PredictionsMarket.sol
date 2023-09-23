@@ -63,8 +63,7 @@ contract HackBoardPredictionMarket{
         if(ForAgainst){
             require(UserForDeposits[TeamID] > 0);
             require(TeamPredictionsInfo[TeamID].ForSuccess);
-            TeamToken.Burn(UserBalance);
-            payable(msg.sender).transfer((UserBalance * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
+            payable(msg.sender).transfer((UserForDeposits[TeamID] * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
         }
         else{
             ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].FadeToken);
