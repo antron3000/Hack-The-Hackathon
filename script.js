@@ -11,9 +11,6 @@ async function Login() {
     if (typeof window.ethereum !== 'undefined') {
         console.log("MetaMask is installed");
         try {
-            // Request account access
-            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-            
             // Get the network ID
             const networkId = await window.ethereum.request({ method: 'net_version' });
 
