@@ -30,7 +30,7 @@ async function Login() {
             console.error("User denied account access or an error occurred.");
         }
     } else {
-        console.error("MetaMask is not installed");
+        alert("MetaMask is not installed");
     }
 }
 
