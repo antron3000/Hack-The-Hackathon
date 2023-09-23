@@ -48,8 +48,8 @@ async function GetAllTeamInfoToConsole(){
     for (let i = 0; i < teamIDs.length; i++) {
         TeamInfos.push(await GetTeamInfo(teamIDs[i]));
     }
-    console.log(teamIDs)
-    return(teamIDs)
+    console.log(TeamInfos)
+    return(TeamInfos)
 }
 
 function insertDataIntoTable(data) {
