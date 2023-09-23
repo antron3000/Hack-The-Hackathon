@@ -106,7 +106,7 @@ function insertDataIntoTable(dataone, datatwo, TeamID) {
     const teamName = dataone[1];
     const LongInterest = datatwo[0] / 1000000000000000000;
     const ShortInterest = datatwo[1] / 1000000000000000000;
-    const UserFadeDposit = PredictionsContract.UserForDeposits("0xc932b3a342658A2d3dF79E4661f29DfF6D7e93Ce", 0)
+    const UserFadeDposit = PredictionsContract.UserForDeposits(signer.address, TeamID)
 
 
     const tbody = document.getElementById('Registry');
@@ -160,7 +160,7 @@ async function populateTableWithTeamInfo() {
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
             if(i != 9 && i != 26){
-            insertDataIntoTable(teamData[i], predData[i]);
+            insertDataIntoTable(teamData[i], predData[i], i);
         }
         }
         
