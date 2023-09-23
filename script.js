@@ -53,8 +53,8 @@ async function GetTeamInfo(teamID) {
 }
 
 async function GetUserInfo(){
-    let User = await contract.GetUserInfo(signer.getAddress());
-    return JSON.parse(User)
+    let User = await contract.GetUserInfo(await signer.getAddress());
+    return JSON.parse(JSON.stringify(User))
 }
 
 async function GetAllTeamInfoToConsole(){
