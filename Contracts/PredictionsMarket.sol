@@ -61,7 +61,11 @@ contract HackBoardPredictionMarket{
         require(msg.sender == HackBoardAdmin);
         MarketsOpen = true;
     }
-    
+
+    function CloseMarkets() public {
+        require(msg.sender == HackBoardAdmin);
+        MarketsOpen = false;
+    }
 
     // function InitializePredictionMarket() public {
     //     
