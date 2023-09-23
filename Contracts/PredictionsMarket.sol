@@ -9,7 +9,7 @@ contract HackBoardPredictionMarket{
     uint256[] public ParticipatingTeams;
 
     constructor(){
-        for()
+        //Check 
     }
 }
 
