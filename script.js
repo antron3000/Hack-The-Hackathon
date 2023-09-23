@@ -18,7 +18,7 @@ async function Login() {
             console.log("a")
 
             document.getElementById('metamaskButton').innerText = "Connected";
-            document.getElementById('metamaskButton').enabled
+            document.getElementById('metamaskButton').disabled = true;
             document.getElementById('temprow').style.display = "none";
 
 
