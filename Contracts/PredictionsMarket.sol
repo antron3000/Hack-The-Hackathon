@@ -49,7 +49,6 @@ contract HackBoardPredictionMarket{
 }
 
 contract ERC20 {
-    uint256 public tokenCap;
     uint256 public totalSupply;
     string public name;
     string public symbol;
@@ -69,8 +68,7 @@ contract ERC20 {
 
     mapping(address => mapping (address => uint256)) public allowance;
     
-    constructor(uint256 _TokenCap, string memory _name, string memory _symbol){
-        tokenCap = _TokenCap;
+    constructor(, string memory _name, string memory _symbol){
         totalSupply = 0;
         name = _name;
         symbol = _symbol;
