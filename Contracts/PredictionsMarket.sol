@@ -14,7 +14,8 @@ contract HackBoardPredictionMarket{
     struct TeamStruct{
         address ForToken;
         address FadeToken;
-        uint256 TotalTeamPredictionsDeposits;
+        uint256 TotalForPredictionsDeposits;
+        uint2
     }
 
     constructor(){
