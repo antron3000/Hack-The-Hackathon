@@ -1,7 +1,7 @@
 let ABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"uint256","name":"TeamID","type":"uint256"},{"internalType":"address[]","name":"NewMembers","type":"address[]"}],"name":"AddTeamMember","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"AllTeams","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"AllUsers","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"GetAllTeams","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"TeamID","type":"uint256"}],"name":"GetTeamInfo","outputs":[{"components":[{"internalType":"address","name":"Admin","type":"address"},{"internalType":"string","name":"TeamName","type":"string"},{"internalType":"string","name":"ShortDescription","type":"string"},{"internalType":"string","name":"Discord","type":"string"},{"internalType":"string","name":"MainBountyTarget","type":"string"},{"internalType":"address[]","name":"TeamMembers","type":"address[]"},{"internalType":"bool","name":"InterestedInPredictionMarket","type":"bool"}],"internalType":"struct HackBoardRegistry.HackBoardTeam","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_User","type":"address"}],"name":"GetUserInfo","outputs":[{"components":[{"internalType":"bool","name":"HasTeam","type":"bool"},{"internalType":"uint256","name":"TeamID","type":"uint256"}],"internalType":"struct HackBoardRegistry.User","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"HackBoardAdmin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"TeamName","type":"string"},{"internalType":"string","name":"ShortDescription","type":"string"},{"internalType":"string","name":"Discord","type":"string"},{"internalType":"string","name":"MainBountyTarget","type":"string"},{"internalType":"address[]","name":"CurrentMembers","type":"address[]"},{"internalType":"bool","name":"InterestedInPredictionMarket","type":"bool"}],"name":"OnboardNewTeam","outputs":[{"internalType":"uint256","name":"TeamCode","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"TeamIncrement","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"Teams","outputs":[{"internalType":"address","name":"Admin","type":"address"},{"internalType":"string","name":"TeamName","type":"string"},{"internalType":"string","name":"ShortDescription","type":"string"},{"internalType":"string","name":"Discord","type":"string"},{"internalType":"string","name":"MainBountyTarget","type":"string"},{"internalType":"bool","name":"InterestedInPredictionMarket","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"Users","outputs":[{"internalType":"bool","name":"HasTeam","type":"bool"},{"internalType":"uint256","name":"TeamID","type":"uint256"}],"stateMutability":"view","type":"function"}]
 
 Login();
-let contract;
+let RegistryContract;
 
 
 let RegistryContractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17";
@@ -21,7 +21,7 @@ async function Login() {
                 provider = new ethers.BrowserProvider(window.ethereum);
                 console.log("Connected to Gnosis Chain");
                 signer = await provider.getSigner();
-                contract = new ethers.Contract(RegistryContractAddress, ABI, signer);
+                RegistryContract = new ethers.Contract(RegistryContractAddress, ABI, signer);
 
                 document.getElementById('metamaskButton').innerText = "Connected";
                 document.getElementById('metamaskButton').disabled = true;
@@ -41,22 +41,22 @@ async function Login() {
     }
 }
 
-//Create a function that calls the contract and gets the list of all team ids
+//Create a function that calls the RegistryContract and gets the list of all team ids
 async function GetAllTeams() {
-    let teamIDs = await contract.GetAllTeams();
+    let teamIDs = await RegistryContract.GetAllTeams();
     return teamIDs
 }
 
-//Create a function that calls the contract and gets the team info for each team then displays it in the "Table" element as a tbody row
+//Create a function that calls the RegistryContract and gets the team info for each team then displays it in the "Table" element as a tbody row
 async function GetTeamInfo(teamID) {
 
-    let teamInfo = await contract.GetTeamInfo(teamID);
+    let teamInfo = await RegistryContract.GetTeamInfo(teamID);
 
     return JSON.parse(JSON.stringify(teamInfo))
 }
 
 async function GetUserInfo(){
-    let User = await contract.GetUserInfo(await signer.getAddress());
+    let User = await RegistryContract.GetUserInfo(await signer.getAddress());
     let Output = [User[0], JSON.parse((User[1]).toString())]
     return Output;
 }
