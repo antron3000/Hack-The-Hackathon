@@ -5,9 +5,9 @@ pragma solidity ^0.8.0;
 contract HackBoardPredictionMarket{
     HackBoardRegistry public HackBoardRegistryContract;
     uint256[] public ParticipatingTeams;
-    uint256 TotalForPrizePool;
-    uint256 TotalFadePrizePool;
-    bool MarketsOpen;
+    uint256 public TotalForPrizePool;
+    uint256 public TotalFadePrizePool;
+    bool public MarketsOpen;
 
     mapping(uint256 => bool) public TeamParticipating;
     mapping(uint256 => TeamStruct) public TeamPredictionsInfo;
