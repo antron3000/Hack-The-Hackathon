@@ -6,14 +6,18 @@ let provider;
 document.getElementById('metamaskButton').addEventListener('click', async () => {
     console.log("button clicked")
     if (typeof window.ethereum !== 'undefined') {
-        console.log("defined");
-        
-        await window.ethereum.request({ method: 'eth_requestAccounts' });
+        console.log("defined")
+        try {
+            // Request account access
+            await window.ethereum.request({ method: 'eth_requestAccounts' });
 
-        provider = new ethers.BrowserProvider(window.ethereum);
-        console.log("a")
-    } 
-    else {
+            provider = new ethers.BrowserProvider(window.ethereum);
+            console.log("a")
+
+        } catch (error) {
+            console.error("User denied account access or an error occurred.");
+        }
+    } else {
         console.error("MetaMask is not installed");
     }
 });
