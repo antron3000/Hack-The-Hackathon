@@ -101,6 +101,12 @@ contract HackBoardPredictionMarket{
         require(msg.sender == HackBoardAdmin);
         MarketsOpen = false;
     }
+
+    //View Functions
+
+    function GetTeamPredictionInfo(uint256 TeamID) public view returns(TeamStruct memory){
+        return TeamPredictionsInfo[TeamID];
+    }
 }
 
 contract ERC20 {
