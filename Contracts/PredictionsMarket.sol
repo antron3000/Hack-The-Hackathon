@@ -7,7 +7,9 @@ contract HackBoardPredictionMarket{
     uint256[] public ParticipatingTeams;
 
     constructor(){
-        //check hackboardregistry for all teams and loop 
+        //check hackboardregistry for all teams and loop through them, if they are interested in prediction market, add them to participating teams
+        HackBoardRegistryContract = HackBoardRegistry(0x5FbDB2315678afecb367f032d93F642f64180aa3);
+        
     }
 }
 
