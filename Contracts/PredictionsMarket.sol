@@ -75,7 +75,17 @@ contract HackBoardPredictionMarket{
     //Admin functions
 
     function UpdateTeams() public{
+        require(msg.sender == HackBoardAdmin);
         
+        uint256[] memory AllTeams = HackBoardRegistryContract.GetAllTeams();
+        for(uint256 i = 0; i < AllTeams.length; i++){
+            HackBoardRegistry.HackBoardTeam memory Team = HackBoardRegistryContract.GetTeamInfo(AllTeams[i]);
+            if(Team.InterestedInPredictionMarket){
+                ParticipatingTeams.push(AllTeams[i]);
+                TeamParticipating[AllTeams[i]] = true;
+                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false);
+            }
+        }
     }
 
     function FinalizeMarkets(uint256[] memory SuccessfulTeams) public {
