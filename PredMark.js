@@ -83,7 +83,7 @@ async function GetAllPredictionTeamInfoToConsole(){
     let TeamInfos = [];
     let teamIDs = await GetAllTeams();
     for (let i = 0; i < teamIDs.length; i++) {
-        TeamInfos.push(await GetTeamPredictionsInfo(teamIDs[i]));
+        TeamInfos.push(await GetTeamInfo(teamIDs[i]));
     }
     console.log(TeamInfos)
     return(TeamInfos)
