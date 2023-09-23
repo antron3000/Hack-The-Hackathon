@@ -19,7 +19,7 @@ contract HackBoardPredictionMarket{
             if(Team.InterestedInPredictionMarket){
                 ParticipatingTeams.push(AllTeams[i]);
                 TeamParticipating[AllTeams[i]] = true;
-                //for each participating team, create 
+                //for each participating team, create two new erc20 tokens, one for f
             }
         }
     }
