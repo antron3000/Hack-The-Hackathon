@@ -24,6 +24,7 @@ contract HackBoardPredictionMarket{
     }
 
     constructor(){
+        HackBoardAdmin = msg.sender;
         HackBoardRegistryContract = HackBoardRegistry(0xD87dF59Bf476e9700f36F00c198166bC901a0e17);
         uint256[] memory AllTeams = HackBoardRegistryContract.GetAllTeams();
         for(uint256 i = 0; i < AllTeams.length; i++){
