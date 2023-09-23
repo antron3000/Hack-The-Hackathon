@@ -41,7 +41,10 @@ async function GetTeamInfo(teamID) {
     console.log(teamInfo)
 }
 
-
+async function GetAllTeamInfoToConsole{
+    let teamIDs = await GetAllTeams();
+    
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     // Define the start time and duration (in this case, a 48-hour hackathon)
