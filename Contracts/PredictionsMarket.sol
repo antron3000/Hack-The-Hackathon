@@ -3,6 +3,7 @@
 pragma solidity ^0.8.0;
 
 contract HackBoardPredictionMarket{
+    address HackBoardAdmin;
     HackBoardRegistry public HackBoardRegistryContract;
     uint256[] public ParticipatingTeams;
     uint256 public TotalForPrizePool;
