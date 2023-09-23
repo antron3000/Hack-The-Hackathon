@@ -156,6 +156,7 @@ async function addGnosisChainToMetaMask() {
 async function populateTableWithTeamInfo() {
     
         const teamData = await GetAllTeamPredictionsInfoToConsole();
+        const predData = await 
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
             if(i != 9 && i != 26){
