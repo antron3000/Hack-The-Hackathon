@@ -105,7 +105,7 @@ function insertDataIntoTable(dataone, datatwo) {
 
     const teamName = dataone[1];
     const LongInterest = datatwo[0] / 1000000000000000000;
-    const ShortInterest = datatwo[1];
+    const ShortInterest = datatwo[1] / 1000000000000000000;
 
     console.log(teamName, description, contactLink, interestInPredictionMarket, mainSponsorPrizeTarget);
 
