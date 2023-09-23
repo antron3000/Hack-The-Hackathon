@@ -29,6 +29,8 @@ contract HackBoardPredictionMarket{
         require(TeamID < ParticipatingTeams.length);
         TotalTeamPredictionsDeposits[TeamID] += msg.value;
         UserTeamPredictionsDeposits[msg.sender][TeamID] += msg.value;
+
+        TotalHackathonPrizePool += msg.value;
     }
 
     // function InitializePredictionMarket() public {
