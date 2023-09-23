@@ -182,9 +182,6 @@ async function populateTableWithTeamInfo() {
         const teamData = await GetAllTeamInfoToConsole();
         const predData = await GetAllTeamPredictionsInfoToConsole();
 
-        //organise the pred data and input the correct team data by 
-
-
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
             if(i != 9 && i != 26){
