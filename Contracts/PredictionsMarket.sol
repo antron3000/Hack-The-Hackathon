@@ -39,7 +39,7 @@ contract HackBoardPredictionMarket{
     function DepositToTeam(uint256 TeamID, bool ForAgainst) public payable {
         require(msg.value > 0);
         require(TeamID >= 0);
-        require(TeamID < ParticipatingTeams.length);
+        require(TeamParticipating[TeamID]);
 
         if(ForAgainst){
             ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].ForToken);
