@@ -111,7 +111,7 @@ contract RebirthedToken {
 
 
     function Mint(address _MintTo, uint256 _MintAmount) public {
-        require(msg.sender ==);
+        require(msg.sender == );
         require (totalSupply+(_MintAmount) <= tokenCap);
         balances[_MintTo] = balances[_MintTo]+(_MintAmount);
         totalSupply = totalSupply+(_MintAmount);
