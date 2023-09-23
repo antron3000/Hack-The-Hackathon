@@ -56,6 +56,11 @@ contract HackBoardPredictionMarket{
         TotalHackathonPrizePool += msg.value;
     }
 
+    //Admin functions
+    function OpenMarkets() public {
+        require(msg.sender == HackBoardAdmin);
+        MarketsOpen = true;
+    }
     
 
     // function InitializePredictionMarket() public {
