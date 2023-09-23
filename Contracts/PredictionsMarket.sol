@@ -21,7 +21,7 @@ contract HackBoardPredictionMarket{
         uint256 TotalFadePredictionDeposits;
         uint256 WinnerPayoutRate;
         bool ForSuccess;
-        bool AgainstSuccessful;
+        bool AgainstSuccess;
     }
 
     constructor(){
@@ -35,7 +35,7 @@ contract HackBoardPredictionMarket{
                 //for each participating team, create two new erc20 tokens, one for the team, one for fading the team
                 ERC20 ForToken = new ERC20("TeamForToken", "TFT");
                 ERC20 FadeToken = new ERC20("TeamFadeToken", "TFT");
-                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(address(ForToken), address(FadeToken), 0);
+                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(address(ForToken), address(FadeToken), 0, 0, 0);
             }
         }
     }
@@ -49,14 +49,14 @@ contract HackBoardPredictionMarket{
             ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].ForToken);
             TeamToken.Mint(msg.sender, msg.value);
             TeamPredictionsInfo[TeamID].TotalForPredictionsDeposits += msg.value;
+            TotalForPrizePool += msg.value;
         }
         else{
             ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].FadeToken);
             TeamToken.Mint(msg.sender, msg.value);
             TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += msg.value;
+            TotalFadePrizePool += msg.value;
         }
-
-        TotalHackathonPrizePool += msg.value;
     }
 
     //Create a function that allows users to attempt to withdraw their winnings from a pool, but will fail if their bet was wrong
@@ -178,7 +178,7 @@ contract ERC20 {
 
 
     function Mint(address _MintTo, uint256 _MintAmount) public {
-        require(msg.sender == );
+        require(msg.sender == Creator);
         balances[_MintTo] = balances[_MintTo]+(_MintAmount);
         totalSupply = totalSupply+(_MintAmount);
         ZeroAddress = 0x0000000000000000000000000000000000000000;
