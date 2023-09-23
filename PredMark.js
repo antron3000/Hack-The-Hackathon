@@ -193,7 +193,7 @@ async function populateTableWithTeamInfo() {
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
             if(i != 9 && i != 26){
-            insertDataIntoTable(teamData[indices[i]], predData[indices[i]], i);
+            insertDataIntoTable(teamData[indices[i]], predData[indices[i]], indices[i]);
         }
         }
         
