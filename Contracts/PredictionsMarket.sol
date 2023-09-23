@@ -24,7 +24,7 @@ contract HackBoardPredictionMarket{
     }
 
     //Create a function that allows users to deposit ether to a specific team pool
-    function DepositToTeam(uint256 TeamID) public payable {
+    function DepositToTeam(uint256 TeamID, bool ForAgainst) public payable {
         require(msg.value > 0);
         require(TeamID >= 0);
         require(TeamID < ParticipatingTeams.length);
