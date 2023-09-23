@@ -31,9 +31,6 @@ contract HackBoardPredictionMarket{
             if(Team.InterestedInPredictionMarket){
                 ParticipatingTeams.push(AllTeams[i]);
                 TeamParticipating[AllTeams[i]] = true;
-                //for each participating team, create two new erc20 tokens, one for the team, one for fading the team
-                ERC20 ForToken = new ERC20("TeamForToken", "TFT");
-                ERC20 FadeToken = new ERC20("TeamFadeToken", "TFT");
                 TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false);
             }
         }
