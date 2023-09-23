@@ -114,7 +114,7 @@ function insertDataIntoTable(dataone, datatwo) {
     const tr = document.createElement('tbody');
     tr.innerHTML = `<tr>
         <td>${teamName}</td>
-        <td>Long interest: ${LongInterest} <br> Short Interest: ${ShortInterest}</td>
+        <td>Long interest: ${LongInterest} XDAI <br> Short Interest: ${ShortInterest} XDAI</td>
         <td>${contactLink}</a></td>
         <td>${interestInPredictionMarket}</td>
         </tr>
