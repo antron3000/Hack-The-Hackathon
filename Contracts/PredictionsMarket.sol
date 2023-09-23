@@ -19,8 +19,7 @@ contract HackBoardPredictionMarket{
     }
 
     // function InitializePredictionMarket() public {
-    //     //check if the prediction market has already been initialized
-    //     //if not, initialize it
+    //     
     // }
 }
 
