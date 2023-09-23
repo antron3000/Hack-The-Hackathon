@@ -108,7 +108,7 @@ contract HackBoardPredictionMarket{
         return ParticipatingTeams;
     }
 
-    function TeamSuccessfulCheck(uint256 TeamID) public view returns(bool ForSuccess, bool AgainstSuccess){
+    function TeamInfoCheck(uint256 TeamID) public view returns(bool ForSuccess, bool AgainstSuccess){
         return(TeamPredictionsInfo[TeamID].ForSuccess, TeamPredictionsInfo[TeamID].AgainstSuccess);
     }
 }
