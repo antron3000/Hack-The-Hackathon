@@ -77,6 +77,7 @@ contract HackBoardPredictionMarket{
     function FinalizeMarkets(uint256[] memory SuccessfulTeams) public {
         require(msg.sender == HackBoardAdmin);
         require(SuccessfulTeams.length == 10);
+        CloseMarkets();
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / 10;
 
