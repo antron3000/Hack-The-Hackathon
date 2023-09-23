@@ -7,12 +7,7 @@ contract HackBoardPredictionMarket{
     uint256[] public ParticipatingTeams;
     uint256 TotalHackathonPrizePool;
 
-    struct Prediction{
-        uint256 TeamID;
-        uint256 PredictionAmount;
-        uint256 PredictionTime;
-        uint256 PredictionID;
-    }
+    mapping
 
     constructor(){
         //check hackboardregistry for all teams and loop through them, if they are interested in prediction market, add them to participating teams
