@@ -44,7 +44,7 @@ async function Login() {
     } else {
         console.error("MetaMask is not installed");
     }
-});
+};
 
 //Create a function that calls the contract and adds the team to the blockchain
 async function OnBoard() {
