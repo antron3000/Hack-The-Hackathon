@@ -64,7 +64,7 @@ function insertDataIntoTable(data) {
     const description = data[2];
     const contactLink = data[3];
     const interestInPredictionMarket = data[6] ? 0 : 1;
-    const mainSponsorPrizeTarget = data[5];
+    const mainSponsorPrizeTarget = data[4];
 
     console.log(teamName, description, contactLink, interestInPredictionMarket, mainSponsorPrizeTarget);
 
