@@ -104,7 +104,7 @@ contract HackBoardPredictionMarket{
 
     //View Functions
 
-    function GetTeamPredictionInfo(uint256 TeamID) public view returns(TeamStruct memory){
+    function TeamSuccessfulCheck(uint256 TeamID) public view returns(TeamStruct memory){
         return TeamPredictionsInfo[TeamID];
     }
 }
