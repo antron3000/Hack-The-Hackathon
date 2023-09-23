@@ -101,13 +101,13 @@ async function GetAllTeamPredictionsInfoToConsole(){
 }
 
 function insertDataIntoTable(dataone, datatwo) {
-    // Add console logs to debug the data
+    // Add console logs to debug the dataone
 
-    const teamName = data[1];
-    const description = data[2];
-    const contactLink = data[3];
-    const interestInPredictionMarket = data[6] ? "Yes" : "No";
-    const mainSponsorPrizeTarget = data[4];
+    const teamName = dataone[1];
+    const description = dataone[2];
+    const contactLink = dataone[3];
+    const interestInPredictionMarket = dataone[6] ? "Yes" : "No";
+    const mainSponsorPrizeTarget = dataone[4];
 
     console.log(teamName, description, contactLink, interestInPredictionMarket, mainSponsorPrizeTarget);
 
