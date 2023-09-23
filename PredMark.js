@@ -107,8 +107,6 @@ function insertDataIntoTable(dataone, datatwo) {
     const LongInterest = datatwo[0] / 1000000000000000000;
     const ShortInterest = datatwo[1] / 1000000000000000000;
 
-    console.log(teamName, description, contactLink, interestInPredictionMarket, mainSponsorPrizeTarget);
-
     const tbody = document.getElementById('Registry');
 
     const tr = document.createElement('tbody');
