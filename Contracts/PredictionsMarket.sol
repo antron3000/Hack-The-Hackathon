@@ -80,7 +80,7 @@ contract HackBoardPredictionMarket{
         uint256[] memory AllTeams = HackBoardRegistryContract.GetAllTeams();
         for(uint256 i = 0; i < AllTeams.length; i++){
             HackBoardRegistry.HackBoardTeam memory Team = HackBoardRegistryContract.GetTeamInfo(AllTeams[i]);
-            if(Team.InterestedInPredictionMarket && !TeamParticipating){
+            if(Team.InterestedInPredictionMarket && !TeamParticipating[]){
                 ParticipatingTeams.push(AllTeams[i]);
                 TeamParticipating[AllTeams[i]] = true;
                 TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false);
