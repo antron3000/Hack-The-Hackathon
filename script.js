@@ -39,6 +39,7 @@ async function GetTeamInfo(teamID) {
     let contract = new ethers.Contract(contractAddress, ABI, signer);
     let teamInfo = await contract.GetTeamInfo(teamID);
     console.log(teamInfo)
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     // Define the start time and duration (in this case, a 48-hour hackathon)
