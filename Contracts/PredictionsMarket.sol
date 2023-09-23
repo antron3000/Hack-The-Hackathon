@@ -68,7 +68,11 @@ contract HackBoardPredictionMarket{
         }
 
         //Loop through all teams to see if they were successful, those that we're not successful, set the fadesuccessful bool to true
-        
+        for(uint256 i = 0; i < ParticipatingTeams.length; i++){
+            if(!TeamPredictionsInfo[ParticipatingTeams[i]].ForSuccess){
+                TeamPredictionsInfo[ParticipatingTeams[i]].AgainstSuccessful = true;
+            }
+        }
     }
 
 
