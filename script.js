@@ -26,6 +26,8 @@ async function Login() {
                 document.getElementById('metamaskButton').disabled = true;
                 document.getElementById('temprow').style.display = "none";
 
+                SetUserTeamName();
+
                 populateTableWithTeamInfo();
             } else {
                 alert("Please switch to Gnosis Chain (Network ID 100) in MetaMask.");
