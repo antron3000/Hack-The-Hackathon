@@ -137,7 +137,7 @@ async function IncreaseInterest(LongShort, TeamID){
         alert("Please enter an amount");
         return
     }
-    Amount = Amount * ;
+    Amount = Amount * 1 000000;
     if (LongShort){
         await PredictionsContract.DepositToTeam(TeamID, LongShort, {value: Amount});
     }
