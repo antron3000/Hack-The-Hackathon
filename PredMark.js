@@ -100,7 +100,7 @@ async function GetAllTeamPredictionsInfoToConsole(){
     return(TeamInfos)
 }
 
-function insertDataIntoTable(data) {
+function insertDataIntoTable(dataone, datatwo) {
     // Add console logs to debug the data
 
     const teamName = data[1];
