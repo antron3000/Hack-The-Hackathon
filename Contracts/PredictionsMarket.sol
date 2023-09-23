@@ -64,7 +64,7 @@ contract HackBoardPredictionMarket{
     function FinalizeMarkets(uint256[] memory SuccessfulTeams) public {
         require(msg.sender == HackBoardAdmin);
 
-        //Calculate the total available prize pool which is the total amount of ether deposited into the successful
+        //Calculate the total available prize pool which is the total amount of ether deposited into the forprizepool
 
         for(uint256 i = 0; i < SuccessfulTeams.length; i++){
             TeamPredictionsInfo[SuccessfulTeams[i]].ForSuccess = true;
