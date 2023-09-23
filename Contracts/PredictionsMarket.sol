@@ -59,7 +59,7 @@ contract HackBoardPredictionMarket{
         TotalHackathonPrizePool += msg.value;
     }
 
-    
+    //Create a function that all
 
     //Admin functions
 
