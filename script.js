@@ -57,7 +57,7 @@ async function GetUserInfo(){
     return JSON.parse(JSON.stringify(User))
 }
 
-toObject() {
+function toObject() {
     return JSON.parse(JSON.stringify(this, (key, value) =>
         typeof value === 'bigint'
             ? value.toString()
