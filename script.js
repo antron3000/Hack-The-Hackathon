@@ -58,7 +58,9 @@ async function GetUserInfo(){
     return Output;
 }
 
-async function SetUserTeamName
+async function SetUserTeamName{
+    
+}
 
 async function GetAllTeamInfoToConsole(){
     let TeamInfos = [];
