@@ -126,7 +126,7 @@ async function insertDataIntoTable(dataone, datatwo, TeamID) {
 }
 
 async function IncreaseInterest(LongShort, TeamID){
-    console.log()
+    console.log(LongShort, TeamID)
 }
 
 async function addGnosisChainToMetaMask() {
