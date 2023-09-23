@@ -81,6 +81,7 @@ contract HackBoardPredictionMarket{
         for(uint256 i = 0; i < ParticipatingTeams.length; i++){
             if(!TeamPredictionsInfo[ParticipatingTeams[i]].ForSuccess){
                 TeamPredictionsInfo[ParticipatingTeams[i]].AgainstSuccessful = true;
+                //Calculate the winner payout rate, which is the total available prize pool devided by the total amount of ether deposited into the forprizepool for this team
             }
         }
     }
