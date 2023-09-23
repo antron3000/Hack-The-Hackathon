@@ -74,6 +74,10 @@ contract HackBoardPredictionMarket{
 
     //Admin functions
 
+    function UpdateTeams() public{
+        
+    }
+
     function FinalizeMarkets(uint256[] memory SuccessfulTeams) public {
         require(msg.sender == HackBoardAdmin);
         require(SuccessfulTeams.length == 10);
