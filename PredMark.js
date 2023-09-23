@@ -186,7 +186,7 @@ async function populateTableWithTeamInfo() {
 
         indices.sort((a, b) => predData[a][0] - predData[b][0]);
 
-        
+        console.log(indices);
 
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
