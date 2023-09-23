@@ -74,7 +74,7 @@ function insertDataIntoTable(data) {
     tr.innerHTML = `<tr>
         <td>${teamName}</td>
         <td>${description}</td>
-        <td><a style="text-decoration: none; " href="${contactLink}">Discord</a></td>
+        <td><a style="text-decoration: none; color: orange;" href="${contactLink}">Discord</a></td>
         <td>${interestInPredictionMarket}</td>
         <td>${mainSponsorPrizeTarget}</td>
         </tr>
