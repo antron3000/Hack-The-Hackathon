@@ -182,7 +182,9 @@ async function populateTableWithTeamInfo() {
         const teamData = await GetAllTeamInfoToConsole();
         const predData = await GetAllTeamPredictionsInfoToConsole();
         
-        const indices = Array.from(originalArray.keys());
+        const indices = Array.from(predData.keys());
+
+        
 
 
         console.log(teamData);
