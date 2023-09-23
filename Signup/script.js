@@ -48,6 +48,36 @@ async function Login() {
     }
 };
 
+async function addGnosisChainToMetaMask() {
+  const chainId = 100;
+  const rpcUrl = 'https://rpc.ankr.com/gnosis';
+  const currencySymbol = 'XDAI';
+  const explorerUrl = 'https://gnosisscan.io/';
+
+  try {
+    await window.ethereum.request({
+      method: 'wallet_addEthereumChain',
+      params: [
+        {
+          chainId: `0x${chainId.toString(16)}`,
+          chainName: 'Gnosis Chain',
+          nativeCurrency: {
+            name: currencySymbol,
+            symbol: currencySymbol,
+            decimals: 18,
+          },
+          rpcUrls: [rpcUrl],
+          blockExplorerUrls: [explorerUrl],
+        },
+      ],
+    });
+
+    console.log('Gnosis Chain added to MetaMask!');
+  } catch (error) {
+    console.error('Error adding Gnosis Chain to MetaMask:', error);
+  }
+}
+
 //Create a function that calls the contract and adds the team to the blockchain
 async function OnBoard() {
     let TeamName = document.getElementById("TeamName").value
