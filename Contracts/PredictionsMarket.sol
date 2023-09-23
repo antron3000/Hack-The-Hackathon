@@ -114,10 +114,6 @@ contract HackBoardPredictionMarket{
         require(msg.sender == HackBoardAdmin);
         MarketsOpen = false;
     }
-
-    // function InitializePredictionMarket() public {
-    //     
-    // }
 }
 
 contract ERC20 {
