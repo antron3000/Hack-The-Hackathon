@@ -31,7 +31,7 @@ async function Login() {
 
                 SetUserTeamName();
 
-                populateTableWithTeamInfo();
+                //populateTableWithTeamInfo();
             } else {
                 alert("Please switch to Gnosis Chain (Network ID 100) in MetaMask.");
             }
