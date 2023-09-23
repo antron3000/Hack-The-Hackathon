@@ -12,7 +12,8 @@ contract HackBoardPredictionMarket{
     mapping(address => mapping(uint256 => uint256)) public UserTeamPredictionsDeposits;
 
     struct TeamTokens{
-        
+        address ForToken;
+        address FadeToken;
     }
 
     constructor(){
@@ -24,7 +25,7 @@ contract HackBoardPredictionMarket{
                 ParticipatingTeams.push(AllTeams[i]);
                 TeamParticipating[AllTeams[i]] = true;
                 //for each participating team, create two new erc20 tokens, one for the team, one for fading the team
-
+                
 
             }
         }
