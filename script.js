@@ -61,6 +61,8 @@ function insertDataIntoTable(data) {
     const interestInPredictionMarket = data[6] ? 0 : 1;
     const mainSponsorPrizeTarget = data[5];
 
+    console.log(teamName, )
+
     const tbody = document.getElementById('Registry');
 
     const tr = document.createElement('tbody');
