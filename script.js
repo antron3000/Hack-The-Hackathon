@@ -6,6 +6,7 @@ let contract;
 
 let contractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17"
 let provider;
+let signer
 
 async function Login() {
     console.log("button clicked");
@@ -45,8 +46,7 @@ async function GetAllTeams() {
 
 //Create a function that calls the contract and gets the team info for each team then displays it in the "Table" element as a tbody row
 async function GetTeamInfo(teamID) {
-    let signer = await provider.getSigner();
-    let contract = new ethers.Contract(contractAddress, ABI, signer);
+
     let teamInfo = await contract.GetTeamInfo(teamID);
 
     return JSON.parse(JSON.stringify(teamInfo))
