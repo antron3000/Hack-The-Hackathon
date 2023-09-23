@@ -59,7 +59,7 @@ function insertDataIntoTable(data) {
     const description = data[2];
     const contactLink = data[3];
     const interestInPredictionMarket = data[6] ? 0 : 1;
-    const mainSponsorPrizeTarget = data[5].join(', ');
+    const mainSponsorPrizeTarget = data[5];
 
     const tbody = document.querySelector('#Table tbody');
 
