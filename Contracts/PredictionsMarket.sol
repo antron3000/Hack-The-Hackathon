@@ -51,7 +51,6 @@ contract HackBoardPredictionMarket{
             TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += msg.value;
         }
 
-
         TotalHackathonPrizePool += msg.value;
     }
 
