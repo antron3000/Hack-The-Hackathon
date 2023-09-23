@@ -106,7 +106,8 @@ function insertDataIntoTable(dataone, datatwo, TeamID) {
     const teamName = dataone[1];
     const LongInterest = datatwo[0] / 1000000000000000000;
     const ShortInterest = datatwo[1] / 1000000000000000000;
-    const UserFadeDposit = PredictionsContract.UserForDeposits
+    const UserFadeDposit = PredictionsContract.UserForDeposits("0xc932b3a342658A2d3dF79E4661f29DfF6D7e93Ce", 0)
+
 
     const tbody = document.getElementById('Registry');
 
