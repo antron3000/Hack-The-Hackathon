@@ -109,8 +109,8 @@ contract HackBoardPredictionMarket{
     }
 
     function GetTeamInfo(uint256 TeamID) public view returns(TeamStruct memory){
-        
-        }
+        return TeamPredictionsInfo[TeamID];
+    }
 }
 
 contract ERC20 {
