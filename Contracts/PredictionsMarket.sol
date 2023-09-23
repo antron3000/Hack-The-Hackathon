@@ -21,6 +21,7 @@ contract HackBoardPredictionMarket{
                 TeamParticipating[AllTeams[i]] = true;
                 //for each participating team, create two new erc20 tokens, one for the team, one for fading the team
                 
+
             }
         }
     }
