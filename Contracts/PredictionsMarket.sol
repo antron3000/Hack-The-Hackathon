@@ -64,7 +64,7 @@ contract HackBoardPredictionMarket{
     function FinalizeMarkets(uint256[] memory SuccessfulTeams) public {
         require(msg.sender == HackBoardAdmin);
 
-        //Calculate the total available prize pool 
+        //Calculate the total available prize pool which is 
 
         for(uint256 i = 0; i < SuccessfulTeams.length; i++){
             TeamPredictionsInfo[SuccessfulTeams[i]].ForSuccess = true;
