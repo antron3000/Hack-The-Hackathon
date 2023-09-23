@@ -6,6 +6,7 @@ contract HackBoardPredictionMarket{
     HackBoardRegistry public HackBoardRegistryContract;
     uint256[] public ParticipatingTeams;
     uint256 TotalHackathonPrizePool;
+    bool MarketsOpen;
 
     mapping(uint256 => bool) public TeamParticipating;
     mapping(uint256 => TeamStruct) public TeamPredictionsInfo;
