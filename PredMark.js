@@ -196,7 +196,7 @@ async function populateTableWithTeamInfo() {
             if(i != 9 && i != 26){
             console.log(teamData[indices[i]], predData[indices[i]], indices[i])
             await insertDataIntoTable(teamData[indices[i]], predData[indices[i]], indices[i]);
-        }
+            }
         }
         
     
