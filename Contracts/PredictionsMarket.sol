@@ -35,7 +35,7 @@ contract HackBoardPredictionMarket{
                 //for each participating team, create two new erc20 tokens, one for the team, one for fading the team
                 ERC20 ForToken = new ERC20("TeamForToken", "TFT");
                 ERC20 FadeToken = new ERC20("TeamFadeToken", "TFT");
-                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(address(ForToken), address(FadeToken), 0, 0, 0);
+                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(address(ForToken), address(FadeToken), 0, 0, 0, false, false);
             }
         }
     }
@@ -75,7 +75,7 @@ contract HackBoardPredictionMarket{
             ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].FadeToken);
             uint256 UserBalance = TeamToken.balanceOf(msg.sender);
             require(UserBalance > 0);
-            require(TeamPredictionsInfo[TeamID].AgainstSuccessful);
+            require(TeamPredictionsInfo[TeamID].AgainstSuccess);
             TeamToken.Burn(UserBalance);
             payable(msg.sender).transfer((UserBalance * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
         }
@@ -98,7 +98,7 @@ contract HackBoardPredictionMarket{
 
         for(uint256 i = 0; i < ParticipatingTeams.length; i++){
             if(!TeamPredictionsInfo[ParticipatingTeams[i]].ForSuccess){
-                TeamPredictionsInfo[ParticipatingTeams[i]].AgainstSuccessful = true;
+                TeamPredictionsInfo[ParticipatingTeams[i]].AgainstSuccess = true;
                 TeamPredictionsInfo[ParticipatingTeams[i]].WinnerPayoutRate = (TotalFadeAvailablePrizePool * 1000) / TeamPredictionsInfo[ParticipatingTeams[i]].TotalFadePredictionDeposits;
             }
         }
