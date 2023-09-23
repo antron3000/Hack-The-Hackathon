@@ -76,7 +76,7 @@ async function SetUserTeamName(){
 
 async function GetTeamPredictionsInfo(teamID){
     let TeamInfo = await PredictionsContract.GetTeamInfo(teamID);
-    TeamInfo = [JSON.parseInt(TeamInfo[0]), JSON.parse(TeamInfo[1]).toString(), JSON.parse(TeamInfo[2]).toString(), TeamInfo[3], TeamInfo[4]];
+    TeamInfo = [JSON.parse(TeamInfo[0]).parseInt(), JSON.parse(TeamInfo[1]).toString(), JSON.parse(TeamInfo[2]).toString(), TeamInfo[3], TeamInfo[4]];
     return TeamInfo
 }
 
