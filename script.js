@@ -57,14 +57,6 @@ async function GetUserInfo(){
     return JSON.parse(JSON.stringify(User))
 }
 
-function toObject() {
-    return JSON.parse(JSON.stringify(this, (key, value) =>
-        typeof value === 'bigint'
-            ? value.toString()
-            : value // return everything else unchanged
-    ));
-}
-
 async function GetAllTeamInfoToConsole(){
     let TeamInfos = [];
     let teamIDs = await GetAllTeams();
