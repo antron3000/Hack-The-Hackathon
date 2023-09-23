@@ -35,12 +35,19 @@
         <label for="ethAddress">Team members (Addresses seperated by commas):</label>
         <input type="text" id="TeamMembers" name="TeamMembers" required><br>
 
-        <!-- Team Token Option -->
-        <label for="createToken">Is your team interested in being part of a hackathon prediction market?</label>
+        <!-- Prediction Market Option -->
+        <label for="createToken">Are you interested in being part of the hackathon prediction market?</label>
         <select id="InteredInPMarket" name="InteredInPMarket">
             <option value="1">Yes</option>
             <option value="0">No</option>
         </select><br>
+
+        <!-- Team Token Option -->
+        <label for="createToken">Do you wish to distribute prize winnings to Team Token Holders?</label>
+        <select id="InteredInPMarket" name="InteredInPMarket">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>        
 
         <!-- Bounties Dropdown -->
         <label for="bounties">What is the main sponsor prize your team is looking to get?</label>
@@ -48,7 +55,13 @@
 
 
         <!-- Submit Button -->
+<<<<<<< HEAD
         <button onclick="OnBoard()" type="button" value="Register">Register</button>
+=======
+        <button onclick="OnBoard()" value="Register">Register</button>
+
+       <br><br> <label>NOTE: A Team token will be automatically created as soon as you register. If you do not wish to use your team token, you can ignore this.</label>
+>>>>>>> e605a7318c2f5b0f4ad79be3820dace34eddfeab
     </form>
 
 </body>
