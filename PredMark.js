@@ -89,7 +89,8 @@ async function GetAllTeamInfoToConsole(){
     return(TeamInfos)
 }
 
-async function GetAllT
+async function GetAllTeamPredictionsInfoToConsole(){
+    
 
 function insertDataIntoTable(data) {
     // Add console logs to debug the data
