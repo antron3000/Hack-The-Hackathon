@@ -14,9 +14,7 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
             provider = new ethers.BrowserProvider(window.ethereum);
             console.log("a")
 
-        } catch (error) {
-            console.error("User denied account access or an error occurred.");
-        }
+        } 
     } else {
         console.error("MetaMask is not installed");
     }
