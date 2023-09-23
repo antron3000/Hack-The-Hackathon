@@ -14,7 +14,7 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
             provider = new ethers.BrowserProvider(window.ethereum);
             console.log("a")
 
-            document.getElementById('metamask')
+            document.getElementById('metamaskButton')
 
         } catch (error) {
             console.error("User denied account access or an error occurred.");
