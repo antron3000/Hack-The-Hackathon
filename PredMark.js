@@ -104,7 +104,7 @@ function insertDataIntoTable(dataone, datatwo) {
     // Add console logs to debug the dataone
 
     const teamName = dataone[1];
-    const LongInterest = datatwo[0];
+    const LongInterest =ethers.utils.formatEther(datatwo[0]);
     const ShortInterest = datatwo[1]
 
     console.log(teamName, description, contactLink, interestInPredictionMarket, mainSponsorPrizeTarget);
