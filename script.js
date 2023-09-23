@@ -41,7 +41,7 @@ async function GetTeamInfo(teamID) {
     console.log(teamInfo)
 }
 
-async function GetAllTeamInfoToConsole{
+async function GetAllTeamInfoToConsole(){
     let teamIDs = await GetAllTeams();
     for (let i = 0; i < teamIDs.length; i++) {
         console.log(await GetTeamInfo(teamIDs[i]));
