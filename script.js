@@ -55,7 +55,7 @@ async function GetAllTeamInfoToConsole(){
 function insertDataIntoTable(data) {
     // Add console logs to debug the data
 
-    const teamName = data[0][1];
+    const teamName = data[1];
     const description = data[2];
     const contactLink = data[3];
     const interestInPredictionMarket = data[6] ? 0 : 1;
@@ -82,7 +82,7 @@ async function populateTableWithTeamInfo() {
     
         const teamData = await GetAllTeamInfoToConsole();
         console.log(teamData);
-        insertDataIntoTable(teamData);
+        insertDataIntoTable(teamData[0]);
     
 }
 
