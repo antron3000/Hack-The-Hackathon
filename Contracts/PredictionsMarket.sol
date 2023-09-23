@@ -59,7 +59,7 @@ contract HackBoardPredictionMarket{
         TotalHackathonPrizePool += msg.value;
     }
 
-    //Create a function that allows users to attempt to withdraw 
+    //Create a function that allows users to attempt to withdraw their winnings from a pool, but will fail if their bet was wrong
 
     //Admin functions
 
