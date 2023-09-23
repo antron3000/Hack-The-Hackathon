@@ -11,6 +11,10 @@ contract HackBoardPredictionMarket{
     mapping(uint256 => uint256) public TotalTeamPredictionsDeposits;
     mapping(address => mapping(uint256 => uint256)) public UserTeamPredictionsDeposits;
 
+    struct TeamTokens{
+        
+    }
+
     constructor(){
         HackBoardRegistryContract = HackBoardRegistry(0x5FbDB2315678afecb367f032d93F642f64180aa3);
         uint256[] memory AllTeams = HackBoardRegistryContract.GetAllTeams();
@@ -20,7 +24,7 @@ contract HackBoardPredictionMarket{
                 ParticipatingTeams.push(AllTeams[i]);
                 TeamParticipating[AllTeams[i]] = true;
                 //for each participating team, create two new erc20 tokens, one for the team, one for fading the team
-                
+
 
             }
         }
