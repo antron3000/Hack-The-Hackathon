@@ -54,18 +54,6 @@ async function GetAllTeamInfoToConsole(){
 
 function insertDataIntoTable(data) {
     // Add console logs to debug the data
-    console.log("Data received:", data);
-    if(data) {
-        console.log("Data length:", data.length);
-    }
-    if(data && data[5]) {
-        console.log("Data[5] length:", data[5].length);
-    }
-
-    if (!Array.isArray(data) || data.length !== 7 || !Array.isArray(data[5])) {
-        console.error('Invalid data format');
-        return;
-    }
 
     const teamName = data[1];
     const description = data[2];
