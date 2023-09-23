@@ -122,8 +122,9 @@ async function populateTableWithTeamInfo() {
         const teamData = await GetAllTeamInfoToConsole();
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
-            if(i != 9){}
+            if(i != 9){
             insertDataIntoTable(teamData[i]);
+        }
         }
         
     
