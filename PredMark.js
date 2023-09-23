@@ -102,6 +102,7 @@ async function GetAllTeamPredictionsInfoToConsole(){
 
 async function insertDataIntoTable(dataone, datatwo, TeamID) {
     // Add console logs to debug the dataone
+    console.log("Inserting Date")
 
     const teamName = dataone[1];
     const LongInterest = datatwo[0] / 1000000000000000000;
