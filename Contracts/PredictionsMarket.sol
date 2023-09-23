@@ -29,7 +29,6 @@ contract HackBoardPredictionMarket{
                 ERC20 ForToken = new ERC20("TeamForToken", "TFT");
                 ERC20 FadeToken = new ERC20("TeamFadeToken", "TFT");
                 TeamPredictionsInfo[AllTeams[i]] = TeamStruct(address(ForToken), address(FadeToken), 0);
-
             }
         }
     }
