@@ -119,6 +119,7 @@ async function insertDataIntoTable(dataone, datatwo, TeamID) {
         <td>Long interest: ${LongInterest} $XDAI <br> Short Interest: ${ShortInterest} $XDAI</td>
         <td>Your Long Interest: ${UserForDeposit} $XDAI<br> </a></td>
         <td>Your Short Interest: ${UserFadeDeposit} $XDAI <br></td>
+        
         </tr>
     `;
 
