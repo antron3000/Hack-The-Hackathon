@@ -73,7 +73,8 @@ contract HackBoardPredictionMarket{
 
         for(uint256 i = 0; i < SuccessfulTeams.length; i++){
             TeamPredictionsInfo[SuccessfulTeams[i]].ForSuccess = true;
-            //Calculate the winner payout rate, which is the total available prize pool devided by the total amount of ether deposited into the team pool
+            //Calculate the winner payout rate, which is the total available prize pool devided by the total amount of ether deposited into the forprizepool for this team
+            
         }
 
         //Loop through all teams to see if they were successful, those that we're not successful, set the fadesuccessful bool to true
