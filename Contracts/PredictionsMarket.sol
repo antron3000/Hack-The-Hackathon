@@ -43,6 +43,12 @@ contract HackBoardPredictionMarket{
         if(ForAgainst){
             ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].ForToken);
             TeamToken.Mint(msg.sender, msg.value);
+            TeamPredictionsInfo[TeamID].TotalForPredictionsDeposits += msg.value;
+        }
+        else{
+            ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].FadeToken);
+            TeamToken.Mint(msg.sender, msg.value);
+            TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += msg.value;
         }
 
 
