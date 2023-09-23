@@ -52,6 +52,9 @@ async function GetTeamInfo(teamID) {
     return JSON.parse(JSON.stringify(teamInfo))
 }
 
+async function GetUserInfo(userAddress){
+}
+
 async function GetAllTeamInfoToConsole(){
     let TeamInfos = [];
     let teamIDs = await GetAllTeams();
