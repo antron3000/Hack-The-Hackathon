@@ -13,9 +13,6 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
 
             provider = new ethers.BrowserProvider(window.ethereum);
             console.log("a")
-            const signer = await provider.getSigner();
-            console.log("a")
-
 
         } catch (error) {
             console.error("User denied account access or an error occurred.");
