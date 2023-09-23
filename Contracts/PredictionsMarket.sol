@@ -113,7 +113,6 @@ contract ERC20 {
 
     function Mint(address _MintTo, uint256 _MintAmount) public {
         require(msg.sender == );
-        require (totalSupply+(_MintAmount) <= tokenCap);
         balances[_MintTo] = balances[_MintTo]+(_MintAmount);
         totalSupply = totalSupply+(_MintAmount);
         ZeroAddress = 0x0000000000000000000000000000000000000000;
