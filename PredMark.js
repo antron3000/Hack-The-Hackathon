@@ -117,7 +117,6 @@ function insertDataIntoTable(dataone, datatwo) {
         <td>${description}</td>
         <td>${contactLink}</a></td>
         <td>${interestInPredictionMarket}</td>
-        <td>${mainSponsorPrizeTarget}</td>
         </tr>
     `;
 
