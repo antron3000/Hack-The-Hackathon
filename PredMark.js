@@ -118,7 +118,7 @@ async function insertDataIntoTable(dataone, datatwo, TeamID) {
         <td>${teamName}</td>
         <td>Long interest: ${LongInterest} $XDAI <br> Short Interest: ${ShortInterest} $XDAI</td>
         <td>Your Long Interest: ${UserForDeposit} $XDAI<br> <input id="LongInput${TeamID}" placeholder="Enter Amount"></input><br><button>Increase Long Interest</button></td>
-        <td>Your Short Interest: ${UserFadeDeposit} $XDAI<br> <input id="LongInput${TeamID}" placeholder="Increase Short Interest"></input><br></td>
+        <td>Your Short Interest: ${UserFadeDeposit} $XDAI<br> <input id="LongInput${TeamID}" placeholder="Enter Amount"></input><br><button></td>
         </tr>
     `;
 
