@@ -20,7 +20,7 @@ async function Login() {
             document.getElementById('metamaskButton').innerText = "Connected";
             document.getElementById('temprow').style.display = "none";
 
-            
+
 
             populateTableWithTeamInfo();
 
