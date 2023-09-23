@@ -8,10 +8,10 @@ contract HackBoardPredictionMarket{
     uint256 TotalHackathonPrizePool;
 
     mapping(uint256 => bool) public TeamParticipating;
-    mapping(uint256 => TeamPredictionsInfo) public TotalTeamPredictionsDeposits;
+    mapping(uint256 => TeamStruct) public TotalTeamPredictionsDeposits;
     mapping(address => mapping(uint256 => uint256)) public UserTeamPredictionsDeposits;
 
-    struct TeamPredictionsInfo{
+    struct TeamStruct{
         address ForToken;
         address FadeToken;
         uint256 TotalTeamPredictionsDeposits;
@@ -37,7 +37,7 @@ contract HackBoardPredictionMarket{
         require(msg.value > 0);
         require(TeamID >= 0);
         require(TeamID < ParticipatingTeams.length);
-        TotalTeamPredictionsDeposits[TeamID.TotalTeamPredictionsDeposits += msg.value;
+        TotalTeamPredictionsDeposits[TeamID].TotalTeamPredictionsDeposits += msg.value;
         UserTeamPredictionsDeposits[msg.sender][TeamID] += msg.value;
 
         TotalHackathonPrizePool += msg.value;
