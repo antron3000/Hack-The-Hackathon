@@ -58,6 +58,8 @@ async function GetUserInfo(){
     return Output;
 }
 
+
+
 async function GetAllTeamInfoToConsole(){
     let TeamInfos = [];
     let teamIDs = await GetAllTeams();
