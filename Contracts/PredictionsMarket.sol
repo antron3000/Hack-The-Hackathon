@@ -60,6 +60,26 @@ contract HackBoardPredictionMarket{
     }
 
     //Create a function that allows users to attempt to withdraw their winnings from a pool, but will fail if their bet was wrong
+    function WithdrawFromTeam(uint256 TeamID, bool ForAgainst) public {
+        require(TeamParticipating[TeamID]);
+
+        if(ForAgainst){
+            ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].ForToken);
+            uint256 UserBalance = TeamToken.balanceOf(msg.sender);
+            require(UserBalance > 0);
+            require(TeamPredictionsInfo[TeamID].ForSuccess);
+            TeamToken.Burn(UserBalance);
+            payable(msg.sender).transfer((UserBalance * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
+        }
+        else{
+            ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].FadeToken);
+            uint256 UserBalance = TeamToken.balanceOf(msg.sender);
+            require(UserBalance > 0);
+            require(TeamPredictionsInfo[TeamID].AgainstSuccessful);
+            TeamToken.Burn(UserBalance);
+            payable(msg.sender).transfer((UserBalance * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
+        }
+    }
 
     //Admin functions
 
