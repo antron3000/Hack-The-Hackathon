@@ -50,8 +50,7 @@ contract HackBoardPredictionMarket{
             TotalForPrizePool += msg.value;
         }
         else{
-            ERC20 TeamToken = ERC20(TeamPredictionsInfo[TeamID].FadeToken);
-            TeamToken.Mint(msg.sender, msg.value);
+            UserFadeDeposits[msg.sender][TeamID] += msg.value;
             TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += msg.value;
             TotalFadePrizePool += msg.value;
         }
