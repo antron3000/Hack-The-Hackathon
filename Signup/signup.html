@@ -12,7 +12,7 @@
 <body>
     <a href="/"><button>Return Home</button></a>
     <div style="text-align: left;" class="header">
-        <button id="metamaskButton">Sign in (Gnosis)</button>
+        <button onclick="Login()" id="metamaskButton">Sign in (Gnosis)</button>
         <div id="addressDisplay">Address: N/A</div>
         <div id="balanceDisplay">Balance: N/A</div>
     </div>
@@ -40,14 +40,7 @@
         <select id="InteredInPMarket" name="InteredInPMarket">
             <option value="1">Yes</option>
             <option value="0">No</option>
-        </select><br>
-
-        <!-- Team Token Option -->
-        <label for="createToken">Do you wish to distribute prize winnings to Team Token Holders?</label>
-        <select id="InteredInPMarket" name="InteredInPMarket">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
-        </select><br>        
+        </select><br>    
 
         <!-- Bounties Dropdown -->
         <label for="bounties">What is the main sponsor prize your team is looking to get?</label>
@@ -57,7 +50,7 @@
         <!-- Submit Button -->
         <button onclick="OnBoard()" value="Register">Register</button>
 
-       <br><br> <label>NOTE: A Team token will be automatically created as soon as you register. If you do not wish to use your team token, you can ignore this.</label>
+       
     </form>
 
 </body>
