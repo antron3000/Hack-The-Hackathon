@@ -59,6 +59,8 @@ contract HackBoardPredictionMarket{
         TotalHackathonPrizePool += msg.value;
     }
 
+    
+
     //Admin functions
 
     function FinalizeMarkets(uint256[] memory SuccessfulTeams) public {
