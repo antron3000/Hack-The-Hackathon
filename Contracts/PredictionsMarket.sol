@@ -5,6 +5,7 @@ pragma solidity ^0.8.0;
 contract HackBoardPredictionMarket{
     HackBoardRegistry public HackBoardRegistryContract;
     uint256[] public ParticipatingTeams;
+    uint256 TotalHackathonPrizePool;
 
     constructor(){
         //check hackboardregistry for all teams and loop through them, if they are interested in prediction market, add them to participating teams
