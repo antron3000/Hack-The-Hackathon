@@ -90,7 +90,14 @@ async function GetAllTeamInfoToConsole(){
 }
 
 async function GetAllTeamPredictionsInfoToConsole(){
-    
+    let TeamInfos = [];
+    let teamIDs = await GetAllTeams();
+    for (let i = 0; i < teamIDs.length; i++) {
+        TeamInfos.push(await GetTeamPredictionsInfo(teamIDs[i]));
+    }
+    console.log(TeamInfos)
+    return(TeamInfos)
+}
 
 function insertDataIntoTable(data) {
     // Add console logs to debug the data
