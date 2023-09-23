@@ -39,6 +39,11 @@ contract HackBoardPredictionMarket{
         require(msg.value > 0);
         require(TeamID >= 0);
         require(TeamID < ParticipatingTeams.length);
+
+        if()
+
+
+
         TotalTeamPredictionsDeposits[TeamID].TotalTeamPredictionsDeposits += msg.value;
         UserTeamPredictionsDeposits[msg.sender][TeamID] += msg.value;
 
