@@ -37,6 +37,8 @@ async function GetTeamInfo(teamID) {
     let signer = await provider.getSigner();
     let contract = new ethers.Contract(contractAddress, ABI, signer);
     let teamInfo = await contract.GetTeamInfo(teamID);
+
+    return teamInfo
 }
 
 async function GetAllTeamInfoToConsole(){
