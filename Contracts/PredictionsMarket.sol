@@ -12,7 +12,7 @@ contract HackBoardPredictionMarket{
 
     mapping(uint256 => bool) public TeamParticipating;
     mapping(uint256 => TeamStruct) public TeamPredictionsInfo;
-    mapping(address => mapping(uint256 => uint256)) public UserTeamPredictionsDeposits;
+    mapping(address => mapping(uint256 => uint256)) public UserForDeposits;
 
     struct TeamStruct{
         uint256 TotalForPredictionsDeposits;
