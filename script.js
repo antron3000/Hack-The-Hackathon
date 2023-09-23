@@ -15,7 +15,7 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
             console.log("a")
 
             document.getElementById('metamaskButton').innerText = "Connected";
-            temprow
+            document.getElementById('temprow')
 
         } catch (error) {
             console.error("User denied account access or an error occurred.");
