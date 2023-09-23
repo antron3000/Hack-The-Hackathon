@@ -24,7 +24,14 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
     }
 });
 
-//Create a function that calls the contract and adds the team to the blockchain
+//Create a function that calls the contract and gets the list of all team ids
+async function GetAllTeams() {
+    let signer = await provider.getSigner();
+    let contract = new ethers.Contract(contractAddress, ABI, signer);
+    let teamIDs = await contract.GetAllTeams();
+    console.log(teamIDs)
+    return teamIDs
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     // Define the start time and duration (in this case, a 48-hour hackathon)
