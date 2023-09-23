@@ -11,7 +11,7 @@ let ABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"i
 let contractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17"
 let provider;
 
-document.getElementById('metamaskButton').addEventListener('click', async () => {
+async function Login() {
     console.log("button clicked")
     if (typeof window.ethereum !== 'undefined') {
         console.log("defined")
