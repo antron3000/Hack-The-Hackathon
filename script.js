@@ -12,7 +12,8 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
 
         provider = new ethers.BrowserProvider(window.ethereum);
         console.log("a")
-    } else {
+    } 
+    else {
         console.error("MetaMask is not installed");
     }
 });
