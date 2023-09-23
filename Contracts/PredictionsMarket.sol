@@ -22,6 +22,8 @@ contract HackBoardPredictionMarket{
         }
     }
 
+    //Create a function that allows users to deposit ether 
+
     // function InitializePredictionMarket() public {
     //     
     // }
