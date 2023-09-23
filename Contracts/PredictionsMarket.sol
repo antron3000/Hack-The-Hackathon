@@ -3,7 +3,7 @@
 pragma solidity ^0.8.0;
 
 contract HackBoardPredictionMarket{
-    address HackBoardAdmin;
+    address public HackBoardAdmin;
     HackBoardRegistry public HackBoardRegistryContract;
     uint256[] public ParticipatingTeams;
     uint256 public TotalForPrizePool;
@@ -55,6 +55,8 @@ contract HackBoardPredictionMarket{
 
         TotalHackathonPrizePool += msg.value;
     }
+
+    
 
     // function InitializePredictionMarket() public {
     //     
