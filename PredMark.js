@@ -100,14 +100,14 @@ async function GetAllTeamPredictionsInfoToConsole(){
     return(TeamInfos)
 }
 
-function insertDataIntoTable(dataone, datatwo, TeamID) {
+async function insertDataIntoTable(dataone, datatwo, TeamID) {
     // Add console logs to debug the dataone
 
     const teamName = dataone[1];
     const LongInterest = datatwo[0] / 1000000000000000000;
     const ShortInterest = datatwo[1] / 1000000000000000000;
     const UserForDeposit = parseInt(await PredictionsContract.UserForDeposits(signer.address, TeamID)) / 1000000000000000000;
-    const UserFadeDeposit = (await PredictionsContract.UserFadeDeposits(signer.address, TeamID)) / 1000000000000000000;
+    const UserFadeDeposit = parseInt(await PredictionsContract.UserFadeDeposits(signer.address, TeamID)) / 1000000000000000000;
 
 
     const tbody = document.getElementById('Registry');
