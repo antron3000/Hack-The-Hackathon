@@ -24,7 +24,7 @@ async function Login() {
 
                 populateTableWithTeamInfo();
             } else {
-                console.error("Please switch to Gnosis Chain (Network ID 100) in MetaMask.");
+                alert("Please switch to Gnosis Chain (Network ID 100) in MetaMask.");
             }
         } catch (error) {
             console.error("User denied account access or an error occurred.");
