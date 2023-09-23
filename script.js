@@ -8,7 +8,10 @@ document.getElementById('metamaskButton').addEventListener('click', async () => 
     if (typeof window.ethereum !== 'undefined') {
         console.log("defined";
         
-        
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
+
+        provider = new ethers.BrowserProvider(window.ethereum);
+        console.log("a")
     } else {
         console.error("MetaMask is not installed");
     }
