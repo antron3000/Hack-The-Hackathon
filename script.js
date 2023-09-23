@@ -58,8 +58,8 @@ async function GetUserInfo(){
     return Output;
 }
 
-async function SetUserTeamName{
-    
+async function SetUserTeamName(){
+    if
 }
 
 async function GetAllTeamInfoToConsole(){
