@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.3.0/ethers.umd.min.js" charset="utf-8" type="text/javascript"></script>    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <a href="/"><button>Return Home</button></a>
+    <div style="text-align: left;" class="header">
+        <button onclick="Login()" id="metamaskButton">Sign in (Gnosis)</button>
+        <div id="addressDisplay">Address: N/A</div>
+        <div id="balanceDisplay">Balance: N/A</div>
+    </div>
+
+    <h1 style="text-align: center;">HackBoard Team Registration</h1>
+    
+    <form id="teamRegistration" onsubmit="return false">
+        <!-- Team Name -->
+        <label for="teamName">Team Name:</label>
+        <input type="text" id="TeamName" name="teamName" required><br>
+
+        <!-- Team Description -->
+        <label for="description">Short Description:</label>
+        <textarea id="Description" name="description" rows="2" required></textarea><br>
+
+        <!-- Ethereum Address -->
+        <label for="ethAddress">Discord:</label>
+        <input type="text" id="Discord" name="Discord" required><br>
+
+        <label for="ethAddress">Team members (Addresses seperated by commas):</label>
+        <input type="text" id="TeamMembers" name="TeamMembers" required><br>
+
+        <!-- Prediction Market Option -->
+        <label for="createToken">Are you interested in being part of the hackathon prediction market?</label>
+        <select id="InteredInPMarket" name="InteredInPMarket">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>    
+
+        <!-- Bounties Dropdown -->
+        <label for="bounties">What is the main sponsor prize your team is looking to get?</label>
+        <input type="text" id="SponsorGoal" name="SponsorGoal" required><br>
+
+
+        <!-- Submit Button -->
+        <button onclick="OnBoard()" value="Register">Register</button>
+
+       
+    </form>
+
+</body>
+</html>
