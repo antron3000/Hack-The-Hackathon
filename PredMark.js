@@ -154,6 +154,7 @@ async function GetTeamsWithForInterest() {
     for (let i = 0; i < TeamIDs.length; i++) {
         let TeamInfo = await GetTeamPredictionsInfo(TeamIDs[i]);
         if (TeamInfo[0] > 0) {
+            //convert the team id from bignum to just number
             TeamsWithForInterest.push(TeamIDs[i]);
         }
     }
