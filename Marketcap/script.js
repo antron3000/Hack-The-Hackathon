@@ -809,7 +809,7 @@ async function GetTeamInfo(teamID) {
 	
 		try {
 			price = await getTokenPrice(pairToken);
-			marketcapValue = price * 10000000;
+			marketcapValue = price * 100000000;
 			marketcapDisplay = "$" + marketcapValue;
 			price = "$" + price;
 		} catch (error) {
