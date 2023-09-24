@@ -785,67 +785,76 @@ async function GetTeamInfo(teamID) {
         return(TeamInfos)
     }
 
-    async function insertDataIntoTable(data) {
-        // Add console logs to debug the data
+	let tableData = [];
 
-        const teamName = data[0];
-        let tokenAddress = data[4]
-        let token = new ethers.Contract(tokenAddress, erc20ABI, signer);
-        console.log(tokenAddress)
-        let symbol = await token.symbol()
-        console.log("price")
-        let pairToken = await getUniswapPairAddress(tokenAddress)
-        console.log(pairToken)
+	async function collectData(data) {
+		const teamName = data[0];
+		let tokenAddress = data[4];
+		let token = new ethers.Contract(tokenAddress, erc20ABI, signer);
+	
+		let symbol = await token.symbol();
+		let pairToken = await getUniswapPairAddress(tokenAddress);
+	
 		let price;
-		let marketcap
-		let circulatingSupply
-		circulatingSupply = await token.totalSupply()
-		console.log(circulatingSupply)
-		circulatingSupply = ethers.formatUnits(circulatingSupply,18)
-		console.log(circulatingSupply)
-
-
+		let marketcapValue;
+		let marketcapDisplay;
+		let circulatingSupply = await token.totalSupply();
+		circulatingSupply = ethers.formatUnits(circulatingSupply, 18);
+	
 		try {
 			price = await getTokenPrice(pairToken);
-			marketcap = price*10000000
-			price = "$" + price
-			marketcap = "$" + marketcap
-		
-		} 
-
-		catch (error) {
+			marketcapValue = price * 10000000;
+			marketcapDisplay = "$" + marketcapValue;
+			price = "$" + price;
+		} catch (error) {
 			price = "no liquidity";
-			marketcap = "N/A";
+			marketcapValue = 0; // To enable sorting
+			marketcapDisplay = "N/A";
 		}
-		
-        console.log("price done")
-        console.log(data)
-        const description = data[2];
-        const contactLink = data[3];
-        const interestInPredictionMarket = data[6] ? "Yes" : "No";
-        const mainSponsorPrizeTarget = data[4];
+	
+		tableData.push({
+			teamName,
+			symbol,
+			price,
+			marketcapValue,
+			marketcapDisplay,
+			circulatingSupply,
+			tokenAddress
+		});
+	}
 
-        console.log(teamName, description, contactLink, interestInPredictionMarket, mainSponsorPrizeTarget);
-
-        const tbody = document.getElementById('Registry');
-
-        const tr = document.createElement('tbody');
-        tr.innerHTML = `<tr>
-            <td></td>
-            <td>${teamName}</td>
-            <td>${symbol}</td>
-            <td>${price}</td>
-            <td>${marketcap}</td>
-			<td>${circulatingSupply}</td>
-			<td><button onclick="mintToken('${tokenAddress}')">Mint</button></td> <!-- Button 1 with onclick event -->
-			<td><button onclick="addToken('${tokenAddress}')">Add</button></td> <!-- Button 1 with onclick event -->
-			<td>   <button onclick="tradeToken('${tokenAddress}')">Trade</button> <!-- Button 1 with onclick event -->
-
-			</tr>
-        `;
-
-        tbody.appendChild(tr);
-    }
+	async function insertDataIntoTable(data) {
+		// Collect Data
+		await collectData(data);
+	
+		// Render Data (You can call this once after all data has been collected)
+		renderTableData();
+	}
+	
+	function renderTableData() {
+		const tbody = document.getElementById('Registry');
+		tbody.innerHTML = ''; // Clear existing rows
+	
+		tableData.sort((a, b) => b.marketcapValue - a.marketcapValue); // Sort by marketcap in descending order
+	
+		tableData.forEach((data, index) => {
+			const tr = document.createElement('tr');
+			tr.innerHTML = `<tr>
+				<td>${index + 1}</td> <!-- This is the rank -->
+				<td>${data.teamName}</td>
+				<td>${data.symbol}</td>
+				<td>${data.price}</td>
+				<td>${data.marketcapDisplay}</td>
+				<td>${data.circulatingSupply}</td>
+				<td><button onclick="mintToken('${data.tokenAddress}')">Mint</button></td>
+				<td><button onclick="addToken('${data.tokenAddress}')">Add</button></td>
+				<td><button onclick="tradeToken('${data.tokenAddress}')">Trade</button></td>
+			</tr>`;
+	
+			tbody.appendChild(tr);
+		});
+	}
+	
 
     function tradeToken(tokenAddress) {
         const baseUrl = "https://honeyswap.1hive.eth.limo//#/swap?inputCurrency=ETH&outputCurrency=";
