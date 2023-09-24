@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HackBoard - ETHGlobal NYC</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.3.0/ethers.umd.min.js" charset="utf-8" type="text/javascript"></script>
+        <script src="script.js" defer></script>
+    </head>
+    
+    <body>
+    
+    
+        <!-- Countdown Timer -->
+        <section class="countdown">
+            <h1 style="font-size: xx-large;">Welcome!</h1>
+            <h1 style="font-size: xx-large;">HackBoard - ETHGlobal New York</h1>
+    
+            <h3>Hacking ends in:</h3>
+            <div style="font-size: 45px;" id="timer">12:34:56</div>
+    
+            <button onclick="Login()" id="metamaskButton">Sign in (Gnosis)</button>
+            <button onclick="addGnosisChainToMetaMask()">Add Gnosis to Metamask</button>
+        </section>
+    
+    <section id="TokenInfo" class="tokens">
+        <h1>Hacker Team Token Info</h1>
+        <table id="Registry">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Team</th>
+                    <th>Token Symbol</th>
+                    <th>Current Price</th>
+                    <th>Market Cap</th>
+                    <th>Circulating Supply</th>
+                    <th>Mint*</th>                   
+                    <th>Add**</th>
+                    <th>Trade</th>
+
+    
+    
+                </tr>
+            </thead>
+            <tbody id="tokenrow">
+                <!-- Dummy data for representation 
+                <tr>
+                    <td>1</td>
+                    <td>Team Alpha</td>
+                    <td>ALPHA</td>
+                    <td>$1.23</td>
+                    <td style="color:green;">+5%</td>
+                    <td>$5,000,000</td>
+                    <td>$200,000</td>
+                    <td>4,065,040 ALPHA</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Team Beta</td>
+                    <td>BETA</td>
+                    <td>$0.89</td>
+                    <td style="color:red;">-3%</td>
+                    <td>$3,500,000</td>
+                    <td>$150,000</td>
+                    <td>3,932,020 BETA</td>
+                </tr>
+                 Add more rows as needed -->
+            
+            </tbody>
+    
+            <label>*1,000,000 tokens will be minted to your address. Honor code to deposit your winnings to be distributed to token holders. If you want to keep your portion in the native prize tokens, burn your team token share.</label>
+            <label>1% of the tokens will be taken to add to liquidity pools on Honeyswap </label> <br>
+            <label>** Add Liquidity to token on honeyswap </label>
+
+        </label>
+        </table>
+</section>
+
+
+    <!-- Team Tokens & MarketCaps -->
+    <!-- Info Tab -->
+    <section class="info-tab">
+        
+        <h1>Hackathon Schedule</h1>
+        <div>
+            <table style="width: 20%;">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>
+                <tbody id="temprow">
+                    <tr>
+                        <td>7 AM</td>
+                        <td>Breakfast</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <br>
+
+        <h1>What is this?</h1>
+        <div>
+            <!-- You can replace this with your desired content -->
+            We're HackBoard, an EthGlobalNYC hackathon team trying to augment the inter-team dynamic at the hackathon, for better collaboration, brainstorming and social connection. As you can see, we currently have a basic site set up allowing teams to sign up and express interest in a potential predictions market. Learn more about the diverse teams here in New York to spark your own ideas. Best of luck to everyone!
+        </div>
+    </section>
+
+</body>
+
+</html>
+
