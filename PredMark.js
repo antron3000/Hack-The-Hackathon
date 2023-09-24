@@ -147,7 +147,9 @@ async function IncreaseInterest(LongShort, TeamID){
     }
 }
 
-//create a fucntion
+//create a function that returns the team id for all teams that have any forinterest
+
+
 
 async function addGnosisChainToMetaMask() {
     const chainId = 100;
