@@ -148,7 +148,17 @@ async function IncreaseInterest(LongShort, TeamID){
 }
 
 //create a function that returns the team id for all teams that have any forinterest
-
+async function GetTeamsWithForInterest() {
+    let TeamIDs = await GetAllTeams();
+    let TeamsWithForInterest = [];
+    for (let i = 0; i < TeamIDs.length; i++) {
+        let TeamInfo = await GetTeamPredictionsInfo(TeamIDs[i]);
+        if (TeamInfo[0] > 0) {
+            TeamsWithForInterest.push(TeamIDs[i]);
+        }
+    }
+    return TeamsWithForInterest
+}
 
 
 
