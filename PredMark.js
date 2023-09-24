@@ -145,8 +145,11 @@ async function IncreaseInterest(LongShort, TeamID){
     else{
         await PredictionsContract.DepositToTeam(TeamID, LongShort, {value: Amount});
     }
-    location.reload();
 }
+
+//create a function that returns the team id for all teams that have any forinterest
+
+
 
 async function addGnosisChainToMetaMask() {
     const chainId = 100;
@@ -193,7 +196,7 @@ async function populateTableWithTeamInfo() {
 
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
-            if(indices[i] != 9 && indices[i] != 26 && indices[i] != 31){
+            if(indices[i] != 9 && indices[i] != 26 && indices[i] != 31 && i != 35){
             console.log(teamData[indices[i]], predData[indices[i]], indices[i])
             await insertDataIntoTable(teamData[indices[i]], predData[indices[i]], indices[i]);
             }
