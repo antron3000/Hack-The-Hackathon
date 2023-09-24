@@ -147,6 +147,8 @@ async function IncreaseInterest(LongShort, TeamID){
     }
 }
 
+//create a fucntion
+
 async function addGnosisChainToMetaMask() {
     const chainId = 100;
     const rpcUrl = 'https://rpc.ankr.com/gnosis';
