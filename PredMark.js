@@ -159,6 +159,7 @@ async function GetTeamsWithForInterest() {
             TeamsWithForInterest.push(ID);
         }
     }
+    console.log(TeamsWithForInterest)
     return TeamsWithForInterest.toString();
 }
 
