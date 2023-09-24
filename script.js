@@ -142,7 +142,7 @@ async function populateTableWithTeamInfo() {
         const teamData = await GetAllTeamInfoToConsole();
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
-            if(i != 9 && i != 26 && i != 31){
+            if(i != 9 && i != 26 && i != 31 && i != 35){
             insertDataIntoTable(teamData[i]);
         }
         }
