@@ -156,7 +156,7 @@ async function GetTeamsWithForInterest() {
         if (TeamInfo[0] > 0) {
             //convert the team id from bignum to just number and paste the array as a string
             ID = parseInt(TeamIDs[i])
-            TeamsWithForInterest.push(TeamIDs[i]);
+            TeamsWithForInterest.push(ID);
         }
     }
     return TeamsWithForInterest
