@@ -729,6 +729,8 @@ const factoryAbi = [
     }
 ];
 
+Login();
+
 let contractAddress = "0xC1FDf4678C684b2e8344057Eb9b37B7113b5d28b"
 let provider;
 
