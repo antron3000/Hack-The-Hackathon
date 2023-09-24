@@ -145,7 +145,6 @@ async function IncreaseInterest(LongShort, TeamID){
     else{
         await PredictionsContract.DepositToTeam(TeamID, LongShort, {value: Amount});
     }
-    location.reload();
 }
 
 async function addGnosisChainToMetaMask() {
