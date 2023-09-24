@@ -744,17 +744,21 @@ async function Login() {
         try {
             // Get the network ID
             const networkId = await window.ethereum.request({ method: 'net_version' });
-
+			console.log(networkId)
             if (networkId === '100') {
                 provider = new ethers.BrowserProvider(window.ethereum);
                 console.log("Connected to Gnosis Chain");
 
                 document.getElementById('metamaskButton').innerText = "Connected";
+				console.log("1")
                 document.getElementById('metamaskButton').disabled = true;
-                document.getElementById('temprow').style.display = "none";
+				console.log("2")
+                //document.getElementById('temprow').style.display = "none";
+				console.log("get Signer")
                 signer = await provider.getSigner();
+				console.log("not")
                 contract = new ethers.Contract(contractAddress, ABI, signer);
-
+				console.log("populate	Table")
                 await populateTableWithTeamInfo();
             } else {
                 alert("Please switch to Gnosis Chain (Network ID 100) in MetaMask.");
