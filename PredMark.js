@@ -151,6 +151,7 @@ async function IncreaseInterest(LongShort, TeamID){
 
 
 
+
 async function addGnosisChainToMetaMask() {
     const chainId = 100;
     const rpcUrl = 'https://rpc.ankr.com/gnosis';
