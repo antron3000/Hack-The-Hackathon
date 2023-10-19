@@ -47,6 +47,7 @@ contract HackBoardPredictionMarket{
         require(TeamParticipating[TeamID]);
 
         if(ForAgainst){
+            if()
             UserForDeposits[msg.sender][TeamID] += msg.value;
             TeamPredictionsInfo[TeamID].TotalForPredictionsDeposits += msg.value;
             TotalForPrizePool += msg.value;
