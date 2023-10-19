@@ -86,7 +86,7 @@ contract HackBoardPredictionMarket{
     }
 
     //Admin functions
-
+    //TODO:REMOVE
     function UpdateTeams() public{
         require(msg.sender == HackBoardAdmin);
 
@@ -96,7 +96,7 @@ contract HackBoardPredictionMarket{
             if(Team.InterestedInPredictionMarket && !TeamParticipating[i]){
                 ParticipatingTeams.push(AllTeams[i]);
                 TeamParticipating[AllTeams[i]] = true;
-                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false);
+                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false, false, false);
             }
         }
     }
