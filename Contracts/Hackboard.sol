@@ -41,6 +41,9 @@ contract HackBoardRegistry{
             Users[CurrentMembers[i]].HasTeam = true;
             Users[CurrentMembers[i]].TeamID = TeamID;
         }
+
+        //create a new prediction market for this team
+        
         
         AllUsers.push(msg.sender);
         AllTeams.push(TeamID);
