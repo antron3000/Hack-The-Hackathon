@@ -144,8 +144,7 @@ contract HackBoardPredictionMarket{
 
     function OpenMarkets() public {
         require(msg.sender == HackBoardAdmin);
-        //require moarkets to not be finalized
-        
+        require(!MarketsFinalized);        
         MarketsOpen = true;
     }
 
