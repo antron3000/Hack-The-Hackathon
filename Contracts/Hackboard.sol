@@ -48,7 +48,6 @@ contract HackBoardRegistry{
 
     function JoinTeam(uint256 TeamID) public {
         require(Users[msg.sender].HasTeam == false);
-        require(Teams[TeamID].Admin != msg.sender);
         Teams[TeamID].JoinRequests.push(msg.sender);
     }
 
