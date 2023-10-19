@@ -108,7 +108,15 @@ contract HackBoardPredictionMarket{
         }
 
         //check all teams if they have any deposits, if not, remove them from the total fade winning slots
+        uint256[] memory FadeTeamsWithDeposits;
+        uint256 FadeTeamsWithDepositsCount = 0;
 
+        for(uint256 i = 0; i < ParticipatingTeams.length; i++){
+            if(!TeamPredictionsInfo[ParticipatingTeams[i]].ForSuccess && TeamPredictionsInfo[ParticipatingTeams[i]].TotalFadePredictionDeposits > 0){
+                FadeTeamsWithDeposits[FadeTeamsWithDepositsCount] = ParticipatingTeams[i];
+                FadeTeamsWithDepositsCount++;
+            }
+        }
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / SuccessfulTeamsWithDepositsCount;
 
