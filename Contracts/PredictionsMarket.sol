@@ -94,7 +94,7 @@ contract HackBoardPredictionMarket{
         require(SuccessfulTeams.length == 10);
         CloseMarkets();
 
-        uint256 TotalForAvailablePrizePool = TotalForPrizePool / 10;
+        uint256 TotalForAvailablePrizePool = TotalForPrizePool / WinningSlots;
 
         uint256 TotalFadeAvailablePrizePool = TotalFadePrizePool / (ParticipatingTeams.length - 10);
 
