@@ -152,7 +152,9 @@ contract HackBoardPredictionMarket{
         require(msg.sender == HackBoardAdmin);
         MarketsOpen = false;
     }
+    
 
+    
     //View Functions
 
     function GetAllTeams() public view returns(uint256[] memory){
