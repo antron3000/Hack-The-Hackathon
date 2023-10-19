@@ -96,7 +96,7 @@ contract HackBoardPredictionMarket{
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / WinningSlots;
 
-        uint256 TotalFadeAvailablePrizePool = TotalFadePrizePool / (ParticipatingTeams.length - 10);
+        uint256 TotalFadeAvailablePrizePool = TotalFadePrizePool / (ParticipatingTeams.length - WinningSlots);
 
         for(uint256 i = 0; i < SuccessfulTeams.length; i++){
             TeamPredictionsInfo[SuccessfulTeams[i]].ForSuccess = true;
