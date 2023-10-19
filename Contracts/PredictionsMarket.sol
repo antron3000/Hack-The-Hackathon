@@ -98,7 +98,14 @@ contract HackBoardPredictionMarket{
 
         //check all successful teams if they have any deposits, if not, remove them from the total winning slots
         uint256[] memory SuccessfulTeamsWithDeposits;
-        
+        uint256 SuccessfulTeamsWithDepositsCount = 0;
+
+        for(uint256 i = 0; i < SuccessfulTeams.length; i++){
+            if(TeamPredictionsInfo[SuccessfulTeams[i]].TotalForPredictionsDeposits > 0){
+                SuccessfulTeamsWithDeposits[SuccessfulTeamsWithDepositsCount] = SuccessfulTeams[i];
+                SuccessfulTeamsWithDepositsCount++;
+            }
+        }
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / WinningSlots;
 
