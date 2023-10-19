@@ -63,6 +63,7 @@ contract HackBoardPredictionMarket{
     function WithdrawFromTeam(uint256 TeamID, bool ForAgainst) public {
         require(TeamParticipating[TeamID]);
         require(!MarketsOpen);
+        require(MarketsFinalized);
 
         if(ForAgainst){
             require(UserForDeposits[msg.sender][TeamID] > 0);
