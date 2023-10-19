@@ -38,7 +38,7 @@ contract HackBoardRegistry{
         Users[msg.sender].HasTeam = true;
         Users[msg.sender].TeamID = TeamID;
 
-        Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, ShortDescription, Discord, MainBountyTarget, CurrentMembers, new address[](0));
+        Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, ShortDescription, Discord, MainBountyTarget, new address[](0), new address[](0));
 
         for(uint256 i = 0; i < CurrentMembers.length; i++){
             Users[CurrentMembers[i]].HasTeam = true;
