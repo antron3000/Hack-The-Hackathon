@@ -43,7 +43,7 @@ contract HackBoardRegistry{
         }
 
         //create a new prediction market for this team
-        
+
         
         AllUsers.push(msg.sender);
         AllTeams.push(TeamID);
@@ -73,9 +73,7 @@ contract HackBoardRegistry{
 
 }
 
-// SPDX-License-Identifier: UNLICENSE
 
-pragma solidity ^0.8.0;
 
 contract HackBoardPredictionMarket{
     address public HackBoardAdmin;
