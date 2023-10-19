@@ -76,7 +76,7 @@ contract HackBoardPredictionMarket{
     }
 
     //Admin functions
-
+    //TODO: REMOVE
     function UpdateTeams() public{
         require(msg.sender == HackBoardAdmin);
 
@@ -95,6 +95,8 @@ contract HackBoardPredictionMarket{
         require(msg.sender == HackBoardAdmin);
         require(SuccessfulTeams.length == 10);
         CloseMarkets();
+
+        
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / WinningSlots;
 
