@@ -96,7 +96,7 @@ contract HackBoardPredictionMarket{
         require(SuccessfulTeams.length == 10);
         CloseMarkets();
 
-        
+        CHECK
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / WinningSlots;
 
