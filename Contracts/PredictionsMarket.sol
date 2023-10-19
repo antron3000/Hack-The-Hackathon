@@ -155,7 +155,12 @@ contract HackBoardPredictionMarket{
     
     //Only Registry Functions
 
-    function AddTeam
+    function AddTeam(uint256 TeamID) public {
+        require(msg.sender == address(HackBoardRegistryContract));
+        ParticipatingTeams.push(TeamID);
+        TeamParticipating[TeamID] = true;
+        TeamPredictionsInfo[TeamID] = TeamStruct(0, 0, 0, false, false);
+    }
 
 
     //View Functions
