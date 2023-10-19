@@ -45,7 +45,9 @@ contract HackBoardRegistry{
         }
 
         //Add team to prediction market
-
+        if(InterestedInPredictionMarket){
+            HackBoardPredictionMarketContract.AddTeam(TeamID);
+        }
         
         AllUsers.push(msg.sender);
         AllTeams.push(TeamID);
