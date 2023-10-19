@@ -9,7 +9,7 @@ contract HackBoardRegistry{
 
     constructor(){
         HackBoardAdmin = 0xc932b3a342658A2d3dF79E4661f29DfF6D7e93Ce;
-        HackBoardPredictionMarketContract 
+        HackBoardPredictionMarketContract = new HackBoardPredictionMarket();
     }
 
     mapping(address => User) public Users;
