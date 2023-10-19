@@ -40,11 +40,6 @@ contract HackBoardRegistry{
 
         Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, ShortDescription, Discord, MainBountyTarget, new address[](0), new address[](0));
 
-        for(uint256 i = 0; i < CurrentMembers.length; i++){
-            Users[CurrentMembers[i]].HasTeam = true;
-            Users[CurrentMembers[i]].TeamID = TeamID;
-        }
-
         HackBoardPredictionMarketContract.AddTeam(TeamID);
         
         AllUsers.push(msg.sender);
