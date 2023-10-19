@@ -162,7 +162,6 @@ contract HackBoardPredictionMarket{
         TeamPredictionsInfo[TeamID] = TeamStruct(0, 0, 0, false, false);
     }
 
-
     //View Functions
 
     function GetAllTeams() public view returns(uint256[] memory){
