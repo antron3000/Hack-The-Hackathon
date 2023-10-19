@@ -37,7 +37,7 @@ contract HackBoardPredictionMarket{
             if(Team.InterestedInPredictionMarket){
                 ParticipatingTeams.push(AllTeams[i]);
                 TeamParticipating[AllTeams[i]] = true;
-                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false);
+                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false, false, false);
             }
         }
     }
