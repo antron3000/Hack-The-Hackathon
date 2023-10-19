@@ -132,7 +132,7 @@ contract HackBoardPredictionMarket{
             }
         }
 
-        for(uint256 i = 0; i < ParticipatingTeams.length; i++){
+        for(uint256 i = 0; i < FadeTeamsWithDeposits.length; i++){
             if(!TeamPredictionsInfo[ParticipatingTeams[i]].ForSuccess){
                 TeamPredictionsInfo[ParticipatingTeams[i]].AgainstSuccess = true;
                 if(TeamPredictionsInfo[ParticipatingTeams[i]].TotalFadePredictionDeposits > 0){
