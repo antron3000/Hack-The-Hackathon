@@ -155,7 +155,7 @@ contract HackBoardPredictionMarket{
     
     //Only Registry Functions
 
-    
+    function AddTeam
 
 
     //View Functions
