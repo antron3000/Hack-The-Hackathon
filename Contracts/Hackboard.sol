@@ -27,7 +27,7 @@ contract HackBoardRegistry{
         string Discord;
         string MainBountyTarget;
         address[] TeamMembers;
-        address
+        address[] JoinRequest;
     }
 
     function OnboardNewTeam(string memory TeamName, string memory ShortDescription, string memory Discord, string memory MainBountyTarget, address[] memory CurrentMembers, bool InterestedInPredictionMarket) public {
