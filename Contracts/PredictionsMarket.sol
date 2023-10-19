@@ -131,7 +131,7 @@ contract HackBoardPredictionMarket{
             }
         }
 
-        uint256 TotalFadeAvailablePrizePool = TotalFadePrizePool / (ParticipatingTeams.length - SuccessfulTeamsWithDepositsCount);
+        uint256 TotalFadeAvailablePrizePool = TotalFadePrizePool / (ParticipatingTeams.length - FadeTeamsWithDepositsCount);
 
         for(uint256 i = 0; i < FadeTeamsWithDeposits.length; i++){
             if(!TeamPredictionsInfo[ParticipatingTeams[i]].ForSuccess){
