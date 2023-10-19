@@ -111,8 +111,7 @@ contract HackBoardPredictionMarket{
 
         for(uint256 i = 0; i < SuccessfulTeamsWithDeposits.length; i++){
             TeamPredictionsInfo[SuccessfulTeams[i]].ForSuccess = true;
-            
-                TeamPredictionsInfo[SuccessfulTeams[i]].WinnerPayoutRate = (TotalForAvailablePrizePool * 1000) / TeamPredictionsInfo[SuccessfulTeams[i]].TotalForPredictionsDeposits;
+            TeamPredictionsInfo[SuccessfulTeams[i]].WinnerPayoutRate = (TotalForAvailablePrizePool * 1000) / TeamPredictionsInfo[SuccessfulTeams[i]].TotalForPredictionsDeposits;
         }
 
         //------------------------------------------------
