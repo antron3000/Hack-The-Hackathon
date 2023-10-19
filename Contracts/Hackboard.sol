@@ -25,7 +25,6 @@ contract HackBoardRegistry{
         string Discord;
         string MainBountyTarget;
         address[] TeamMembers;
-        bool InterestedInPredictionMarket;
     }
 
     function OnboardNewTeam(string memory TeamName, string memory ShortDescription, string memory Discord, string memory MainBountyTarget, address[] memory CurrentMembers, bool InterestedInPredictionMarket) public returns(string memory TeamCode) {
@@ -36,7 +35,7 @@ contract HackBoardRegistry{
         Users[msg.sender].HasTeam = true;
         Users[msg.sender].TeamID = TeamID;
 
-        Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, ShortDescription, Discord, MainBountyTarget, CurrentMembers, InterestedInPredictionMarket);
+        Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, ShortDescription, Discord, MainBountyTarget, CurrentMembers);
 
         for(uint256 i = 0; i < CurrentMembers.length; i++){
             User[CurrentMembers[i]].HasTeam = true;
