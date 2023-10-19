@@ -95,7 +95,7 @@ contract HackBoardPredictionMarket{
         CloseMarkets();
 
         for(uint256 i = 0; i < SuccessfulTeams.length; i++){
-            if(TeamsPredictionsInfo[])
+            if(TeamsPredictionsInfo[SuccessfulTeams[i]])
         }
 
 
