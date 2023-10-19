@@ -48,7 +48,7 @@ contract HackBoardRegistry{
         return TeamID;
     }
 
-    function AddTeamMember(uint256 TeamID, address[] NewMembers) public {
+    function AddTeamMember(uint256 TeamID, address[] memory NewMembers) public {
         require(Teams[TeamID].Admin == msg.sender);
         Teams[TeamID].TeamMembers.push(NewMembers);
 
