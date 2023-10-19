@@ -96,7 +96,7 @@ contract HackBoardPredictionMarket{
         require(SuccessfulTeams.length == 10);
         CloseMarkets();
 
-        //check all successful teams if they have any deposits, if not, remove them from the total wi
+        //check all successful teams if they have any deposits, if not, remove them from the total 
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / WinningSlots;
 
