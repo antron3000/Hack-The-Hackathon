@@ -13,7 +13,6 @@ contract HackBoardPredictionMarket{
 
     mapping(uint256 => bool) public TeamParticipating;
     mapping(uint256 => TeamStruct) public TeamPredictionsInfo;
-    mapping(bool => bool)
     mapping(address => mapping(uint256 => uint256)) public UserForDeposits;
     mapping(address => mapping(uint256 => uint256)) public UserFadeDeposits;
 
