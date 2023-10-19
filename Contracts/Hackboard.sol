@@ -104,7 +104,7 @@ contract HackBoardPredictionMarket{
 
     constructor(address admin){
         HackBoardAdmin = admin;
-        HackBoardRegistryContract = HackBoardRegistry(0xD87dF59Bf476e9700f36F00c198166bC901a0e17);
+        HackBoardRegistryContract = HackBoardRegistry(msg.sender);
     }
 
     //Create a function that allows users to deposit ether to a specific team pool
