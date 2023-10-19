@@ -51,6 +51,14 @@ contract HackBoardRegistry{
         Teams[TeamID].JoinRequests.push(msg.sender);
     }
 
+    function ApproveJoinRequest(address UserAddress, uint256 TeamID) public {
+        require(msg.sender == Teams[TeamID].Admin);
+        require(Users[UserAddress].HasTeam == false);
+        Users[UserAddress].HasTeam = true;
+        Users[UserAddress].TeamID = TeamID;
+        Teams[TeamID].TeamMembers.push(UserAddress);
+    }
+
     function GetTeamInfo(uint256 TeamID) public view returns(HackBoardTeam memory){
         return Teams[TeamID];
     }
