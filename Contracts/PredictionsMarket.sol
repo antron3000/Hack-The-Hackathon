@@ -12,6 +12,7 @@ contract HackBoardPredictionMarket{
     uint256 public ForPoolActiveMarkets;
     uint256 public FadePoolActiveMarkets;
     bool public MarketsOpen;
+    bool public MarketsFinalized;
 
     mapping(uint256 => bool) public TeamParticipating;
     mapping(uint256 => TeamStruct) public TeamPredictionsInfo;
