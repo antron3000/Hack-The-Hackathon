@@ -2,6 +2,7 @@ pragma solidity 0.8.19;
 
 contract HackBoardRegistry{
     address public HackBoardAdmin;
+    
     uint256[] public AllTeams;
     address[] public AllUsers;
     uint256 public TeamIncrement;
