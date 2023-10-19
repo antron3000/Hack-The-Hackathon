@@ -114,9 +114,6 @@ contract HackBoardPredictionMarket{
             if(TeamPredictionsInfo[SuccessfulTeams[i]].TotalForPredictionsDeposits > 0){
                 TeamPredictionsInfo[SuccessfulTeams[i]].WinnerPayoutRate = (TotalForAvailablePrizePool * 1000) / TeamPredictionsInfo[SuccessfulTeams[i]].TotalForPredictionsDeposits;
             }
-            else{
-                TeamPredictionsInfo[SuccessfulTeams[i]].WinnerPayoutRate = 0;
-            }
         }
 
         //------------------------------------------------
