@@ -22,8 +22,6 @@ contract HackBoardPredictionMarket{
         uint256 TotalForPredictionsDeposits;
         uint256 TotalFadePredictionDeposits;
         uint256 WinnerPayoutRate;
-        bool ForMarketActive;
-        bool AgainstMarketActive;
         bool ForSuccess;
         bool AgainstSuccess;
     }
@@ -49,7 +47,6 @@ contract HackBoardPredictionMarket{
         require(TeamParticipating[TeamID]);
 
         if(ForAgainst){
-            if()
             UserForDeposits[msg.sender][TeamID] += msg.value;
             TeamPredictionsInfo[TeamID].TotalForPredictionsDeposits += msg.value;
             TotalForPrizePool += msg.value;
