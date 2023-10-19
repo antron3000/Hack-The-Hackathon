@@ -102,7 +102,7 @@ contract HackBoardPredictionMarket{
 
         for(uint256 i = 0; i < SuccessfulTeams.length; i++){
             if(TeamPredictionsInfo[SuccessfulTeams[i]].TotalForPredictionsDeposits > 0){
-                SuccessfulTeamsWithDeposits[SuccessfulTeamsWithDepositsCount] = SuccessfulTeams[i];
+                SuccessfulTeamsWithDeposits[] = SuccessfulTeams[i];
                 SuccessfulTeamsWithDepositsCount++;
             }
         }
