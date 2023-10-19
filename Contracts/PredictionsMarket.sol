@@ -119,6 +119,10 @@ contract HackBoardPredictionMarket{
             }
         }
 
+        //------------------------------------------------
+        //FADE MARKET
+        //------------------------------------------------
+
         uint256[] memory FadeTeamsWithDeposits;
         uint256 FadeTeamsWithDepositsCount = 0;
 
