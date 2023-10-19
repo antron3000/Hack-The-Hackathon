@@ -58,6 +58,10 @@ contract HackBoardPredictionMarket{
             TotalForPrizePool += msg.value;
         }
         else{
+            if(!TeamPredictionsInfo[TeamID].AgainstMarketActive){
+                TeamPredictionsInfo[TeamID].AgainstMarketActive = true;
+                FadePoolActiveMarkets++;
+            }
             UserFadeDeposits[msg.sender][TeamID] += msg.value;
             TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += msg.value;
             TotalFadePrizePool += msg.value;
