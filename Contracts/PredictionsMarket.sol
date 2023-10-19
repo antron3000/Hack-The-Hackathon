@@ -37,7 +37,7 @@ contract HackBoardPredictionMarket{
             if(Team.InterestedInPredictionMarket){
                 ParticipatingTeams.push(AllTeams[i]);
                 TeamParticipating[AllTeams[i]] = true;
-                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false, false, false);
+                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false);
             }
         }
     }
@@ -49,19 +49,12 @@ contract HackBoardPredictionMarket{
         require(TeamParticipating[TeamID]);
 
         if(ForAgainst){
-            if(!TeamPredictionsInfo[TeamID].ForMarketActive){
-                TeamPredictionsInfo[TeamID].ForMarketActive = true;
-                ForPoolActiveMarkets++;
-            }
+            if()
             UserForDeposits[msg.sender][TeamID] += msg.value;
             TeamPredictionsInfo[TeamID].TotalForPredictionsDeposits += msg.value;
             TotalForPrizePool += msg.value;
         }
         else{
-            if(!TeamPredictionsInfo[TeamID].AgainstMarketActive){
-                TeamPredictionsInfo[TeamID].AgainstMarketActive = true;
-                FadePoolActiveMarkets++;
-            }
             UserFadeDeposits[msg.sender][TeamID] += msg.value;
             TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += msg.value;
             TotalFadePrizePool += msg.value;
@@ -86,7 +79,7 @@ contract HackBoardPredictionMarket{
     }
 
     //Admin functions
-    //TODO: REMOVE
+
     function UpdateTeams() public{
         require(msg.sender == HackBoardAdmin);
 
@@ -96,7 +89,7 @@ contract HackBoardPredictionMarket{
             if(Team.InterestedInPredictionMarket && !TeamParticipating[i]){
                 ParticipatingTeams.push(AllTeams[i]);
                 TeamParticipating[AllTeams[i]] = true;
-                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false, false, false);
+                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false);
             }
         }
     }
