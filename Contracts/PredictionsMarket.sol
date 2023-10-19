@@ -9,7 +9,7 @@ contract HackBoardPredictionMarket{
     uint256 public WinningSlots;
     uint256 public TotalForPrizePool;
     uint256 public TotalFadePrizePool;
-    uint256 public 
+    uint256 public ForPoolActiveM
     bool public MarketsOpen;
 
     mapping(uint256 => bool) public TeamParticipating;
