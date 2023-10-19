@@ -86,7 +86,7 @@ contract HackBoardPredictionMarket{
     }
 
     //Admin functions
-    //TODO:REMOVE
+    //TODO: REMOVE
     function UpdateTeams() public{
         require(msg.sender == HackBoardAdmin);
 
