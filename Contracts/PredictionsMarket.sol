@@ -153,8 +153,11 @@ contract HackBoardPredictionMarket{
         MarketsOpen = false;
     }
     
+    //Only Registry Functions
 
     
+
+
     //View Functions
 
     function GetAllTeams() public view returns(uint256[] memory){
