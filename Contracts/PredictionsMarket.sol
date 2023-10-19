@@ -134,10 +134,6 @@ contract HackBoardPredictionMarket{
             if(!TeamPredictionsInfo[ParticipatingTeams[i]].ForSuccess){
                 TeamPredictionsInfo[ParticipatingTeams[i]].AgainstSuccess = true;
                 TeamPredictionsInfo[ParticipatingTeams[i]].WinnerPayoutRate = (TotalFadeAvailablePrizePool * 1000) / TeamPredictionsInfo[ParticipatingTeams[i]].TotalFadePredictionDeposits;
-                }
-                else{
-                    TeamPredictionsInfo[ParticipatingTeams[i]].WinnerPayoutRate = 0;
-                }
             }
         }
     }
