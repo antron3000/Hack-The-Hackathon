@@ -107,7 +107,7 @@ contract HackBoardPredictionMarket{
             }
         }
 
-        //check 
+        //check all teams if they have any deposits, if not, remove them from the total 
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / SuccessfulTeamsWithDepositsCount;
 
