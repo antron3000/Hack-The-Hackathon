@@ -71,7 +71,10 @@ contract HackBoardRegistry{
         return AllTeams;
     }
 
-    
+    //display team join requests minus the ones that have been approved
+    function GetTeamJoinRequests(uint256 TeamID) public view returns(address[] memory){
+        return Teams[TeamID].JoinRequests;
+    }
 
 }
 
