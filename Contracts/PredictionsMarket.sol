@@ -107,6 +107,8 @@ contract HackBoardPredictionMarket{
             }
         }
 
+        //check 
+
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / SuccessfulTeamsWithDepositsCount;
 
         uint256 TotalFadeAvailablePrizePool = TotalFadePrizePool / (ParticipatingTeams.length - SuccessfulTeamsWithDepositsCount);
