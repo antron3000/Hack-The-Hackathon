@@ -97,6 +97,8 @@ contract HackBoardPredictionMarket{
         CloseMarkets();
 
         //check all successful teams if they have any deposits, if not, remove them from the total winning slots
+        uint256[] memory SuccessfulTeamsWithDeposits;
+        
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / WinningSlots;
 
