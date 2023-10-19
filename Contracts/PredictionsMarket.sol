@@ -6,7 +6,7 @@ contract HackBoardPredictionMarket{
     address public HackBoardAdmin;
     HackBoardRegistry public HackBoardRegistryContract;
     uint256[] public ParticipatingTeams;
-    uint256 public WinningTeams; //The number of teams that end up becoming w
+    uint256 public WinningSlots; //The number of spots 
     uint256 public TotalForPrizePool;
     uint256 public TotalFadePrizePool;
     bool public MarketsOpen;
