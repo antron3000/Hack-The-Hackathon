@@ -56,12 +56,12 @@ contract HackBoardRegistry{
         }
     }
 
-    function GetTeamInfo(uint256 TeamID) public returns(HackBoardTeam memory){
+    function GetTeamInfo(uint256 TeamID) public view returns(HackBoardTeam memory){
         return Teams[TeamID];
     }
 
     function GetUserInfo(address _User) public returns(User memory){
-        return(Users[User]);
+        return(Users[_User]);
     }
 
     function GetAllTeams() public returns(uint256[] memory){
