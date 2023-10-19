@@ -22,7 +22,7 @@ contract HackBoardPredictionMarket{
         uint256 TotalForPredictionsDeposits;
         uint256 TotalFadePredictionDeposits;
         uint256 WinnerPayoutRate;
-        bool
+        bool ForMarketActive;
         bool ForSuccess;
         bool AgainstSuccess;
     }
