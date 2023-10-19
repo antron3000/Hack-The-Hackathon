@@ -2,13 +2,14 @@ pragma solidity 0.8.19;
 
 contract HackBoardRegistry{
     address public HackBoardAdmin;
-    
+    HackBoardPredictionMarket public HackBoardPredictionMarketContract;
     uint256[] public AllTeams;
     address[] public AllUsers;
     uint256 public TeamIncrement;
 
     constructor(){
         HackBoardAdmin = 0xc932b3a342658A2d3dF79E4661f29DfF6D7e93Ce;
+        
     }
 
     mapping(address => User) public Users;
