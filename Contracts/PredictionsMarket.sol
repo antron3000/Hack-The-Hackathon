@@ -107,7 +107,8 @@ contract HackBoardPredictionMarket{
             }
         }
 
-        //check all teams if they have any deposits, if not, remove them from the total 
+        //check all teams if they have any deposits, if not, remove them from the total fade winning slots
+
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / SuccessfulTeamsWithDepositsCount;
 
