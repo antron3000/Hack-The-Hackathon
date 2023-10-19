@@ -43,7 +43,7 @@ contract HackBoardRegistry{
         }
 
         //create a new prediction market for this team
-        
+            HackBoardPredictionMarket NewPredictionMarket = new HackBoardPredictionMarket()        }
         
         AllUsers.push(msg.sender);
         AllTeams.push(TeamID);
