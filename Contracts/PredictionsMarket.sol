@@ -30,15 +30,6 @@ contract HackBoardPredictionMarket{
     constructor(){
         HackBoardAdmin = msg.sender;
         HackBoardRegistryContract = HackBoardRegistry(0xD87dF59Bf476e9700f36F00c198166bC901a0e17);
-        uint256[] memory AllTeams = HackBoardRegistryContract.GetAllTeams();
-        for(uint256 i = 0; i < AllTeams.length; i++){
-            HackBoardRegistry.HackBoardTeam memory Team = HackBoardRegistryContract.GetTeamInfo(AllTeams[i]);
-            if(Team.InterestedInPredictionMarket){
-                ParticipatingTeams.push(AllTeams[i]);
-                TeamParticipating[AllTeams[i]] = true;
-                TeamPredictionsInfo[AllTeams[i]] = TeamStruct(0, 0, 0, false, false);
-            }
-        }
     }
 
     //Create a function that allows users to deposit ether to a specific team pool
