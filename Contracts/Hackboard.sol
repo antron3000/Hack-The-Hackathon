@@ -71,7 +71,7 @@ contract HackBoardRegistry{
         return AllTeams;
     }
 
-    //
+    
 
 }
 
