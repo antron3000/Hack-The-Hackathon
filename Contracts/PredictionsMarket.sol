@@ -111,8 +111,6 @@ contract HackBoardPredictionMarket{
 
         uint256 TotalForAvailablePrizePool = TotalForPrizePool / SuccessfulTeamsWithDepositsCount;
 
-        uint256 TotalFadeAvailablePrizePool = TotalFadePrizePool / (ParticipatingTeams.length - SuccessfulTeamsWithDepositsCount);
-
         for(uint256 i = 0; i < SuccessfulTeamsWithDeposits.length; i++){
             TeamPredictionsInfo[SuccessfulTeams[i]].ForSuccess = true;
             if(TeamPredictionsInfo[SuccessfulTeams[i]].TotalForPredictionsDeposits > 0){
@@ -122,6 +120,18 @@ contract HackBoardPredictionMarket{
                 TeamPredictionsInfo[SuccessfulTeams[i]].WinnerPayoutRate = 0;
             }
         }
+
+        uint256[] memory FadeTeamsWithDeposits;
+        uint256 FadeTeamsWithDepositsCount = 0;
+
+        for(uint256 i = 0; i < ParticipatingTeams.length; i++){
+            if(!TeamPredictionsInfo[ParticipatingTeams[i]].ForSuccess && TeamPredictionsInfo[ParticipatingTeams[i]].TotalFadePredictionDeposits > 0){
+                FadeTeamsWithDeposits[FadeTeamsWithDepositsCount] = ParticipatingTeams[i];
+                FadeTeamsWithDepositsCount++;
+            }
+        }
+
+        uint256 TotalFadeAvailablePrizePool = TotalFadePrizePool / (ParticipatingTeams.length - SuccessfulTeamsWithDepositsCount);
 
         for(uint256 i = 0; i < FadeTeamsWithDeposits.length; i++){
             if(!TeamPredictionsInfo[ParticipatingTeams[i]].ForSuccess){
