@@ -50,9 +50,9 @@ contract HackBoardRegistry{
         require(Teams[TeamID].Admin == msg.sender);
 
         for(uint256 i = 0; i < NewMembers.length; i++){
-            
-            User[NewMembers[i]].HasTeam = true;
-            User[NewMembers[i]].TeamID = TeamID;
+            Teams[TeamID].TeamMembers.push(NewMembers[i]);
+            Users[NewMembers[i]].HasTeam = true;
+            Users[NewMembers[i]].TeamID = TeamID;
         }
     }
 
