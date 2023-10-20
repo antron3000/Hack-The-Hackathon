@@ -95,7 +95,6 @@ contract HackBoardRegistry{
         return JoinRequestsMinusApproved;
     }
 
-
 }
 
 
