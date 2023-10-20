@@ -41,12 +41,12 @@ contract HackBoardPredictionMarket{
         require(TeamParticipating[TeamID]);
 
         if(ForAgainst){
-            UserForDeposits[msg.sender][TeamID] += msg.value;
-            TeamPredictionsInfo[TeamID].TotalForPredictionsDeposits += msg.value;
-            TotalForPrizePool += msg.value;
+            UserForDeposits[msg.sender][TeamID] += Amount;
+            TeamPredictionsInfo[TeamID].TotalForPredictionsDeposits += Amount;
+            TotalForPrizePool += Amount;
         }
         else{
-            UserFadeDeposits[msg.sender][TeamID] += msg.value;
+            UserFadeDeposits[msg.sender][TeamID] += Amount;
             TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += msg.value;
             TotalFadePrizePool += msg.value;
         }
