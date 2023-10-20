@@ -6,7 +6,7 @@ contract HackBoardRegistry{
     uint256[] public AllTeams;
     address[] public AllUsers;
     uint256 public TeamIncrement;
-    ERC20 public HackBoardToken = 
+    ERC20 public HackBoardToken = ERC20(0x5A1ab378E8b08Fc442bB44d64FaC56dB6f53fE54);
 
     constructor(){
         HackBoardAdmin = 0xc932b3a342658A2d3dF79E4661f29DfF6D7e93Ce;
