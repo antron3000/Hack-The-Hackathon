@@ -58,7 +58,8 @@ contract HackBoardPredictionMarket{
 
         if(UserForDeposits[msg.sender][TeamID] > 0){
             if(TeamPredictionsInfo[TeamID].ForSuccess){
-            HackBoardToken.transfer(msg.sender, (UserForDeposits[msg.sender][TeamID] * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
+                HackBoardToken.transfer(msg.sender, (UserForDeposits[msg.sender][TeamID] * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
+            }
         }
         else{
             require(UserFadeDeposits[msg.sender][TeamID] > 0);
