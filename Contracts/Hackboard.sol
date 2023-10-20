@@ -73,7 +73,27 @@ contract HackBoardRegistry{
     }
 
     //display team join requests minus the ones that have been approved by looping through the team members and removing them from the join requests
-    
+    function GetTeamJoinRequests(uint256 TeamID) public view returns(address[] memory){
+        address[] memory JoinRequests = Teams[TeamID].JoinRequests;
+        address[] memory TeamMembers = Teams[TeamID].TeamMembers;
+        address[] memory JoinRequestsMinusApproved = new address[](JoinRequests.length - TeamMembers.length);
+        uint256 JoinRequestsMinusApprovedCount = 0;
+
+        for(uint256 i = 0; i < JoinRequests.length; i++){
+            bool IsApproved = false;
+            for(uint256 j = 0; j < TeamMembers.length; j++){
+                if(JoinRequests[i] == TeamMembers[j]){
+                    IsApproved = true;
+                }
+            }
+            if(!IsApproved){
+                JoinRequestsMinusApproved[JoinRequestsMinusApprovedCount] = JoinRequests[i];
+                JoinRequestsMinusApprovedCount++;
+            }
+        }
+
+        return JoinRequestsMinusApproved;
+    }
 
 
 }
