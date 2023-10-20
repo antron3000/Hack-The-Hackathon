@@ -67,7 +67,7 @@ contract HackBoardPredictionMarket{
             }
         }
         else{
-            revert('N')
+            revert('No winning bets on this team');
         }
     }
 
