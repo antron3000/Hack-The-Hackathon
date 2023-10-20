@@ -72,8 +72,9 @@ contract HackBoardRegistry{
         return AllTeams;
     }
 
-    //display team join requests minus the ones that have been approved
+    //display team join requests minus the ones that have been approved by looping through the team members and removing them from the join requests
     
+
 
 }
 
