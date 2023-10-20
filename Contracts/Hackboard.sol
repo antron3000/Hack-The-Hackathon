@@ -93,7 +93,8 @@ contract HackBoardPredictionMarket{
     bool public MarketsOpen;
     bool public MarketsFinalized;
 
-    mapping(uint256 => bool) public TeamParticipating;
+    ERC20 HackBoardToken = ERC20(0x5A1ab378E8b08Fc442bB44d64FaC56dB6f53fE54);
+
     mapping(uint256 => TeamStruct) public TeamPredictionsInfo;
     mapping(address => mapping(uint256 => uint256)) public UserForDeposits;
     mapping(address => mapping(uint256 => uint256)) public UserFadeDeposits;
@@ -106,44 +107,46 @@ contract HackBoardPredictionMarket{
         bool AgainstSuccess;
     }
 
-    constructor(address admin){
-        HackBoardAdmin = admin;
-        HackBoardRegistryContract = HackBoardRegistry(msg.sender);
+    constructor(){
+        HackBoardAdmin = msg.sender;
+        HackBoardRegistryContract = HackBoardRegistry(0xD87dF59Bf476e9700f36F00c198166bC901a0e17);
     }
 
     //Create a function that allows users to deposit ether to a specific team pool
-    function DepositToTeam(uint256 TeamID, bool ForAgainst) public payable {
+    function DepositToTeam(uint256 TeamID, bool ForAgainst, uint256 Amount) public {
         require(MarketsOpen);
-        require(msg.value > 0);
-        require(TeamParticipating[TeamID]);
+        require(HackBoardToken.allowance(msg.sender, address(this)) >= Amount, "Insufficient allowance");
+        require(Amount > 1 ether, "Minimum token deposit is 1");
 
         if(ForAgainst){
-            UserForDeposits[msg.sender][TeamID] += msg.value;
-            TeamPredictionsInfo[TeamID].TotalForPredictionsDeposits += msg.value;
-            TotalForPrizePool += msg.value;
+            UserForDeposits[msg.sender][TeamID] += Amount;
+            TeamPredictionsInfo[TeamID].TotalForPredictionsDeposits += Amount;
+            TotalForPrizePool += Amount;
         }
         else{
-            UserFadeDeposits[msg.sender][TeamID] += msg.value;
-            TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += msg.value;
-            TotalFadePrizePool += msg.value;
+            UserFadeDeposits[msg.sender][TeamID] += Amount;
+            TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += Amount;
+            TotalFadePrizePool += Amount;
         }
     }
 
     //Create a function that allows users to attempt to withdraw their winnings from a pool, but will fail if their bet was wrong
-    function WithdrawFromTeam(uint256 TeamID, bool ForAgainst) public {
-        require(TeamParticipating[TeamID]);
+    function WithdrawFromTeam(uint256 TeamID) public {
         require(!MarketsOpen);
         require(MarketsFinalized);
 
-        if(ForAgainst){
-            require(UserForDeposits[msg.sender][TeamID] > 0);
-            require(TeamPredictionsInfo[TeamID].ForSuccess);
-            payable(msg.sender).transfer((UserForDeposits[msg.sender][TeamID] * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
+        if(UserForDeposits[msg.sender][TeamID] > 0){
+            if(TeamPredictionsInfo[TeamID].ForSuccess){
+                HackBoardToken.transfer(msg.sender, (UserForDeposits[msg.sender][TeamID] * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
+            }
+        }
+        else if(UserFadeDeposits[msg.sender][TeamID] > 0){
+            if(TeamPredictionsInfo[TeamID].AgainstSuccess){
+                HackBoardToken.transfer(msg.sender, (UserFadeDeposits[msg.sender][TeamID] * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
+            }
         }
         else{
-            require(UserFadeDeposits[msg.sender][TeamID] > 0);
-            require(TeamPredictionsInfo[TeamID].AgainstSuccess);
-            payable(msg.sender).transfer((UserFadeDeposits[msg.sender][TeamID] * TeamPredictionsInfo[TeamID].WinnerPayoutRate) / 1000);
+            revert('No winning bets on this team');
         }
     }
 
@@ -198,6 +201,35 @@ contract HackBoardPredictionMarket{
         MarketsFinalized = true;
     }
 
+    function OpenMarkets() public {
+        require(msg.sender == HackBoardAdmin);
+        require(!MarketsFinalized);        
+        MarketsOpen = true;
+    }
+
+    function CloseMarkets() public {
+        require(msg.sender == HackBoardAdmin);
+        MarketsOpen = false;
+    }
+    
+    //Only Registry Functions
+
+    function AddTeam(uint256 TeamID) public {
+        require(msg.sender == address(HackBoardRegistryContract));
+        ParticipatingTeams.push(TeamID);
+        TeamPredictionsInfo[TeamID] = TeamStruct(0, 0, 0, false, false);
+    }
+
+    //View Functions
+
+    function GetAllTeams() public view returns(uint256[] memory){
+        return ParticipatingTeams;
+    }
+
+    function GetTeamInfo(uint256 TeamID) public view returns(TeamStruct memory){
+        return TeamPredictionsInfo[TeamID];
+    }
+}
     function OpenMarkets() public {
         require(msg.sender == HackBoardAdmin);
         require(!MarketsFinalized);        
