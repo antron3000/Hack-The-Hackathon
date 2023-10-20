@@ -119,7 +119,7 @@ async function addGnosisChainToMetaMask() {
         params: [
           {
             chainId: `0x${chainId.toString(16)}`,
-            chainName: 'Gnosis Chain',
+            chainName: 'Ethereum Classic',
             nativeCurrency: {
               name: currencySymbol,
               symbol: currencySymbol,
