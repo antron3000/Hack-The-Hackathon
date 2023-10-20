@@ -28,8 +28,6 @@ contract HackBoardRegistry{
         address Admin;
         string TeamName;
         string ShortDescription;
-        string Discord;
-        string MainBountyTarget;
         address[] TeamMembers;
         address[] JoinRequests;
     }
@@ -42,7 +40,7 @@ contract HackBoardRegistry{
         Users[msg.sender].HasTeam = true;
         Users[msg.sender].TeamID = TeamID;
 
-        Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, ShortDescription, Discord, MainBountyTarget, new address[](0), new address[](0));
+        Teams[TeamID] = HackBoardTeam(msg.sender, TeamName, ShortDescription, new address[](0), new address[](0));
         HackBoardToken.transferFrom(HackBoardAdmin, msg.sender, 2500 ether);
 
         HackBoardPredictionMarketContract.AddTeam(TeamID);
