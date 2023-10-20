@@ -108,7 +108,7 @@ function insertDataIntoTable(data) {
 }
 
 async function addGnosisChainToMetaMask() {
-    const chainId = 100;
+    const chainId = 61;
     const rpcUrl = 'https://rpc.ankr.com/gnosis';
     const currencySymbol = 'XDAI';
     const explorerUrl = 'https://gnosisscan.io/';
