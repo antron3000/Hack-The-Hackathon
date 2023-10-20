@@ -57,8 +57,7 @@ contract HackBoardRegistry{
     }
 
     function ApproveJoinRequest(address UserAddress, uint256 TeamID) public {
-        //require total team members is 5 or less
-        require();
+        require(Teams[TeamID].TeamMembers.length < 5);
         require(msg.sender == Teams[TeamID].Admin);
         require(Users[UserAddress].HasTeam == false);
         Users[UserAddress].HasTeam = true;
