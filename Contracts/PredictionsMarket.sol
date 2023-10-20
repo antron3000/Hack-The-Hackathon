@@ -16,7 +16,6 @@ contract HackBoardPredictionMarket{
 
     ERC20 HackBoardToken = ERC20(0x5A1ab378E8b08Fc442bB44d64FaC56dB6f53fE54);
 
-    mapping(uint256 => bool) public TeamParticipating;
     mapping(uint256 => TeamStruct) public TeamPredictionsInfo;
     mapping(address => mapping(uint256 => uint256)) public UserForDeposits;
     mapping(address => mapping(uint256 => uint256)) public UserFadeDeposits;
@@ -39,7 +38,6 @@ contract HackBoardPredictionMarket{
         require(MarketsOpen);
         require(HackBoardToken.allowance(msg.sender, address(this)) >= Amount, "Insufficient allowance");
         require(Amount > 1 ether, "Minimum token deposit is 1");
-        require(TeamParticipating[TeamID]);
 
         if(ForAgainst){
             UserForDeposits[msg.sender][TeamID] += Amount;
