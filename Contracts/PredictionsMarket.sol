@@ -14,7 +14,7 @@ contract HackBoardPredictionMarket{
     bool public MarketsOpen;
     bool public MarketsFinalized;
 
-    ERC20 
+    ERC20 HackBoardToken = 
 
     mapping(uint256 => bool) public TeamParticipating;
     mapping(uint256 => TeamStruct) public TeamPredictionsInfo;
