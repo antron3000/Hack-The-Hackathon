@@ -18,7 +18,7 @@ async function Login() {
 
             if (networkId === '61') {
                 provider = new ethers.BrowserProvider(window.ethereum);
-                console.log("Connected to Gnosis Chain");
+                console.log("Connected to Ethereum C Chain");
                 signer = await provider.getSigner();
                 contract = new ethers.Contract(contractAddress, ABI, signer);
 
