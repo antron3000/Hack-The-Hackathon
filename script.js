@@ -109,9 +109,9 @@ function insertDataIntoTable(data) {
 
 async function addGnosisChainToMetaMask() {
     const chainId = 61;
-    const rpcUrl = 'https://rpc.ankr.com/gnosis';
-    const currencySymbol = 'XDAI';
-    const explorerUrl = 'https://gnosisscan.io/';
+    const rpcUrl = 'https://etc.rivet.link';
+    const currencySymbol = 'ETC';
+    const explorerUrl = 'https://etc.blockscout.com/';
   
     try {
       await window.ethereum.request({
