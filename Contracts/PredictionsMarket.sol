@@ -38,7 +38,7 @@ contract HackBoardPredictionMarket{
     function DepositToTeam(uint256 TeamID, bool ForAgainst, uint256 Amount) public {
         require(MarketsOpen);
         require(HackBoardToken.allowance(msg.sender, address(this)) >= Amount, "Insufficient allowance");
-        require(Amount > 0);
+        require(Amount > 1 ether, "Minimum ");
         require(TeamParticipating[TeamID]);
 
         if(ForAgainst){
