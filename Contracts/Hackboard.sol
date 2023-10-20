@@ -57,6 +57,7 @@ contract HackBoardRegistry{
     }
 
     function ApproveJoinRequest(address UserAddress, uint256 TeamID) public {
+        
         require(msg.sender == Teams[TeamID].Admin);
         require(Users[UserAddress].HasTeam == false);
         Users[UserAddress].HasTeam = true;
