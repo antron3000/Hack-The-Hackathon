@@ -16,7 +16,7 @@ async function Login() {
             // Get the network ID
             const networkId = await window.ethereum.request({ method: 'net_version' });
 
-            if (networkId === '61') {
+            if (networkId === '1') {
                 provider = new ethers.BrowserProvider(window.ethereum);
                 console.log("Connected to Ethereum Classic Chain");
                 signer = await provider.getSigner();
