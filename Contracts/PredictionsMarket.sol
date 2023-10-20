@@ -55,7 +55,6 @@ contract HackBoardPredictionMarket{
 
     //Create a function that allows users to attempt to withdraw their winnings from a pool, but will fail if their bet was wrong
     function WithdrawFromTeam(uint256 TeamID, bool ForAgainst) public {
-        require(TeamParticipating[TeamID]);
         require(!MarketsOpen);
         require(MarketsFinalized);
 
@@ -138,7 +137,6 @@ contract HackBoardPredictionMarket{
     function AddTeam(uint256 TeamID) public {
         require(msg.sender == address(HackBoardRegistryContract));
         ParticipatingTeams.push(TeamID);
-        TeamParticipating[TeamID] = true;
         TeamPredictionsInfo[TeamID] = TeamStruct(0, 0, 0, false, false);
     }
 
