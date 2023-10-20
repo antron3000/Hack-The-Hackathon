@@ -47,8 +47,8 @@ contract HackBoardPredictionMarket{
         }
         else{
             UserFadeDeposits[msg.sender][TeamID] += Amount;
-            TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += msg.value;
-            TotalFadePrizePool += msg.value;
+            TeamPredictionsInfo[TeamID].TotalFadePredictionDeposits += Amount;
+            TotalFadePrizePool += Amount;
         }
     }
 
