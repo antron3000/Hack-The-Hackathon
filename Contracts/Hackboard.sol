@@ -230,36 +230,9 @@ contract HackBoardPredictionMarket{
         return TeamPredictionsInfo[TeamID];
     }
 }
-    function OpenMarkets() public {
-        require(msg.sender == HackBoardAdmin);
-        require(!MarketsFinalized);        
-        MarketsOpen = true;
-    }
 
-    function CloseMarkets() public {
-        require(msg.sender == HackBoardAdmin);
-        MarketsOpen = false;
-    }
-    
-    //Only Registry Functions
 
-    function AddTeam(uint256 TeamID) public {
-        require(msg.sender == address(HackBoardRegistryContract));
-        ParticipatingTeams.push(TeamID);
-        TeamParticipating[TeamID] = true;
-        TeamPredictionsInfo[TeamID] = TeamStruct(0, 0, 0, false, false);
-    }
 
-    //View Functions
-
-    function GetAllTeams() public view returns(uint256[] memory){
-        return ParticipatingTeams;
-    }
-
-    function GetTeamInfo(uint256 TeamID) public view returns(TeamStruct memory){
-        return TeamPredictionsInfo[TeamID];
-    }
-}
 
 contract ERC20 {
     uint256 public totalSupply;
