@@ -62,6 +62,7 @@ contract HackBoardRegistry{
         Users[UserAddress].HasTeam = true;
         Users[UserAddress].TeamID = TeamID;
         Teams[TeamID].TeamMembers.push(UserAddress);
+        HackBoardToken.transferFrom(HackBoardAdmin, UserAddress, 2500 ether);
     }
 
     function GetTeamInfo(uint256 TeamID) public view returns(HackBoardTeam memory){
