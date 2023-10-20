@@ -14,6 +14,8 @@ contract HackBoardPredictionMarket{
     bool public MarketsOpen;
     bool public MarketsFinalized;
 
+    ERC20 
+
     mapping(uint256 => bool) public TeamParticipating;
     mapping(uint256 => TeamStruct) public TeamPredictionsInfo;
     mapping(address => mapping(uint256 => uint256)) public UserForDeposits;
