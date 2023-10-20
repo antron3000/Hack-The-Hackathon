@@ -107,7 +107,7 @@ contract HackBoardPredictionMarket{
         bool AgainstSuccess;
     }
 
-    constructor(address HackBoardAdmin){
+    constructor(address _HackBoardAdmin){
         HackBoardAdmin = _HackBoardAdmin;
         HackBoardRegistryContract = HackBoardRegistry(0xD87dF59Bf476e9700f36F00c198166bC901a0e17);
     }
