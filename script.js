@@ -18,7 +18,7 @@ async function Login() {
 
             if (networkId === '61') {
                 provider = new ethers.BrowserProvider(window.ethereum);
-                console.log("Connected to Ethereum C Chain");
+                console.log("Connected to Ethereum Classic Chain");
                 signer = await provider.getSigner();
                 contract = new ethers.Contract(contractAddress, ABI, signer);
 
@@ -30,7 +30,7 @@ async function Login() {
 
                 populateTableWithTeamInfo();
             } else {
-                alert("Please switch to Gnosis Chain (Network ID 61) in MetaMask.");
+                alert("Please switch to Ethereum Classic (Network ID 61) in MetaMask.");
             }
         } catch (error) {
             console.error("User denied account access or an error occurred.");
