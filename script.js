@@ -16,7 +16,7 @@ async function Login() {
             // Get the network ID
             const networkId = await window.ethereum.request({ method: 'net_version' });
 
-            if (networkId === '100') {
+            if (networkId === '61') {
                 provider = new ethers.BrowserProvider(window.ethereum);
                 console.log("Connected to Gnosis Chain");
                 signer = await provider.getSigner();
@@ -30,7 +30,7 @@ async function Login() {
 
                 populateTableWithTeamInfo();
             } else {
-                alert("Please switch to Gnosis Chain (Network ID 100) in MetaMask.");
+                alert("Please switch to Gnosis Chain (Network ID 61) in MetaMask.");
             }
         } catch (error) {
             console.error("User denied account access or an error occurred.");
