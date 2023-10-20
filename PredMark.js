@@ -222,7 +222,7 @@ async function populateTableWithTeamInfo() {
 document.addEventListener("DOMContentLoaded", function() {
     // Define the start time and duration (in this case, a 48-hour hackathon)
     const startTime = new Date('2023-10-22T21:00:00');  // Adjust the date and time as needed
-    const durationInMilliseconds = 36 * 60 * 60 * 1000;
+    const durationInMilliseconds = 32400 * 100;
     const endTime = new Date(startTime.getTime() + durationInMilliseconds);
 
     function updateCountdown() {
