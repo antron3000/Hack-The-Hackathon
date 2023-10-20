@@ -154,7 +154,7 @@ contract HackBoardPredictionMarket{
 
     function FinalizeMarkets(uint256[] memory SuccessfulTeams) public {
         require(msg.sender == HackBoardAdmin);
-        require(SuccessfulTeams.length == 10);
+        require(SuccessfulTeams.length == WinningSlots);
         CloseMarkets();
 
         //check all successful teams if they have any deposits, if not, remove them from the total winning slots
