@@ -67,7 +67,7 @@ contract HackBoardPredictionMarket{
             }
         }
         else{
-            revert()
+            revert('N')
         }
     }
 
