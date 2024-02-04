@@ -5,25 +5,6 @@ let ABI = [
 		"type": "constructor"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "AllTeams",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"name": "HackBoardAdmin",
 		"outputs": [
@@ -50,27 +31,17 @@ let ABI = [
 			},
 			{
 				"internalType": "string",
-				"name": "discord",
+				"name": "github",
 				"type": "string"
 			},
 			{
-				"internalType": "string",
-				"name": "bountyTargets",
-				"type": "string"
+				"internalType": "uint256",
+				"name": "pledged",
+				"type": "uint256"
 			},
 			{
 				"internalType": "bool",
-				"name": "interestedInPredictionMarket",
-				"type": "bool"
-			},
-			{
-				"internalType": "bool",
-				"name": "pledgedToDistributePrize",
-				"type": "bool"
-			},
-			{
-				"internalType": "bool",
-				"name": "_willContinue",
+				"name": "willContinue",
 				"type": "bool"
 			},
 			{
@@ -80,49 +51,6 @@ let ABI = [
 			}
 		],
 		"name": "RegisterTeam",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "team",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "discord",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "bountyTargets",
-				"type": "string"
-			},
-			{
-				"internalType": "bool",
-				"name": "interestedInPredictionMarket",
-				"type": "bool"
-			},
-			{
-				"internalType": "bool",
-				"name": "_willContinue",
-				"type": "bool"
-			}
-		],
-		"name": "importOldTeam",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -200,12 +128,7 @@ let ABI = [
 			},
 			{
 				"internalType": "string",
-				"name": "discord",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "bountyTargets",
+				"name": "github",
 				"type": "string"
 			},
 			{
@@ -214,14 +137,9 @@ let ABI = [
 				"type": "address"
 			},
 			{
-				"internalType": "bool",
-				"name": "interest",
-				"type": "bool"
-			},
-			{
-				"internalType": "bool",
+				"internalType": "uint256",
 				"name": "pledge",
-				"type": "bool"
+				"type": "uint256"
 			},
 			{
 				"internalType": "bool",
@@ -281,37 +199,11 @@ let ABI = [
 		"inputs": [
 			{
 				"internalType": "string",
-				"name": "_discord",
+				"name": "_github",
 				"type": "string"
 			}
 		],
-		"name": "updateDiscord",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "_interest",
-				"type": "bool"
-			}
-		],
-		"name": "updateInterest",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_description",
-				"type": "string"
-			}
-		],
-		"name": "updateMainBountyTarget",
+		"name": "updateGithub",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -332,9 +224,9 @@ let ABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "bool",
+				"internalType": "uint256",
 				"name": "_pledge",
-				"type": "bool"
+				"type": "uint256"
 			}
 		],
 		"name": "updatePledge",
@@ -343,7 +235,7 @@ let ABI = [
 		"type": "function"
 	}
 ]
-
+3
 let erc20ABI = [
 	{
 		"inputs": [
@@ -731,57 +623,92 @@ const factoryAbi = [
 
 Login();
 
-let contractAddress = "0xC1FDf4678C684b2e8344057Eb9b37B7113b5d28b"
+let contractAddress = "0x7cfffb3afa95a0F09E92c850B9bE1a7D6698A800"
 let provider;
 
 let signer
 let contract
 
-async function Login() {
-    console.log("button clicked");
-    if (typeof window.ethereum !== 'undefined') {
-        console.log("MetaMask is installed");
-        try {
-            // Get the network ID
-            const networkId = await window.ethereum.request({ method: 'net_version' });
-			console.log(networkId)
-            if (networkId === '100') {
-                provider = new ethers.BrowserProvider(window.ethereum);
-                console.log("Connected to Gnosis Chain");
 
-                document.getElementById('metamaskButton').innerText = "Connected";
-				console.log("1")
-                document.getElementById('metamaskButton').disabled = true;
-				console.log("2")
+async function Login() {
+    console.log("button clicked")
+    if (typeof window.ethereum !== 'undefined') {
+        console.log("defined")
+        try {
+            // Request account access
+            await window.ethereum.request({ method: 'eth_requestAccounts' });
+
+            provider = new ethers.BrowserProvider(window.ethereum);
+            //provider2 = new ethers.JsonRPCProvider("https://geth-at.etc-network.info")
+            console.log("a")
+            const signer = await provider.getSigner();
+            console.log("a")
+
+            document.getElementById('metamaskButton').innerText = "Connected";
+            document.getElementById('metamaskButton').disabled = true;
+
+            const userAddress = await signer.getAddress();
+            console.log("a")
+
+            console.log(userAddress)
+            // document.getElementById('addressDisplay').innerText = `Address: ${userAddress}`;
+
+            // // Fetch balance
+            // console.log(userAddress)
+            // const balanceWei = await provider.getBalance(userAddress);
+            // console.log(balanceWei)
+            // const balanceEth = ethers.formatEther(balanceWei);
+            // console.log(balanceEth)
+            // document.getElementById('balanceDisplay').innerText = `Balance: ${balanceEth} ETH`;
+
+			console.log("Connected to Eth Classic Chain");
+
+            
                 //document.getElementById('temprow').style.display = "none";
 				console.log("get Signer")
-                signer = await provider.getSigner();
-				console.log("not")
+				console.log(signer)
                 contract = new ethers.Contract(contractAddress, ABI, signer);
 				console.log("populate	Table")
                 await populateTableWithTeamInfo();
-            } else {
-                alert("Please switch to Gnosis Chain (Network ID 100) in MetaMask.");
-            }
+
         } catch (error) {
             console.error("User denied account access or an error occurred.");
         }
     } else {
-        alert("MetaMask is not installed");
+        console.error("MetaMask is not installed");
     }
-}
+};
 
-//Create a function that calls the contract and gets the team info for each team then displays it in the "Table" element as a tbody row
-async function GetTeamInfo(teamID) {
-    let teamAddress = await contract.teamList(teamID)
+async function serialize(teamInfo) {
+	let serializableTemp1 = Object.fromEntries(
+		Object.entries(temp1).map(([key, value]) => {
+			if (typeof value === 'bigint') {
+				return [key, value.toString()];
+			}
+			return [key, value];
+		})
+	);
+}
+ //Create a function that calls the contract and gets the team info for each team then displays it in the "Table" element as a tbody row
+ async function GetTeamInfo(teamID) {
+    let teamAddress = await contract.teamList(teamID);
+    console.log(teamAddress);
     let teamInfo = await contract.teams(teamAddress);
 
-    return JSON.parse(JSON.stringify(teamInfo))
+    // Convert BigInt to String
+    let teamInfoStr = JSON.parse(JSON.stringify(teamInfo, (key, value) =>
+        typeof value === 'bigint' ? value.toString() : value
+    ));
+
+    console.log(teamInfoStr);
+    return teamInfoStr;
 }
+
 
     async function GetAllTeamInfoToConsole(){
         let TeamInfos = [];
         let length = await contract.teamListLength()
+		console.log(length)
         console.log("start")
         for (let i = 0; i < length; i++) {
             console.log(i)
@@ -795,11 +722,11 @@ async function GetTeamInfo(teamID) {
 
 	async function collectData(data) {
 		const teamName = data[0];
-		let tokenAddress = data[4];
+		let tokenAddress = data[3];
 		let token = new ethers.Contract(tokenAddress, erc20ABI, signer);
-	
+		console.log(token)
 		let symbol = await token.symbol();
-		let pairToken = await getUniswapPairAddress(tokenAddress);
+		//let pairToken = await getUniswapPairAddress(tokenAddress);
 	
 		let price;
 		let marketcapValue;
@@ -807,23 +734,23 @@ async function GetTeamInfo(teamID) {
 		let circulatingSupply = await token.totalSupply();
 		circulatingSupply = ethers.formatUnits(circulatingSupply, 18);
 	
-		try {
-			price = await getTokenPrice(pairToken);
-			marketcapValue = price * 100000000;
-			marketcapDisplay = "$" + marketcapValue;
-			price = "$" + price;
-		} catch (error) {
-			price = "no liquidity";
-			marketcapValue = 0; // To enable sorting
-			marketcapDisplay = "N/A";
-		}
+		// try {
+		// 	price = await getTokenPrice(pairToken);
+		// 	marketcapValue = price * 100000000;
+		// 	marketcapDisplay = "$" + marketcapValue;
+		// 	price = "$" + price;
+		// } catch (error) {
+		// 	price = "no liquidity";
+		// 	marketcapValue = 0; // To enable sorting
+		// 	marketcapDisplay = "N/A";
+		// }
 	
 		tableData.push({
 			teamName,
 			symbol,
-			price,
-			marketcapValue,
-			marketcapDisplay,
+			//price,
+			//marketcapValue,
+			//marketcapDisplay,
 			circulatingSupply,
 			tokenAddress
 		});
@@ -879,35 +806,35 @@ async function GetTeamInfo(teamID) {
 		await token.mint()
 	}
 
-    async function addGnosisChainToMetaMask() {
-        const chainId = 100;
-        const rpcUrl = 'https://rpc.ankr.com/gnosis';
-        const currencySymbol = 'XDAI';
-        const explorerUrl = 'https://gnosisscan.io/';
-    
-        try {
-        await window.ethereum.request({
-            method: 'wallet_addEthereumChain',
-            params: [
-            {
-                chainId: `0x${chainId.toString(16)}`,
-                chainName: 'Gnosis Chain',
-                nativeCurrency: {
-                name: currencySymbol,
-                symbol: currencySymbol,
-                decimals: 18,
-                },
-                rpcUrls: [rpcUrl],
-                blockExplorerUrls: [explorerUrl],
-            },
-            ],
-        });
-    
-        console.log('Gnosis Chain added to MetaMask!');
-        } catch (error) {
-        console.error('Error adding Gnosis Chain to MetaMask:', error);
-        }
-    }
+	async function addETCToMetaMask() {
+		const chainId = 61;
+		const rpcUrl = 'https://geth-at.etc-network.info';
+		const currencySymbol = 'ETC';
+		const explorerUrl = 'https://etc.blockscout.com/';
+	  
+		try {
+		  await window.ethereum.request({
+			method: 'wallet_addEthereumChain',
+			params: [
+			  {
+				chainId: `0x${chainId.toString(16)}`,
+				chainName: 'Ethereum Classic',
+				nativeCurrency: {
+				  name: currencySymbol,
+				  symbol: currencySymbol,
+				  decimals: 18,
+				},
+				rpcUrls: [rpcUrl],
+				blockExplorerUrls: [explorerUrl],
+			  },
+			],
+		  });
+	  
+		  console.log('Gnosis Chain added to MetaMask!');
+		} catch (error) {
+		  console.error('Error adding Gnosis Chain to MetaMask:', error);
+		}
+	  }
 
     async function populateTableWithTeamInfo() {
         
@@ -956,3 +883,60 @@ async function getUniswapPairAddress(tokenAddress) {
 
     return pairAddress;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Define the start time and duration (in this case, a 48-hour hackathon)
+    const startTime = new Date('2024-02-04T09:00:00');  // Adjust the date and time as needed
+    const durationInMilliseconds = 32400 * 100;
+    const endTime = new Date(startTime.getTime() + durationInMilliseconds);
+
+    function updateCountdown() {
+        const now = new Date();
+        let timeDifference = endTime - now;
+
+        // Calculate hours, minutes, and seconds
+        const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+        timeDifference -= hours * (1000 * 60 * 60);
+
+        const mins = Math.floor(timeDifference / (1000 * 60));
+        timeDifference -= mins * (1000 * 60);
+
+        const secs = Math.floor(timeDifference / 1000);
+
+        // Update the countdown timer display
+        document.getElementById('timer').textContent = `${hours}:${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+});
+
+async function addETCToMetaMask() {
+    const chainId = 61;
+    const rpcUrl = 'https://geth-at.etc-network.info';
+    const currencySymbol = 'ETC';
+    const explorerUrl = 'https://etc.blockscout.com/';
+  
+    try {
+      await window.ethereum.request({
+        method: 'wallet_addEthereumChain',
+        params: [
+          {
+            chainId: `0x${chainId.toString(16)}`,
+            chainName: 'Ethereum Classic',
+            nativeCurrency: {
+              name: currencySymbol,
+              symbol: currencySymbol,
+              decimals: 18,
+            },
+            rpcUrls: [rpcUrl],
+            blockExplorerUrls: [explorerUrl],
+          },
+        ],
+      });
+  
+      console.log('Gnosis Chain added to MetaMask!');
+    } catch (error) {
+      console.error('Error adding Gnosis Chain to MetaMask:', error);
+    }
+  }

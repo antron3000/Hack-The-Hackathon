@@ -1,10 +1,245 @@
-let ABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"uint256","name":"TeamID","type":"uint256"},{"internalType":"address[]","name":"NewMembers","type":"address[]"}],"name":"AddTeamMember","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"AllTeams","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"AllUsers","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"GetAllTeams","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"TeamID","type":"uint256"}],"name":"GetTeamInfo","outputs":[{"components":[{"internalType":"address","name":"Admin","type":"address"},{"internalType":"string","name":"TeamName","type":"string"},{"internalType":"string","name":"ShortDescription","type":"string"},{"internalType":"string","name":"Discord","type":"string"},{"internalType":"string","name":"MainBountyTarget","type":"string"},{"internalType":"address[]","name":"TeamMembers","type":"address[]"},{"internalType":"bool","name":"InterestedInPredictionMarket","type":"bool"}],"internalType":"struct HackBoardRegistry.HackBoardTeam","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_User","type":"address"}],"name":"GetUserInfo","outputs":[{"components":[{"internalType":"bool","name":"HasTeam","type":"bool"},{"internalType":"uint256","name":"TeamID","type":"uint256"}],"internalType":"struct HackBoardRegistry.User","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"HackBoardAdmin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"TeamName","type":"string"},{"internalType":"string","name":"ShortDescription","type":"string"},{"internalType":"string","name":"Discord","type":"string"},{"internalType":"string","name":"MainBountyTarget","type":"string"},{"internalType":"address[]","name":"CurrentMembers","type":"address[]"},{"internalType":"bool","name":"InterestedInPredictionMarket","type":"bool"}],"name":"OnboardNewTeam","outputs":[{"internalType":"uint256","name":"TeamCode","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"TeamIncrement","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"Teams","outputs":[{"internalType":"address","name":"Admin","type":"address"},{"internalType":"string","name":"TeamName","type":"string"},{"internalType":"string","name":"ShortDescription","type":"string"},{"internalType":"string","name":"Discord","type":"string"},{"internalType":"string","name":"MainBountyTarget","type":"string"},{"internalType":"bool","name":"InterestedInPredictionMarket","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"Users","outputs":[{"internalType":"bool","name":"HasTeam","type":"bool"},{"internalType":"uint256","name":"TeamID","type":"uint256"}],"stateMutability":"view","type":"function"}]
-
+let ABI = [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "HackBoardAdmin",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "github",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "pledged",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "willContinue",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "tokenSymbol",
+				"type": "string"
+			}
+		],
+		"name": "RegisterTeam",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			}
+		],
+		"name": "teamCreated",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "teamList",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "teamListLength",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "teams",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "github",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "teamToken",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "pledge",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "willContinue",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenList",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "_willContinue",
+				"type": "bool"
+			}
+		],
+		"name": "updateContinue",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			}
+		],
+		"name": "updateDescription",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_github",
+				"type": "string"
+			}
+		],
+		"name": "updateGithub",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			}
+		],
+		"name": "updateName",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pledge",
+				"type": "uint256"
+			}
+		],
+		"name": "updatePledge",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
 Login();
 let contract;
 
 
-let contractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17"
+let contractAddress = "0x7cfffb3afa95a0F09E92c850B9bE1a7D6698A800"
 let provider;
 let signer;
 
@@ -26,7 +261,7 @@ async function Login() {
                 document.getElementById('metamaskButton').disabled = true;
                 document.getElementById('temprow').style.display = "none";
 
-                SetUserTeamName();
+                //SetUserTeamName();
 
                 populateTableWithTeamInfo();
             } else {
@@ -73,43 +308,51 @@ async function SetUserTeamName(){
 
 async function GetAllTeamInfoToConsole(){
     let TeamInfos = [];
-    let teamIDs = await GetAllTeams();
-    for (let i = 0; i < teamIDs.length; i++) {
-        TeamInfos.push(await GetTeamInfo(teamIDs[i]));
+    let numTeams = await contract.teamListLength();
+    for (let i = 0; i < numTeams; i++) {
+        let teamAddress = await contract.teamList(i)
+        let teamInfo = await contract.teams(teamAddress)
+        console.log(teamInfo)
+        TeamInfos.push(teamInfo);
     }
     console.log(TeamInfos)
     return(TeamInfos)
 }
 
-function insertDataIntoTable(data) {
+async function insertDataIntoTable(data) {
     // Add console logs to debug the data
 
-    const teamName = data[1];
-    const description = data[2];
-    const contactLink = data[3];
-    const interestInPredictionMarket = data[6] ? "Yes" : "No";
-    const mainSponsorPrizeTarget = data[4];
+    const name = data[0];
+    const description = data[1];
+    const github = data[2];
+    const teamAddress = data[3];
+    let pledged = data[4]
+    const willContinue = data[5] ? "Yes" : "No";
+    //const tokenSymbol = data[6];
 
-    console.log(teamName, description, contactLink, interestInPredictionMarket, mainSponsorPrizeTarget);
+    pledged = await ethers.formatUnits(pledged,0) + "%"
+
+    console.log(name, description, github, pledged, willContinue);
 
     const tbody = document.getElementById('Registry');
 
     const tr = document.createElement('tbody');
     tr.innerHTML = `<tr>
-        <td>${teamName}</td>
+        <td>${name}</td>
         <td>${description}</td>
-        <td>${contactLink}</a></td>
-        <td>${interestInPredictionMarket}</td>
-        <td>${mainSponsorPrizeTarget}</td>
+        <td>${github}</a></td>
+        <td>${teamAddress}</a></td>
+        <td>${pledged}</a></td>
+        <td>${willContinue}</td>
         </tr>
     `;
 
     tbody.appendChild(tr);
 }
 
-async function addGnosisChainToMetaMask() {
+async function addETCToMetaMask() {
     const chainId = 61;
-    const rpcUrl = 'https://etc.rivet.link';
+    const rpcUrl = 'https://geth-at.etc-network.info';
     const currencySymbol = 'ETC';
     const explorerUrl = 'https://etc.blockscout.com/';
   
@@ -138,7 +381,7 @@ async function addGnosisChainToMetaMask() {
   }
 
 async function populateTableWithTeamInfo() {
-    
+        console.log("populateTableWithTeamInfo")
         const teamData = await GetAllTeamInfoToConsole();
         console.log(teamData);
         for (let i = 0; i < teamData.length; i++){
@@ -152,7 +395,7 @@ async function populateTableWithTeamInfo() {
 
 document.addEventListener("DOMContentLoaded", function() {
     // Define the start time and duration (in this case, a 48-hour hackathon)
-    const startTime = new Date('2023-10-22T21:00:00');  // Adjust the date and time as needed
+    const startTime = new Date('2024-02-04T09:00:00');  // Adjust the date and time as needed
     const durationInMilliseconds = 32400 * 100;
     const endTime = new Date(startTime.getTime() + durationInMilliseconds);
 

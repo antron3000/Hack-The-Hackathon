@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HackBoard - BlockHack 2023</title>
+    <title>Hack the Hackathon</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.3.0/ethers.umd.min.js" charset="utf-8" type="text/javascript"></script>
     <script src="script.js" defer></script>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
 </head>
 
 <body>
@@ -15,24 +18,32 @@
     <!-- Countdown Timer -->
     <section class="countdown">
         <h1 style="font-size: xx-large;">Welcome<a id="UserTeamName"></a>!</h1>
-        <h1 style="font-size: xx-large;">HackBoard - BlockHack 2023 (Toronto)</h1>
+        <h1 style="font-size: xx-large;">Hack The Hackathon - Eth Cinco de Mayo 2024</h1>
+        <a href="https://t.me/ethcdm/1722">Telegram Chat</a>
 
         <div style="font-size: 45px;" id="timer"></div>
 
-        <button onclick="Login()" id="metamaskButton">Sign in (Gnosis)</button>
-        <button onclick="addGnosisChainToMetaMask()">Add ETC to Metamask</button>
+        <button onclick="Login()" id="metamaskButton">Sign in</button>
+        <button onclick="addETCToMetaMask()">Add ETC to Metamask</button>
         <br>
-        <a href="/PredictionMarkets.html"><button>Prediction Markets</button></a>
-        <a href="/MarketCap"><button>Team Marketcaps</button></a>
+        <a href="/PredictionMarkets.html"><button>Prediction Markets (Coming Soon)</button></a>
+        <a href="/Marketcap"><button>Team Marketcaps</button></a>
     </section>
 
+    <a href="/Signup/signup2.html"><button>Register your team</button></a>
+
     <section id="Table" class="tokens">
-        <h1>Registered HackBoard Teams</h1>
+        <h1>Registered Teams</h1>
         <table id="Registry">
             <thead>
                 <tr>
                     <th>Team</th>
                     <th>Description</th>
+                    <th>github</th>
+                    <th>Team Address</th>
+                    <th>Pledged</th>
+                    <th>willContinue</th>
+
                 </tr>
             </thead>
             <tbody id="temprow">
@@ -46,7 +57,62 @@
             </tbody>
         </table>
         <br>
-        <a href="/Signup/signup.html"><button>Register your team</button></a>
+
+    </section>
+
+    <section id="BountiesTable" class="tokens">
+        <h1>Bounties</h1>
+        <table id="Bounties">
+            <thead>
+                <tr>
+                    <th>Bounty</th>
+                    <th>Description</th>
+                    <th>Available</th>
+                    <th>Reward</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+            <tbody id="temprow">
+                <tr>
+                    <td>Request Airdrop</td>
+                    <td>Request ETC airdrop in the telegram chat</td>
+                    <td>99</td>
+                    <td>0.05 ETC</td>
+                    <td>Ongoing</td>
+                </tr>
+                <tr>
+                    <td>Register</td>
+                    <td>Register your team</td>
+                    <td>10</td>
+                    <td>0.25 ETC</td>
+                    <td>Ongoing</td>
+                </tr>
+                <tr>
+                    <td>Charger</td>
+                    <td>Find me a charger for my phone</td>
+                    <td>1</td>
+                    <td>1 ETC</td>
+                    <td>Incomplete</td>
+                </tr>
+                <tr>
+                    <td>Translate</td>
+                    <td>Help me translate this app to spanish</td>
+                    <td>1</td>
+                    <td>3 ETC</td>
+                    <td>Incomplete</td>
+                </tr>
+                <tr>
+                    <td>Register other team</td>
+                    <td>Help another hackathon team register</td>
+                    <td>10</td>
+                    <td>0.5 ETC</td>
+                    <td>Incomplete</td>
+                </tr>
+ 
+            </tbody>
+        </table>
+        <br>
 
     </section>
 
@@ -54,13 +120,23 @@
     <!-- Info Tab -->
     <section class="info-tab">
         
-        <h1>Hackathon Schedule</h1>
-        <br>
+    <!--    <h1>Hackathon Schedule</h1>
+        <br> -->
 
-        <h1>What is this?</h1>
+        <h1>How it works</h1>
         <div>
-            <!-- You can replace this with your desired content -->
-            We're HackBoard, an EthGlobalNYC 2023 hackathon team trying to augment the inter-team dynamic at the hackathon, for better collaboration, brainstorming and social connection. Now expanding into other hackathons, we can successfuly say the concept stook!
+            <p>0. Request ETC in         <a href="https://t.me/ethcdm/1722">Telegram Chat</a>            </p>
+            <p>1. Register your team and crate a team token.</p>
+            <p>2. Pledge your prize winnings to token holders</p>
+            <p>3. Trade tokens with other teams</p>
+            <p>4. BONUS: complete bounties to receive extra ETC</p>
+            <p>5. At the end of the hackathon, the team with the highest market cap wins!</p>
+            
+        </div>
+        <div>
+            <!-- You can replace this with your desired content 
+            We're HackBoard, an EthGlobalNYC 2023 hackathon team trying to augment the inter-team dynamic at the hackathon, for better collaboration, brainstorming and social connection. Now expanding into other hackathons, we can successfuly say the concept stook! -->
+        
         </div>
     </section>
 

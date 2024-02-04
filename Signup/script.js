@@ -6,11 +6,245 @@ let Discord = document.getElementById('Discord');
 let InteredInPMarket = document.getElementById('InteredInPMarket');
 let SponsorGoal = document.getElementById('SponsorGoal');
 
-Login()
 
-let ABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"uint256","name":"TeamID","type":"uint256"},{"internalType":"address[]","name":"NewMembers","type":"address[]"}],"name":"AddTeamMember","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"AllTeams","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"AllUsers","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"GetAllTeams","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"TeamID","type":"uint256"}],"name":"GetTeamInfo","outputs":[{"components":[{"internalType":"address","name":"Admin","type":"address"},{"internalType":"string","name":"TeamName","type":"string"},{"internalType":"string","name":"ShortDescription","type":"string"},{"internalType":"string","name":"Discord","type":"string"},{"internalType":"string","name":"MainBountyTarget","type":"string"},{"internalType":"address[]","name":"TeamMembers","type":"address[]"},{"internalType":"bool","name":"InterestedInPredictionMarket","type":"bool"}],"internalType":"struct HackBoardRegistry.HackBoardTeam","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_User","type":"address"}],"name":"GetUserInfo","outputs":[{"components":[{"internalType":"bool","name":"HasTeam","type":"bool"},{"internalType":"uint256","name":"TeamID","type":"uint256"}],"internalType":"struct HackBoardRegistry.User","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"HackBoardAdmin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"TeamName","type":"string"},{"internalType":"string","name":"ShortDescription","type":"string"},{"internalType":"string","name":"Discord","type":"string"},{"internalType":"string","name":"MainBountyTarget","type":"string"},{"internalType":"address[]","name":"CurrentMembers","type":"address[]"},{"internalType":"bool","name":"InterestedInPredictionMarket","type":"bool"}],"name":"OnboardNewTeam","outputs":[{"internalType":"uint256","name":"TeamCode","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"TeamIncrement","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"Teams","outputs":[{"internalType":"address","name":"Admin","type":"address"},{"internalType":"string","name":"TeamName","type":"string"},{"internalType":"string","name":"ShortDescription","type":"string"},{"internalType":"string","name":"Discord","type":"string"},{"internalType":"string","name":"MainBountyTarget","type":"string"},{"internalType":"bool","name":"InterestedInPredictionMarket","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"Users","outputs":[{"internalType":"bool","name":"HasTeam","type":"bool"},{"internalType":"uint256","name":"TeamID","type":"uint256"}],"stateMutability":"view","type":"function"}]
-
-let contractAddress = "0xD87dF59Bf476e9700f36F00c198166bC901a0e17"
+let ABI = [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "HackBoardAdmin",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "github",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "pledged",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "willContinue",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "tokenSymbol",
+				"type": "string"
+			}
+		],
+		"name": "RegisterTeam",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			}
+		],
+		"name": "teamCreated",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "teamList",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "teamListLength",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "teams",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "github",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "teamToken",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "pledge",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "willContinue",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenList",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "_willContinue",
+				"type": "bool"
+			}
+		],
+		"name": "updateContinue",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			}
+		],
+		"name": "updateDescription",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_github",
+				"type": "string"
+			}
+		],
+		"name": "updateGithub",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			}
+		],
+		"name": "updateName",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pledge",
+				"type": "uint256"
+			}
+		],
+		"name": "updatePledge",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
+let contractAddress = "0x7cfffb3afa95a0F09E92c850B9bE1a7D6698A800"
 let provider;
 
 async function Login() {
@@ -22,6 +256,7 @@ async function Login() {
             await window.ethereum.request({ method: 'eth_requestAccounts' });
 
             provider = new ethers.BrowserProvider(window.ethereum);
+            //provider2 = new ethers.JsonRPCProvider("https://geth-at.etc-network.info")
             console.log("a")
             const signer = await provider.getSigner();
             console.log("a")
@@ -55,27 +290,65 @@ async function Login() {
 //Create a function that calls the contract and adds the team to the blockchain
 async function OnBoard() {
     let TeamName = document.getElementById("TeamName").value
-    let TeamMembers = (document.getElementById('TeamMembers').value).split(',');
+    
     let Description = document.getElementById('Description').value
-    let Discord = document.getElementById('Discord').value;
-    let InteredInPMarket = document.getElementById('InteredInPMarket').value;
-    let SponsorGoal = document.getElementById('SponsorGoal').value;
+    let Github = document.getElementById('Github').value;
+    let TokenSymbol = document.getElementById('tokenSymbol').value;
+    let Pledge = document.getElementById('Pledge').value;
+    let WillContinue = document.getElementById('WillContinue').value === 'yes'; // Will be true if 'yes' is selected, false otherwise
+
+    Pledge = await ethers.parseUnits(Pledge, 0)
+
+     //let TeamMembers = (document.getElementById('TeamMembers').value).split(',');
+         //let InteredInPMarket = document.getElementById('InteredInPMarket').value;
+
 
     console.log(TeamName)
-    console.log(TeamMembers)
 
     console.log(Description)
 
-    console.log(Discord)
+    console.log(TokenSymbol)
+    console.log(Github)
+    console.log(Pledge)
+    console.log(WillContinue)
 
-    console.log(InteredInPMarket)
 
-    console.log(SponsorGoal)
 
     let signer = await provider.getSigner();
     let contract = new ethers.Contract(contractAddress, ABI, signer);
+    console.log(contract)
 
-    let tx = await contract.OnboardNewTeam(TeamName, Description, Discord, SponsorGoal, TeamMembers, InteredInPMarket);
+    let tx = await contract.RegisterTeam(TeamName, Description, Github, Pledge, false, TokenSymbol);
     let receipt = await tx.wait();
     console.log(receipt);
 }
+
+async function addETCToMetaMask() {
+    const chainId = 61;
+    const rpcUrl = 'https://geth-at.etc-network.info';
+    const currencySymbol = 'ETC';
+    const explorerUrl = 'https://etc.blockscout.com/';
+  
+    try {
+      await window.ethereum.request({
+        method: 'wallet_addEthereumChain',
+        params: [
+          {
+            chainId: `0x${chainId.toString(16)}`,
+            chainName: 'Ethereum Classic',
+            nativeCurrency: {
+              name: currencySymbol,
+              symbol: currencySymbol,
+              decimals: 18,
+            },
+            rpcUrls: [rpcUrl],
+            blockExplorerUrls: [explorerUrl],
+          },
+        ],
+      });
+  
+      console.log('Gnosis Chain added to MetaMask!');
+    } catch (error) {
+      console.error('Error adding Gnosis Chain to MetaMask:', error);
+    }
+  }

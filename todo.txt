@@ -1,0 +1,59 @@
+reset time
+
+make sure sign up form works
+
+test marketcap
+
+overview of necessary contracts
+
+
+redeploy team contract 
+	make sure its modular
+
+
+make prediction market front end
+prediction market smart contract
+
+teams create tokens
+
+token swap
+
+team list 
+	teams info page
+		teams pledge
+
+xdai faucet
+
+
+
+Decide Chain
+	eth classic
+	
+
+get domain
+
+put on domain
+
+
+
+
+
+prediction market for each team 
+0
+1-250
+250-1000
+1000-2500
+2500+
+
+prediction market for each bounty
+
+discord
+swap
+help
+bounties
+
+
+domain
+boom bada boom
+
+simple as

@@ -79,3 +79,33 @@ async function OnBoard() {
     let receipt = await tx.wait();
     console.log(receipt);
 }
+
+async function addETCToMetaMask() {
+    const chainId = 61;
+    const rpcUrl = 'https://geth-at.etc-network.info';
+    const currencySymbol = 'ETC';
+    const explorerUrl = 'https://etc.blockscout.com/';
+  
+    try {
+      await window.ethereum.request({
+        method: 'wallet_addEthereumChain',
+        params: [
+          {
+            chainId: `0x${chainId.toString(16)}`,
+            chainName: 'Ethereum Classic',
+            nativeCurrency: {
+              name: currencySymbol,
+              symbol: currencySymbol,
+              decimals: 18,
+            },
+            rpcUrls: [rpcUrl],
+            blockExplorerUrls: [explorerUrl],
+          },
+        ],
+      });
+  
+      console.log('Gnosis Chain added to MetaMask!');
+    } catch (error) {
+      console.error('Error adding Gnosis Chain to MetaMask:', error);
+    }
+  }
